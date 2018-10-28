@@ -245,7 +245,7 @@ Die zu den jeweilogen Übergängen gehörenden Landé- Faktoren sind in Tabelle 
     \begin{tabular}{c c c c c c}
         \toprule
 %<<<<<<< HEAD:V27/V27.tex
-        %&\multicolumn{2}{c}{${}^3S_1$} & \multicolumn{2}{c}{${}3P_1$}
+        %&\multicolumn{2}{c}{${}^3S_1$} & \multicolumn{2}{c}{${}3P_1$} \\
         %auch hier stimmt irgendwas nicht
         Übergang    &   $m_{\alpha}$ & $g_{\alpha}$ & $m_{\beta}$ & $g_{\beta}$ & $g_{\alpha \beta}$ \\
         \midrule
@@ -300,10 +300,10 @@ Das Lichtbündel wird anschließend durch eine Lummer-Gehrcke-Platte geschickt, 
 Totalreflexion an ihren Kanten und Intereferenz der Lichtstrahlen das Auflösungsvermögen erhöht.
 Hierbei ist zu beachten, dass sich zwei Wellenlängen nicht überlagern sollen. Deshalb deren
 Wellenlängendifferenz nicht größer als das Dispersionsgebiet der Lummer-Gehrcke-Platte sein:
-\begin{align*}
+\begin{align}
     \Delta \lambda_D =\frac{\lambda^2}{2d}\sqrt{\frac{1}{n^2-1}}
     \label{eq:dis}
-\end{align*}
+\end{align}
 In dieser Formel beschreibt $n$ den Brechungsindex und $d$ die Dicke der Platte.
 Mit den gegebenen Daten für $n$ und $d$ für die Platte lässt sich nach der Berechnung von
 $\Delta \lambda$ dann auch das Auflösungsvermögen $A$ der Lummer-Gehrcke-Platte berechnen:
@@ -348,7 +348,7 @@ jeder Stromstärke das Magnetfeld mittels Hall-Sonde vermessen.
 
 \section{Auswertung}
 %gucken Punkte Komma
-\subsection{Eichung des Elektromagneten}
+\subsection{Kalibrierung des Elektromagneten}
 Um die Magentfeldstärke im Inneren des Elektromagneten zu bestimmen, wird eine nichtlineare Regression der Form
 
 \begin{equation}
@@ -392,7 +392,7 @@ Die Messwerte und der Fit sind in Abbildung \ref{abb:1} und Tabelle \ref{tab:1} 
 \begin{figure}
   \centering
   \includegraphics[scale=0.7]{Magnetfeld.pdf}
-  \caption{Fit und Messwerte zur Eichung des Elektromagneten.}
+  \caption{Fit und Messwerte zur Kalibrierung des Elektromagneten.}
   \label{abb:1}
 \end{figure}
 
@@ -434,14 +434,7 @@ Ausdrücke \eqref{eq:2} und \eqref{eq:3} ist daher erlaubt und liefert:
 Zur Auswertung werden die Abstände $\symup{\Delta} s$ der Linien ohne Magnetfeld und die Abstände $\symup{\delta} s$ der aufgespaltenen Linien mit Magnetfeld ausgemessen.
 Da der Abstand zwischen zwei Linien vermessen wird, aber sich je eine Linie durch das Magnetfeld in zwei aufspaltet, muss der Mittelwert der jeweils
 angrenzenden $\symup{\delta} s$ genommen werden. Die Abstände sind in Tabelle \ref{tab:2} aufgelistet, wobei die Einheit der Abstände Pixel beschreibt.
-Das Dispersionsgebiet wird mit der Formel \eqref{eq:dis} berechnet, wobei hier die Wellenlänge $\lambda= \SI{643,8}{\nano\meter}$, die Dicke der
-Lummer-Gehrcke-Platte $L=\SI{4}{\milli\meter}$ und der dazugehörige Brechungsindex $n(\SI{643,8}{\nano\meter})= 1,4567$ eingesetzt wird:
-
-\begin{equation*}
-  \symup{\Delta}\lambda_{\symup{D, rot}} = \SI{48,91}{\pico\meter}
-\end{equation*}
-
-Die Wellenlängenänderung $\symup{\delta}\lambda$ kann somit durch die Formel
+Das Dispersionsgebiet wird mit der Formel \eqref{eq:dis} berechnet, vergleiche \ref{tab3}. Die Wellenlängenänderung $\symup{\delta}\lambda$ kann somit durch die Formel
 
 \begin{equation}
 \symup{\delta}\lambda = \frac{1}{2} \frac{\symup{\delta}s}{\symup{\Delta}s} \cdot \symup{\Delta}\lambda_{\symup{D}}
@@ -453,20 +446,14 @@ sind ebenfalls in Tabelle \ref{tab:2} zu finden.
 Der Mittelwert der Wellenlängenverschiebung beträgt
 $\overline{\symup{\delta}\lambda_{·\symup{rot}}} = \SI{10.89(15)}{\pico\meter}$.
 
-Zu Berechnung des dazugehörigen Landé-Faktors muss die Magnetische Feldstärke B
-mit Hilfe der Ausgleichsrechnung zur Eichung des Magnetfeld berechnet
+Zu Berechnung des dazugehörigen Landé-Faktors muss die magnetische Feldstärke B
+mit Hilfe der Ausgleichsrechnung zur Kalibrierung des Magnetfeld berechnet
 werden (siehe Gleichung \eqref{eq:B})
 \begin{equation*}
   B(\SI{9}{\ampere})= \SI{561,64}{\milli\tesla}
 \end{equation*}
 
-Der Landé-Faktor kann nun mit Hilfe der Formel \eqref{eq:4} bestimmt werden:
-
-\begin{equation}
-  |\symup{\Delta}(m \cdot g)| = \frac{h c}{\lambda^2 \mu_B B} \symup{\Delta} \lambda.
-  \label{eq:lande}
-\end{equation}
-
+Der Landé-Faktor kann nun mit Hilfe der Formel \eqref{eq:4} bestimmt werden.
 Mit dem $\textsc{Planck}$schen Wirkungsquantum $h$, der Vakuumlichtgeschwindikeit
 $c$, der Wellenlänge $ \lambda = \SI{643,8}{\nano\meter}$, dem Bohrschen
 Magneton $\mu_B$ und der Wellenlängeverschiebung $\symup{\Delta}\lambda$ folgt
@@ -475,9 +462,6 @@ Magneton $\mu_B$ und der Wellenlängeverschiebung $\symup{\Delta}\lambda$ folgt
   |\symup{\Delta}(m \cdot g)_{\symup{rot, \sigma}}| = \SI{1,002(5)}{}.
 \end{equation*}
 
-Da es bei dem normales Zeeman-Effekt keine Verschiebung der Linie bei dem
-$\pi$-Übergang, wird hier $|\symup{\Delta}(m \cdot g)_{\symup{rot, \pi}}| = 0$
-angenommen.
 
 \begin{table}
   \centering
@@ -512,7 +496,7 @@ angenommen.
   \includegraphics[width=\textwidth]{Bild2.JPG}
   \subcaption{B$\neq$0}
 \end{subfigure}
-\caption{Aufspaltung der roten Linie.}
+\caption{Aufspaltung der roten Linie beim $\sigma$-Übergang.}
 \end{figure}
 
 
@@ -524,11 +508,7 @@ anschließend die Abstände $\symup{\delta}s$ zwischen den durch das Magnetfeld
 aufgespalteten Linien. Auch hier muss der Mittelwert der angrenzenden
 $\symup{\delta}s$ genommen werden.
 Zur Berechnung der Wellenlängenverschiebung muss zunächst das
-Dispersiongebiet mit Hilfe der Gleichung \eqref{eq:dis} berechnet werden.
-\begin{equation*}
-  \symup{\Delta}\lambda_{\symup{D, blau}} = \SI{26.95}{\pico\meter}
-\end{equation*}
-
+Dispersiongebiet mit Hilfe der Gleichung \eqref{eq:dis} berechnet werden, vergleiche Tabelle \ref{tab3}.
 Die Messwerte und die mit Gleichung \eqref{eq:5} berechneten
 Wellenlängeverschiebungen sind in Tabelle \ref{tab:2} aufgelistet.
 Der Mittelwert der Wellenlängenverschiebung beträgt
@@ -545,7 +525,7 @@ Elektromagneten (siehe Gleichung \eqref{eq:B}) wird die Magentfeldstärke bestim
   B(I_{\symup{blau, \sigma}}=\SI{5.5}{\ampere}) &= \SI{344.31}{\milli\tesla} \\
 \end{align*}
 
-Nun können durch die Gleichung \eqref{eq:lande} die Landé-Faktoren berechnet werden.
+Nun können durch die Gleichung \eqref{eq:4} die Landé-Faktoren berechnet werden.
 
 \begin{align*}
   |\symup{\Delta}(m \cdot g)_{\symup{blau, \pi}}| = \SI{1.69(5)}{} \\
@@ -612,7 +592,6 @@ Nun können durch die Gleichung \eqref{eq:lande} die Landé-Faktoren berechnet w
     \toprule
     Übergäng & Theoriewert & Messwert & Abweichung \\
     \midrule
-    rot, $\pi$ & 0 & 0 (nicht explizit berechnet) & - \\
     rot, $\sigma$ & 1 & 1.002\pm0.005 & \SI{0.2}{\percent}\\
     blau, $\pi$ & 1,75 & 1.69\pm0.05 & \SI{3.5}{\percent}\\
     blau, $\sigma$ & 0.5 & 0.530\pm0.016 & \SI{6}{\percent}\\
@@ -624,13 +603,13 @@ Ein Vergleich der Theorie- und der Messwerte für den Landé-Faktor
 $|\symup{\Delta}(m \cdot g)|$ findet sich in Tabelle \ref{tab:4}.
 Für die rote Spektrallinie befindet sich der Theoriewert im Bereich der
 Messungenauigkeit. Bei der blauen Spektrallinie befindet sich der
-Theoriewert im zwar nicht in der Messungenauigkeit, aber in dem $2\sigma$-Intervall.
+Theoriewert zwar nicht in der Messungenauigkeit, aber in dem $2\sigma$-Intervall.
 Da bei dem $\sigma$-Übergang eingentlich vier dünne Linien zu sehen sind mit Landé-Faktor
 1,5 und 2, wird hier der Mittelwert als Theoriewert angenommen, da je zwei dieser
 Linien so dicht beieinander liegen, dass diese mit dem Versuchsaufbau nicht zu
-erkennen sind.
+unterscheiden sind.
 Als größte Fehlerquelle lässt sich das Ablesen der Abstände einordnen, denn die
-Spektrallinien wurden nicht Scharf auf dem Foto abgebildet, sondern haben
+Spektrallinien wurden nicht scharf auf dem Foto abgebildet, sondern haben
 ein Intensitätsmaximum, welches durch das bloße Auge abgemessen wurde, bzw.
 durch setzen eines Markers am Computer. Dies lässt auf eine Ungenauigkeit
 der Messwerte schließen.
@@ -638,8 +617,15 @@ Außerdem ist die Messung der Magnetfeldstärke mittels der Hallsonde auch
 nicht vollkommen genau, da die Hallsonde nur das Magnetfeld misst, welches
 senkrecht zu der Hallsonde verläuft, hierbei kann es also nur durch geringes
 Drehen der Sonde zu Fehlern kommen.
+Eine weitere große Fehlerquelle ist das Ablesen des Stroms am Elektromagneten, da
+dieses nur sehr ungenau machbar war, hierbei ensteht ein Ablesefehler von ungefähr
+\SI{0.25}{\ampere}. Durch den Fehler liegen die Messwerte höchstwahrscheinlich
+in der $\sigma$-Umgebung, da der Fehler dadurch sehr viel größer wird.
 Dennoch sind die Messwerte mit einer maximalen Abweichung von \SI{6}{\percent}
 sehr genau bestimmt worden. Ein Grund hierfür ist die sehr hohe Auflösung
 der Lummer-Gehrcke-Platte.
 Generell entsprechen die Ergebnisse des Versuches der theoretischen Grundlage
 des Zeeman-Effektes.
+
+
+\printbibliography
