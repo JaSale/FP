@@ -1,6 +1,6 @@
 \section{Theorie}
-Im Veruch soll der Zeeman Effekt untersucht werden. Dieser beschreibt die Aufspaltung der
-von einem Atom emittierten Spektrallinien, wenn dieses einem äußeren Magnetfeld unterworfen
+Im Veruch soll der Zeeman Effekt untersucht werden. Dieser beschreibt die Aufspaltung und Polarisation
+der von einem Atom emittierten Spektrallinien, wenn dieses einem äußeren Magnetfeld unterworfen
 ist. Hierzu wird die rote und die blaue Linie einer Cadmiumlampe (Cd-Lampe) im Speziellen
 untersucht.
 \subsection{Magnetische Momente}
@@ -28,7 +28,7 @@ wie folgt berechnen:
 Beide Momente besitzen einen Landé-Faktor ($g_s$). Er beschreibt die Stärke der Kopplung des
 Spins, beziehungsweise des Bahndrehimpulses an das magnetische Moment. Im Falle von
 $\vec{\mu}_l$ beträgt der Landé-Faktort jedoch eins und wurde deshalb nicht aufgeführt.
-Im Falle von $\vec{\mu}_s$ beträgt er in etwa zwei.
+Im Falle von $\vec{\mu}_s$ beträgt er für ein freies Elektron in etwa zwei.
 Im Falle, dass die Spinquantenzahl $s$ $\frac{1}{2}$ und $l$ 1 beträgt, so ist
 $\vec{\mu}_s$ in etwa doppelt so groß wie $\vec{\mu}_l$. Dies wird als magnetomechanische
 Anomalie des Elektrons beschrieben.
@@ -45,12 +45,12 @@ einem Gesamtdrehimpuls $\vec{L}$ aufsummieren:
     \vec{L} = \sum_i \vec{l}_i\, \text{ mit }\, |\vec{L}|=\sqrt{L(L+1)}\hbar.
 \end{align*}
 Der Drehimpuls in abgeschlossenen Schalen beträgt auf Grund des
-Pauliprinzips immer Null, sodass es genügt, lediglich die Drehimpulse der freien
-Elektronen zu addieren.
+Pauliprinzips immer Null, sodass es genügt, lediglich die Drehimpulse der Valenzelektronen
+zu addieren.
 Zu erwähnen bleibt, dass lediglich Gesamtdrehimpulse auftreten, deren Quantenzahl L
 ganzzahlig ist. Es ist konvention den Zahlen 0, 1, 2, 3 die Buchstaben S, P, D, F zuzuordnen.
 
-\noindent Ebenso wie die Bahndrehimpulse, lassen sich die Spins der freien Elektronen $\vec{s}_i$
+\noindent Ebenso wie die Bahndrehimpulse, lassen sich die Spins der Valenzelektronen $\vec{s}_i$
 zu einem Gesamtspin addieren:
 \begin{align*}
     \vec{S} = \sum_i \vec{s}_i \text{ mit } |\vec{S}=\sqrt{S(S+1)}\hbar.
@@ -77,7 +77,7 @@ Die Gesamtbahndrehimpulse und Gesamtspins ergeben dann gemeinsam den Gesamtdrehi
 \noindent Bei großen Kernladungszahlen, also sehr schweren Atomen lässt sich kein Gesamtbahndrehimpuls $\vec{L}$,
 sowie kein Gesamtspin $\vec{S}$ ermitteln. Hier ist die Wechselwirkung der einzelnen Spins mit den zugehörigen
 Bahndrehimpulsen der jeweiligen Elektronen größer als die Kopplung mit anderen Elektronen und es
-entstehen einzelne Gesamtdrehimpulse der freien Elektronen:
+entstehen einzelne Gesamtdrehimpulse der Valenzelektronen:
 \begin{align*}
     \vec{j}_i = \vec{l}_i + \vec{s}_i.
 \end{align*}
@@ -98,7 +98,7 @@ Der Landé-Faktor $g_J$ berechnet sich nun wie folgt:
     g_J = \frac{3J(J+1) + S(S+1) - L(L+1)}{2J(J+1)}.
 \end{align*}
 Im allgemeinen Fall haben $\vec{\mu}_J$ und $\vec{J}$ nicht dieselbe Orientierung. Das bedeutet, dass
-sich $\vec{\mu}_J$ in eine zu $\vec{J}$ parallele und in eine parallele Komponente aufteilt. Klassisch
+sich $\vec{\mu}_J$ in eine zu $\vec{J}$ parallele und in eine senkrechte Komponente aufteilt. Klassisch
 betrachtet, führt $\vec{\mu}_J$ eine Preäzzesionsbewegung um $\vec{J}$ aus. Der Erwartungswert der zur Gesamtdrehimpulsachse
 senkrechten Komponente von $\vec{\mu}_J$ verschwindet somit und es spielt lediglich die zu $\vec{J}$ parallele
 Komponente eine Rolle. Im Folgenden ist mit $\vec{\mu}_J$ eigentlich $\vec{\mu}_{J_{||}}$ gemeint.
@@ -107,12 +107,12 @@ des angelegten Magnetfeldes zeigt $\vec{\mu}_Jz$, nur ein ganzzahliges Vielfache
 Hierbei spielt die Orientierungsquantenzahl m eine wichtige Rolle, da diese vorgibt, wieviele Einstellmöglichkeiten
 für $\vec{\mu}_J$ in Richtung des angelegten Magnetfeldes (z-Richtung) existieren:
 \begin{align*}
-    \vec{\mu}_Jz = - m \, \mu_B \, g_J \ \text{mit} m \in {-J, -J+1, \dots,0, \dots, J}.
+    \vec{\mu}_{Jz} = - m \, \mu_B \, g_J \ \text{mit} \ m \in {-J, -J+1, \dots,0, \dots, J}.
 \end{align*}
 Die durch das B-Feld hinzugewonnenen $2J+1$ Einstellmöglichkeiten des magnetische Moments gegenüber
 dem Magnetfeld ergeben sich somit zu:
 \begin{align*}
-    E_{\text{Mag}} = m \mu_B g_J B.
+    E_{\text{Mag}} = m \, \mu_B \, g_J B.
 \end{align*}
 In Abbildung \ref{abb1} ist die Aufspaltung in $2J+1$ äquidistante Energieniveaus exemplarisch für $J=2$
 dargestellt.
@@ -145,8 +145,8 @@ mit der Frequenz
 \begin{align*}
     \nu_{\alpha, \beta} := \frac{E_{\alpha}-E_{\beta}}{2}
 \end{align*}
-Die bei der Schwingung entstehende Strahlungsintensität wird mittels Poyntingvektor
-ermittelt. Hierbei ergibt sich, dass bei einem Magnetfeld mit Ausrichtung in z-Richtung
+Die bei der Schwingung entstehende Strahlungsintensität wird über die Matrixelemente des Dipolmoments
+mittels Poyntingvektor ermittelt. Hierbei ergibt sich, dass bei einem Magnetfeld mit Ausrichtung in z-Richtung
 die z-Komponente des Dipols nur dann nicht verschwindet, wenn sich die Orientierungsquantenzahlen
 der Zustände $E_{\alpha}$ und $E_{\beta}$, $m_{\alpha}$ und $m_{\beta}$ nicht
 voneinander unterscheiden. Hierbei ist lediglich die z- Komponente der emittierten Strahlung von 0
@@ -168,7 +168,7 @@ wird die Aufspaltung der Spektrallinien als $\textbf{normaler Zeeman-Effekt}$ be
 Gilt also $s=0$, so ist stets $g_J=1$. Somit betragen die Energieunterschiede zwischen
 den Niveaus unabhängig von den Quantenzahlen $L$ und $J$:
 \begin{equation}
-	\Delta E = \Delta m \mu_{B} B.
+	\Delta E = \Delta m \, \mu_{B} \, B.
 \end{equation}
 Der zum Übergang gehörende Landé-Faktor $g_{\alpha \beta}$ entspricht hier dem Unterschied
 $\Delta m$.
@@ -190,8 +190,8 @@ muss wie folgt berechnet werden:
 \end{align*}
 Dies wird als $\textbf{anomaler Zeeman- Effekt}$ bezeichnet.
 Die Polarisation der $\sigma$- und $\pi$- Emission bleiben hier gleich zum normalen
-Zeeman- Effekt.
-In Abbildung \ref{abb3} ist eine Aufspaltung von Spektrallinien beim anomalen Zeeman- effekt zu sehen.
+Zeeman-Effekt.
+In Abbildung \ref{abb3} ist eine Aufspaltung von Spektrallinien beim anomalen Zeeman-Effekt zu sehen.
 
 \FloatBarrier
 \begin{figure}
@@ -249,7 +249,7 @@ Die zu den jeweilogen Übergängen gehörenden Landé- Faktoren sind in Tabelle 
         %auch hier stimmt irgendwas nicht
         Übergang    &   $m_{\alpha}$ & $g_{\alpha}$ & $m_{\beta}$ & $g_{\beta}$ & $g_{\alpha \beta}$ \\
         \midrule
-        &  \multicolumn{2}{c}{${}^3S_1$}  &  \multicolumn{2}{c}{${}^3P_1$} & ${}^3S_1 \leftrightarrow{}^3P_1$ \\
+        &  \multicolumn{2}{c}{${}^3S_1$}  &  \multicolumn{2}{c}{${}3P_1$} & ${}^3S_1 \leftrightarrow{}^3P_1$ \\
         \midrule
         &   1   &   2   &   0   &   $\frac{3}{2}$   &   2   \\
         $\sigma$    &   0   &   2   &   -1  &   $\frac{3}{2}$   &   $\frac{3}{2}$   \\
@@ -291,8 +291,9 @@ Versuchsteil die blaue Spektrallinie ausgewählt wird. Dies geschieht, indem man
 Linie exakt durch den Spalt durchlässt. Hier ist zu erwähnen, dass es hilfreich sein kann, die
 Breite des Spaltes beim untersuchen der blauen Linie etwas zu verkleinern, um die, sehr nah neben
 der blauen Linie liegende, Violette Linie auszublenden.
-Mit Hilfe des Polarisationsfilters kann zwischen horizontaler und longitudinaler Betrachtung durch
-Verschiebung um $\frac{\pi}{2}$ gewechselt werden. Die Position des Filters spielt für die Durchführung
+Mit Hilfe des Polarisationsfilters kann zwischen horizontaler und vertikaler Polarisation durch
+Drehung um $\frac{\pi}{2}$ gewechselt werden.
+Die Position des Filters spielt für die Durchführung
 keine Rolle. Um den Strahlengang nicht zu sehr zu beeinflussen, ist es jedoch von Vorteil, den Filter
 kurz vor der Lummer-Gehrcke-Platte zu platzieren.
 Das Lichtbündel wird anschließend durch eine Lummer-Gehrcke-Platte geschickt, welche durch
@@ -333,14 +334,14 @@ $\SI{10}{\second}$ gewählt wird.
 Sodann wird das Magnetfeld aufgedreht, bis eine deutliche Aufspaltung der Spektrallinien
 zu sehen ist. Nun wird ein Foto der aufegspaltenen Spektrallinie aufgenommen und die Magnetfeldstärke
 notiert. Das Vorgehen ist bei roter, wie blauer Linie gleich, wobei zu erwähnen bleibt, dass die
-Aufspaltung der blauen Linie etwas verwaschener im Bild erscheinen wird, was durch den Dopplereffekt
-zu erklären ist.
+Aufspaltung der blauen Linie etwas verwaschener im Bild erscheinen wird, da die Photonenenergie des
+blauen Lichts deutlich größer als die des roten Lichts ist.
 Durch die verwendung der Lummer-Gehrcke-Platte sind im Fokus der Kamera sehr viele Spektrallinien zu sehen,
 da hier ein Interferenzmuster entsteht. Es ist essentiell für die anschließende Auswertung, dass Messungen
 der Wellenlängenänderung immer an derselben Linie durchgeführt werden, beziehungsweise dass bei der
 Aufspaltung einer Linie in mehrere über deren Wellenlängenänderung gemittelt wird.
 Nach Durchführung des Versuchs wird das Magnetfeld vermessen. Hierzu wird der Gleichstrom,
-der den Permanentmagneten versorgt in $\SI{1}{\ampere}$-Schritten bis zu $\SI{1}{\ampere}$ hochgeregelt und zu
+der den Permanentmagneten versorgt in $\SI{1}{\ampere}$-Schritten bis zu $\SI{21}{\ampere}$ hochgeregelt und zu
 jeder Stromstärke das Magnetfeld mittels Hall-Sonde vermessen.
 
 
