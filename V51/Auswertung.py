@@ -10,8 +10,10 @@ from scipy.stats import stats
 
 ########### A1 ################################################################
 f1, A1 = np.genfromtxt('1.txt', unpack=True)
+U_01=8*10**(-3)
+V_01=60*10**(-3)/U_01
 f1_log = np.log(f1)
-A1_log = np.log(A1)
+A1_log = np.log(A1/U_01)
 
 def f_1(x, a1, b1):
     return x*a1+b1
@@ -21,7 +23,6 @@ i1 = np.linspace(11, 14, 1000000)
 ErrorsI = np.sqrt(np.diag(CovarianceI))
 a1 = ufloat(ParamsI[0], ErrorsI[0])
 b1 = ufloat(ParamsI[1], ErrorsI[1])
-null1 = brentq(f_1, 0, 100, args=(ParamsI[0], ParamsI[1]))
 
 plt.plot(i1, f_1(i1, *ParamsI), 'b-', label='linear regression')
 plt.plot(f1_log, A1_log, 'r.', label='data')
@@ -34,17 +35,19 @@ plt.clf()
 print('    - A1 -    ')
 print('a1: ', a1)
 print('b1: ', b1)
-print('Nullstelle 1: ', np.exp(null1))
+
 R_N1=50*10**3
 R_11=10*10**3
 V1 = -R_N1/R_11
 print('V1= ', V1)
-print('V1*v1= ', V1*np.exp(null1))
+#print('v1= ', v1)
+#print('V1*v1= ', V1*v1)
 ########### A2 ################################################################
 
 f2, A2 = np.genfromtxt('2.txt', unpack=True)
+U_02 = 57.5*10**(-3)
 f2_log = np.log(f2)
-A2_log = np.log(A2)
+A2_log = np.log(A2/U_02)
 
 def f_2(x, a2, b2):
     return x*a2+b2
@@ -72,7 +75,7 @@ R_12=1*10**3
 V2 = -R_N2/R_12
 print('V2= ', V2)
 print('V2*v2= ', V2*np.exp(null2))
-print('Verhältnis:', V1*np.exp(null1)/(V2*np.exp(null2)))
+#print('Verhältnis:', V1*np.exp(null1)/(V2*np.exp(null2)))
 
 
 ### Integrator###############################################################
@@ -105,5 +108,6 @@ print('a3: ', a3)
 print('b3: ', b3)
 R= 476.8
 C= 12.9*10**(-9)
-print('1/RC_Theorie : ', 1/(R*C))
+print('RC = ', 1/a3)
+print('RC_Theorie : ', R*C)
 print('Abweichung: ', 1/(R*C)/(a3))

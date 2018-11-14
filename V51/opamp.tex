@@ -207,3 +207,170 @@ is analyzed in regard to the fact that an integration if the input voltage is ex
 Afterwards the frequency of the input voltage is increased from $\SI{570}{\hertz}$
 to $\SI{16}{\kilo \hertz}$ in order to show that with an increase of the input frequency
 the output voltage tends to a certain value.
+
+\section{Analysis}
+
+The data of the first two measurements are written in the table \ref{tab:1}. In
+figure you can see the data on logarithmic scales an a linear regression with
+\begin{equation*}
+  ln(U) = a \cdot ln(\nu) + b
+\end{equation*}
+with
+
+\begin{align*}
+  a_1 &= \num{-0.783(25)} \\
+  b_1 &= \num{10.53(30)} \\
+\end{align*}
+and
+\begin{align*}
+  a_2 &= \num{-0.760(12)} \\
+  b_2 &= \num{11.32(13)} \\
+\end{align*}
+
+The critical frequency $\nu_g$ is defined as the frequency, when the amplification drops
+to $\frac{V_0}{\sqrt{2}}$.
+\begin{align*}
+  \nu_{\symup{g,1}} = \SI{8(4)}{\per\second} \\
+  \nu_{\symup{g,2}} = \SI{1.09(24)}{\per\second}
+\end{align*}
+
+The normal amplification $V_0$ can be calculated with the arithmetic mean of
+the first data.
+
+\begin{align*}
+  V_{0, 1} = 7.612 \\
+  V_{0, 1} = 99.302
+\end{align*}
+
+The product of the normal amplification $V_0$ and the critical frequency should
+be a constant:
+\begin{align*}
+  V_{0, 1} \cdot \nu_{\symup{g,1}} = \SI{1.6(9)e5}{\per\second} \\
+  V_{0, 2} \cdot \nu_{\symup{g,2}} = \SI{0.50(11)e5}{\per\second}
+\end{align*}
+
+
+
+\begin{table}
+  \centering
+  \caption{Data of the characteristic roll off and the cut-off frequency.}
+  \label{tab:1}
+  \begin{tabular}{c c | c c}
+    \toprule
+    \multicolumn{2}{c}{measurement 1} & \multicolumn{2}{c}{measurement 2} \\
+    $\nu$ / \si{\hertz} & $U$ / \si{\milli\volt} & $\nu$ / \si{\hertz} & $U$ / \si{\volt} \\
+    \midrule
+    10      &  62  &  10     &  5.75 \\
+    50      &  61  &  100    &  5.75 \\
+    100     &  60  &  500    &  5.67 \\
+    200     &  61  &  1000   &  5.67 \\
+    500     &  61  &  2500   &  5.03 \\
+    1000    &  61  &  5000   &  5.03 \\
+    2500    &  62  &  6000   &  4.90 \\
+    5000    &  61  &  7000   &  4.82 \\
+    7500    &  61  &  8000   &  4.50 \\
+    10000   &  59  &  9000   &  4.38 \\
+    15000   &  60  &  10000  &  4.18 \\
+    20000   &  59  &  11000  &  4.02 \\
+    25000   &  59  &  12000  &  3.82 \\
+    30000   &  59  &  13000  &  3.66 \\
+    35000   &  58  &  14000  &  3.5  \\
+    45000   &  57  &  15000  &  3.3  \\
+    50000   &  55  &  16000  &  3.18 \\
+    60000   &  53  &  17000  &  3.06 \\
+    70000   &  50  &  18000  &  2.93 \\
+    80000   &  47  &  20000  &  2.69 \\
+    90000   &  43  &  22500  &  2.45 \\
+    100000  &  40  &  25000  &  2.25 \\
+    125000  &  35  &  30000  &  1.93 \\
+    150000  &  29  &  35000  &  1.69 \\
+    175000  &  24  &  40000  &  1.53 \\
+    250000  &  18  &  45000  &  1.37 \\
+    300000  &  15  &  50000  &  1.25 \\
+    400000  &  12  &  60000  &  1.05 \\
+    500000  &  9   &  70000  &  0.920 \\
+    600000  &  9   &  80000  &  0.800 \\
+    1000000 &  6   &  100000 &  0.68  \\
+            &      &  150000 &  0.520 \\
+            &      &  300000 &  0.320 \\
+            &      &  450000 &  0.280 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+
+\subsection{Reverse Integrator}
+In figure \ref{abb:1} you can see the integral of a sinus-oscillation an in
+figure \ref{abb:2} the integral of a triangle-oscillation.
+The green line represents the function and the yellow line the integral of
+the function.
+
+The data of the voltage amplitude as a function of the frequency is written
+in the table \ref{tab:2}. To analyse the porportionality of the voltage amplitude
+in function of the inverse frequency or rather the inverse of the phase velocity,
+you have to do a linear regression:
+\begin{equation*}
+  \frac{U}{U_0} = a_2 \cdot \frac{1}{\omega} + b_2 = a_2 \cdot \frac{1}{2 \pi \nu} + b_2
+\end{equation*}
+$a_2$ and $b_2$ are regression parameter, with the values
+\begin{align*}
+  a_3 &= \SI{1.413(8)e5}{\per\second} \\
+  b_3 &= \SI{0.75(10)}{} \\
+\end{align*}
+You can calculate the value of $RC$ by comparing the slope with the formula
+\begin{equation}
+  \label{eq:1}
+  U = \frac{U_0}{\omega R C} \cos{(\omega t)}
+\end{equation}
+\begin{equation*}
+  RC = \SI{7.08(4)e-6}{\farad\ohm}
+\end{equation*}
+Compared with the theoretical value of $RC_{theory}= \SI{6.15e-6}{\farad\ohm}$ there is a
+deviation of $\SI{15}{percent}$.
+\begin{table}
+  \centering
+  \caption{The data of the ouput voltage in function of the frequency.}
+  \label{tab:2}
+  \begin{tabular}{c c| c c}
+    \toprule
+    $\nu$ / \si{\hertz} & $U$ / \si{\volt} & $\nu$ / \si{\hertz} & $U$ / \si{\volt} \\
+    \midrule
+    570  & 23.3  &  1650  & 8.60 \\
+    600  & 22.3  &  1700  & 8.60 \\
+    650  & 20.3  &  1800  & 8.00 \\
+    700  & 19.3  &  1900  & 7.60 \\
+    750  & 18.1  &  2000  & 7.40 \\
+    800  & 17.1  &  2250  & 6.60 \\
+    850  & 16.1  &  2500  & 5.70 \\
+    900  & 15.3  &  2750  & 5.20 \\
+    950  & 14.5  &  3000  & 4.80 \\
+    1000 & 13.7  &  3500  & 4.20 \\
+    1100 & 12.7  &  4000  & 3.50 \\
+    1150 & 12.1  &  5000  & 2.89 \\
+    1200 & 11.7  &  6000  & 2.49 \\
+    1250 & 11.3  &  7000  & 2.13 \\
+    1300 & 10.9  &  8000  & 1.89 \\
+    1350 & 10.5  &  9000  & 1.69 \\
+    1400 & 10.0  &  10000 & 1.57 \\
+    1450 & 9.8   &  12000 & 1.33 \\
+    1500 & 9.4   &  14000 & 1.19 \\
+    1550 & 9.2   &  16000 & 1.09 \\
+    1600 & 8.8   &        &      \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{scope_2.png}
+  \caption{Integral of sinus-oscillation.}
+  \label{abb:1}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{scope_3.png}
+  \caption{Integral of triangle-oscillation.}
+  \label{abb:2}
+\end{figure}
+
+\printbibliography
