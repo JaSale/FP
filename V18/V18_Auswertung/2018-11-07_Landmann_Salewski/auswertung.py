@@ -86,8 +86,8 @@ def gaussian_fit_peaks(test_ind) :
         unter = []
         sigma = []
         for i in test_ind:
-            a=i-20
-            b=i+20
+            a=i-17
+            b=i+17
 
             params_gauss, covariance_gauss=curve_fit(gauss, np.arange(a,b+1), Eu[a:b+1],p0=[1,Eu[i],0,i-0.1])
             errors_gauss = np.sqrt(np.diag(covariance_gauss))
@@ -166,7 +166,7 @@ c=ufloat(params2[1],errors2[1])
 d=ufloat(params2[2],errors2[2])
 e=ufloat(params2[3],errors2[3])
 
-x=np.linspace(0,1600,10000)
+x=np.linspace(200,1600,10000)
 plt.plot(x, potenz(x,*params2), 'g--', label='Energie-Effizienz-Fit')
 plt.plot(E, noms(Q),'rx', label='Effizienz-Energie')
 plt.legend(loc='best')
@@ -174,3 +174,20 @@ plt.xlabel(r'E / keV')
 plt.ylabel(r'Q(E)')
 plt.savefig('effizienz.pdf')
 plt.clf()
+
+Cs = np.genfromtxt('137Cs.txt', unpack=True)
+peaks_2= find_peaks(Cs, height=80, distance=20)
+index_2= peaks_2[0]
+peaks_heights= peaks_2[1]
+energie_2=lin(index_2, *paramsI)
+print('Peaks',index_2)
+print('Peakhöhe', peaks_heights)
+print('Energie_2=====', energie_2)
+e_rueck=energie_2[-4]
+e_comp=energie_2[-2]
+e_photo=energie_2[-1]
+
+ascii.write(
+[[index_2[-4], index_2[-2], index_2[-1]], [e_rueck, e_comp, e_photo]],
+'monochromat.tex', format='latex', overwrite='True')
+print('Energie des Photopeaks====', e_photo)
