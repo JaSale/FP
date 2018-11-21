@@ -133,12 +133,12 @@ Q=[peakinhalt[i]/(omega_4pi*A*W[i]) for i in range(len(W))]
 print('Effizienz =====>',Q)
 
 ascii.write(
-[sigma, index_f, hoehe, unter, peakinhalt ],
+[sigma, index_f, hoehe, unter ],
 'effizienz.tex', format='latex', overwrite='True'
 )
 
 ascii.write(
-[E_det, Q],
+[peakinhalt, E_det, Q],
 'effizienz2.tex', format='latex', overwrite='True'
 )
 
@@ -148,8 +148,6 @@ peakinhalt = peakinhalt[1:]
 W = W[1:]
 E=E[1:]
 E_det=E_det[1:]
-
-E_det_r, Q_r = np.genfromtxt('Probe.txt', unpack=True)
 
 def potenz(x, b, c, d, e):
     return b*(x-c)**d+e
@@ -170,14 +168,17 @@ c=ufloat(params2[1],errors2[1])
 d=ufloat(params2[2],errors2[2])
 e=ufloat(params2[3],errors2[3])
 
-x= np.linspace(200,2000)
-plt.plot(lin(x,*paramsI), potenz(x,*params2), 'r--', label='Energie-Effizienz-Fit')
+x= np.linspace(200,1600, 10000)
+plt.plot(x, potenz(x,*params2), 'r--', label='Energie-Effizienz-Fit')
 plt.plot(E, noms(Q),'g+', label='Effizienz-Energie')
 plt.legend(loc='best')
 plt.xlabel(r'E / keV')
 plt.ylabel(r'Q(E)')
 plt.savefig('effizienz.pdf')
 plt.clf()
+
+
+#Teil b)
 
 Cs = np.genfromtxt('137Cs.txt', unpack=True)
 peaks_2= find_peaks(Cs, height=70, distance=20)
@@ -233,7 +234,7 @@ print('Zehntel nach half =====>', lin((1.823*half),*paramsI))
 print('Verhältnis zehntel zu halbwertsbreite =====>', 1 - lin(ten,*paramsI)/lin((1.823*half),*paramsI))
 
 x=np.linspace(1,8192,8192)
-plt.plot(lin(x, *paramsI), Cs, 'r--', label = 'Energien-Bins-Fit')
+plt.plot(lin(x, *paramsI), Cs, 'r--', label = 'Messwerte des Detektors')
 plt.plot(lin(index_2,*paramsI), Cs[index_2], 'g+', label = 'Detektierte Peaks')
 #plt.axhline(y=0.5*Cs[index_2[-1]], color='y', linestyle='dashed')
 #print('Halbwertshöhe =====>', 0.5*Cs[index_2[-1]])
@@ -317,8 +318,8 @@ def gaussian_fit_peaks_d(test_ind) :
     sigma= []
     unter= []
     for i in test_ind:
-        a=i-40
-        b=i+40
+        a=i-30
+        b=i+30
 
         params_gauss,covariance_gauss= curve_fit(gauss,np.arange(a,b+1),Ba[a:b+1],p0=[1,Ba[i],0,i-0.1])
         errors_gauss= np.sqrt(np.diag(covariance_gauss))
@@ -346,7 +347,7 @@ print('Untergrund Ba =====>',unter_ba)
 print('Höhe Ba =====>', hoehe_ba)
 
 ascii.write(
-[E_ba, W_ba, bin_ba, lin(bin_ba, *paramsI)],
+[sigma_ba, hoehe_ba, lin(bin_ba, *paramsI), unter_ba],
 'BaTab.tex', format='latex', overwrite='True')
 
 E_ba_det = []
@@ -361,7 +362,7 @@ for i in A_ba:
     A_det.append(i)
 
 ascii.write(
-[index_ba, peakinhalt_ba, A_det],
+[E_ba, W_ba, bin_ba, E_ba_det],
 'BaTab2.tex', format='latex', overwrite='True')
 
 A_mittel= ufloat(np.mean(noms(A_ba)), np.mean(stds(A_ba)))
