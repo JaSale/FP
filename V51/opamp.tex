@@ -185,7 +185,7 @@ of the input voltage.
 \end{figure}
 \FloatBarrier
 
-\section{Experiment set-up}
+\section{Experimental set-up}
 The circuits that are previously described can be easily built up on an electrical
 pin board. At the sight of the experiment is a short explanation of the various inputs
 of the operational amplifier, various resistances, capacitors as well as a voltage generator which is able to
@@ -211,7 +211,8 @@ the output voltage tends to a certain value.
 \section{Analysis}
 
 The data of the first two measurements are written in the table \ref{tab:1}. In
-figure you can see the data on logarithmic scales an a linear regression with
+figures \ref{abb:1} and \ref{abb:2} you can see the data on logarithmic scales
+and a linear regression with
 \begin{equation*}
   ln(U) = a \cdot ln(\nu) + b
 \end{equation*}
@@ -298,16 +299,27 @@ be a constant:
   \end{tabular}
 \end{table}
 
-
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{A1.pdf}
+  \caption{First measurement with linear regression.}
+  \label{abb:1}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{A2.pdf}
+  \caption{Second measurement with linear regression.}
+  \label{abb:2}
+\end{figure}
 
 \subsection{Reverse Integrator}
-In figure \ref{abb:1} you can see the integral of a sinus-oscillation an in
-figure \ref{abb:2} the integral of a triangle-oscillation.
+In figure \ref{abb:3} you can see the integral of a square-wave-voltage and in
+figure \ref{abb:4} the integral of a triangle-oscillation.
 The green line represents the function and the yellow line the integral of
 the function.
 
 The data of the voltage amplitude as a function of the frequency is written
-in the table \ref{tab:2}. To analyse the porportionality of the voltage amplitude
+in the table \ref{tab:2} and shown in \ref{abb:5}. To analyse the porportionality of the voltage amplitude
 in function of the inverse frequency or rather the inverse of the phase velocity,
 you have to do a linear regression:
 \begin{equation*}
@@ -327,7 +339,7 @@ You can calculate the value of $RC$ by comparing the slope with the formula
   RC = \SI{7.08(4)e-6}{\farad\ohm}
 \end{equation*}
 Compared with the theoretical value of $RC_{theory}= \SI{6.15e-6}{\farad\ohm}$ there is a
-deviation of $\SI{15}{percent}$.
+deviation of $\SI{15}{\percent}$.
 \begin{table}
   \centering
   \caption{The data of the ouput voltage in function of the frequency.}
@@ -362,18 +374,52 @@ deviation of $\SI{15}{percent}$.
 \end{table}
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{scope_2.png}
-  \caption{Integral of sinus-oscillation.}
-  \label{abb:1}
+  \includegraphics[scale=0.4]{scope_2.png}
+  \caption{Integral of square-wave-voltage.}
+  \label{abb:3}
 \end{figure}
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{scope_3.png}
+  \includegraphics[scale=0.4]{scope_3.png}
   \caption{Integral of triangle-oscillation.}
-  \label{abb:2}
+  \label{abb:4}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{3.pdf}
+  \caption{The amplitude as a function of the inverse angular velocity.}
+  \label{abb:5}
 \end{figure}
 
+\newpage
 \subsection{Discussion}
-- 
+In figures \ref{abb:1} and \ref{abb:2} the fall of the amplifier-factor is
+visible very well and also the linear fit of the logarithm values.
+The product of the constant amplifier-factor and the cut off frequency
+should be a constant value. Here you can see, that it is in the same magnitude,
+but just different:
+\begin{align*}
+  V_{0, 1} \cdot \nu_{\symup{g,1}} = \SI{1.6(9)e5}{\per\second} \\
+  V_{0, 2} \cdot \nu_{\symup{g,2}} = \SI{0.50(11)e5}{\per\second}
+\end{align*}
+We cannot give a statement if this value ist constant, because we did just two
+measurements, but need more to obtain a significant result.
+
+Out of the data of the amplitude as a function of the frequency you get the
+value of the $RC$-member:
+
+\begin{align*}
+  RC = \SI{7.08(4)e-6}{\farad\ohm} \\
+  RC_{theory}= \SI{6.15e-6}{\farad\ohm}
+\end{align*}
+
+It is a deviation of \SI{15}{\percent}. The big deviation can be based on
+the inexact measurement of the capacity or the resistance.
+In figures \ref{abb:3} and \ref{abb:4} you can see the integration of two
+differenst voltage-shapes. As expected, the integral of a square-wave-voltage is an
+triangle-oscillation and the integral of the triangle-oscillation is an
+parabolic-oscillation.
+
+
 
 \printbibliography

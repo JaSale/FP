@@ -149,6 +149,8 @@ W = W[1:]
 E=E[1:]
 E_det=E_det[1:]
 
+E_det_r, Q_r = np.genfromtxt('Probe.txt', unpack=True)
+
 def potenz(x, b, c, d, e):
     return b*(x-c)**d+e
 
