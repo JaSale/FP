@@ -5,6 +5,6 @@
 *.toc
 *.bbl
 *.blg
-dokument.pdf
+*.pdf
 .DS_Store
-Anleitung.pdf
+
