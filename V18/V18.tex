@@ -1,31 +1,40 @@
 \section{Theorie}
-Der Germanium-Detektor wird zur $\gamma$-Spektroskopie verwendet, da dieser
+Der Germaniumdetektor wird zur $\gamma$-Spektroskopie verwendet, da dieser
 gegenüber eines Szintillations-Detektors eine viel höhere Auflösung besitzt.
+(Szintialltionsdetektor: $\approx \SI{70}{\kilo\eV} $,
+Germaniumdetektor:$\approx \SI{500}{\kilo\eV} $)
 
 \subsection{Wechselwirkung von Gamma-Strahlung mit Materie}
-Da die $\gamma$-Quanten in dem Detektor mit der Materie wechselwirken, werden
-zunächst die Wechselwirkungen näher erläutert:
+In Abbildung \ref{abb:1} sind die verschiedenen Wechselwirkungen mit Materie zu
+erkennen. Es wurde dabei der Extinktionskoeffizient, ein Maß für die Schwächung
+der elektromagnetischen Welle, gegen die Energie der $\gamma$-Quanten aufgetragen.
+Zur Beschreibung der Wechselwirkungen, ist es notwendig auch den Wirkungsquerschnitt
+zu betrachten. Dieser beschreibt die Wahrscheinlichkeit der Wechselwirkung mit
+der Materie, diese hängt von der Energie der $\gamma$-Quanten und der
+Eigenschaften des Materials ab. Die verschiedenen Wechselwirkungen werden im
+Folgenden näher erklärt:
 
-\begin{itemize}
-  \item Bei dem \textbf{Photoeffekt} gibt das $\gamma$-Quant die komplette Energie
-  an ein Hüllenelektron (meist aus der K-Schale) des Atoms ab. Übersteigt diese
-  Energie die Bindungsenergie des Elektrons, so wird dieses aus dem Atom
-  herausgelöst. Die übrige Energie erhält das Elektron als kinetische Energie.
-  Da bei dem Herauslösen des Elektrons ein Loch entsteht, wird dieses durch ein
-  anderes Elektron einer höheren Schale aufgefüllt, dabei wird Energie in Form
-  von $\gamma$-Strahlung frei, welches ein weiteres Elektron aus einer höheren
-  Schale herauslösen kann. Dieses zweite herausgelöste Elektron wird Auger-Elektron
-  genannt.
-  Der Wirkungsquerschnitt $\sigma_{\symup{Ph}}$ für den Photoeffekt ist stark
-  abhängig von der Energie der $\gamma$-Quanten und der Kernladungszahl des
-  Materials:
-  \begin{equation}
-    \sigma_{\symup{Ph}} \propto Z^{\alpha}E^{\delta}
-  \end{equation}
-  wobei die Exponenten empirisch festegestellt wurden mit $4<\alpha<5$ und
-  $\delta \approx -3,5$. $\delta$ kann aber für Energien ab \SI{5}{\mega\eV} auf
-  einen Wert bis zu -1 steigen.
+Bei dem Photoeffekt gibt das $\gamma$-Quant die komplette Energie
+an ein Hüllenelektron (meist aus der K-Schale) eines Atoms ab. Übersteigt die
+Energie des $\gamma$-Quants
+die Bindungsenergie des Elektrons, so wird dieses aus dem Atom
+herausgelöst. Die übrige Energie erhält das Elektron als kinetische Energie.
+Da bei dem Herauslösen des Elektrons ein Loch entsteht, wird dieses durch ein
+anderes Elektron einer höheren Schale aufgefüllt. Dabei wird Energie in Form
+von $\gamma$-Strahlung frei, welche ein weiteres Elektron aus einer höheren
+Schale herauslösen kann. Dieses zweite herausgelöste Elektron wird Auger-Elektron
+genannt.
+Der Wirkungsquerschnitt $\sigma_{\symup{Ph}}$ für den Photoeffekt ist stark
+abhängig von der Energie  $E$ der $\gamma$-Quanten und der Kernladungszahl $Z$ des
+Materials:
+\begin{equation}
+  \sigma_{\symup{Ph}} \propto Z^{\alpha}E^{\delta}
+\end{equation}
+wobei die Exponenten empirisch festgestellt wurden ($4<\alpha<5$ und
+$\delta \approx -3,5$. Für Energien ab \SI{5}{\mega\eV} kann $\delta$ auf
+einen Wert bis zu -1 steigen.
 
+<<<<<<< HEAD
   \item Eine weitere wichtige Wechselwirkung ist der \textbf{Compton-Effekt}.
   Hierbei streut das $\gamma$-Quant elastisch an einem freien Elektron und gibt
   Teil seiner Energie an dieses in Form von kinetischer Energie ab.
@@ -55,53 +64,117 @@ zunächst die Wechselwirkungen näher erläutert:
   wobei $e_o$ die Elementarladung, $c$ die Vakuumlichtgeschwindigkeit,
   $\epsilon_0$ die Influenzkonstante, $m_0$ die Masse eines Elektrons und
   $r_e$ den klassischen Elektronenradius darstellt.
-
-  \item Bei der \textbf{Paarerzeugung} stößt ein $\gamma$-Quant mit einem
-  Stoßpartner zusammen, wobei ein Elektron und ein Positron erzeugt wird.
-  Bei einem Atom als Stoßpartner muss die Energie des $\gamma$-Quants
-  mindestens gleich der Ruheenergie von einem Elektron und einem Postiron sein,
-  da hierbei die Energie in Masse umgewandelt wird. Der Impuls wird hierbei
-  an das Atom weitergegeben. Bei einem Elektron als Stoßpartner muss das
-  $\gamma$-Quant mindestens die vierfache Ruheenergie eines Elektrons besitzen,
-  da hier der Impuls nicht komplett an das Stoßelektron übergeben werden kann,
-  aufgrund der geringen Masse des Elektrons.
-  Der Wirkungsquerschnitt $\sigma_{\symup{Pa}}$ der Paarerzeugung kann mit viel
-  Aufwand hergeleitet werden. Hier sind nur die Ergebnisse dargestellt, wobei
-  unterschieden werden muss für kernnahe und kernferne Paarbildung.
-  Für die kernnahe Paarbildung, also Bereiche von 10-15\,\si{\mega\eV}, gilt
-  die folgende Gleichung:
-  \begin{equation*}
-     \sigma_{\symup{Pa}}= \alpha r_e^2z^2 \left( \frac{28}{9} \ln{2 \epsilon} -
-     \frac{218}{27} \right)
-  \end{equation*}
-  Für die kernferne Paarbildung (außerhalb der Elektronenhülle) lässt sich der
-  Wirkungsquerschnitt wie folgt berechnen:
+||||||| merged common ancestors
+  \item Eine weitere wichtige Wechselwirkung ist der \textbf{Compton-Effekt}.
+  Hierbei streut das $\gamma$-Quant elastisch an einem freien Elektron und gibt
+  Teil seiner Energie an dieses in Form von kinetischer Energie ab.
+  Die Streuung bewirkt eine Energieabnahme und Richtungsänderung des
+  $\gamma$-Quants, wobei ein maximaler Energieübertrag bei einer Richtungsänderung
+  von $\Psi_{\gamma} = \pi$ stattfindet:
   \begin{equation}
-    \sigma_{\symup{Pa}}= \alpha r_e^2z^2 \left( \frac{28}{9} \ln{\frac{183}{\sqrt[3]{z}}} -
-    \frac{2}{27} \right)
+    E_{\gamma}' = E_{\gamma} \cdot ( 1+\epsilon(1-\cos{\Psi_{\gamma}}))^{-1} \;
+    \symup{mit} \; \epsilon = \frac{E_{\gamma}}{m_0c²}
   \end{equation}
-\end{itemize}
-In Abbildung \ref{abb:1} sind die Intensitäten der Wechselwirkungen gegen die
-Energie der $\gamma$-Quanten aufgetragen.
+  Die Herleitung des Wirkungsquerschnitts $\sigma_{\symup{Co}}$ für den Compton-Effekt
+  ist sehr lang und kompliziert und wird deswegen hier nicht weiter erläutert.
+  Aus dieser Herleitung folgt:
+  \begin{equation}
+    \sigma_{\symup{Co}}=\frac{3}{4}\sigma_{\symup{Th}}
+    \left( \frac{1+\epsilon}{\epsilon^2} \left[ \frac{2+2\epsilon}{1+2\epsilon} -
+    \frac{1}{\epsilon} \ln{(1+2\epsilon)} \right] +
+    \frac{1}{2\epsilon}\ln{(1+2\epsilon)} -
+    \frac{1+3\epsilon}{(1-2\epsilon)^2}\right)
+  \end{equation}
+  mit
+  \begin{equation}
+    \sigma_{\symup{Th}} = \frac{8}{3}\pi \left(\frac{e_0}{4 \pi \epsilon_0 c^2 m_o} \right)^2
+    := \frac{8}{3}\pi r_e^2
+  \end{equation}
+  wobei $e_o$ die Elementarladung, $c$ die Vakuumlichtgeschwindigkeit,
+  $\epsilon_0$ die Influenzkonstante, $m_0$ die Masse eines Elektrons und
+  $r_e$ den klassischen Elektronenradius darstellt.
+=======
+Eine weitere wichtige Wechselwirkung ist der Compton-Effekt.
+Hierbei streut das $\gamma$-Quant elastisch an einem quasi freien Elektron und gibt
+einen Teil seiner Energie an dieses in Form von kinetischer Energie ab.
+Die Streuung bewirkt eine Energieabnahme und Richtungsänderung des
+$\gamma$-Quants, wobei ein maximaler Energieübertrag bei einer Richtungsänderung
+von $\Psi_{\gamma} = \pi$ stattfindet:
+\begin{equation}
+  E_{\gamma}' = E_{\gamma} \cdot ( 1+\epsilon(1-\cos{\Psi_{\gamma}}))^{-1} \;
+  \symup{mit} \; \epsilon = \frac{E_{\gamma}}{m_0c²}
+\end{equation}
+Die Herleitung des Wirkungsquerschnitts $\sigma_{\symup{Co}}$ für den Compton-Effekt
+ist sehr lang und kompliziert und wird hier nicht weiter erläutert.
+Aus dieser Herleitung folgt:
+\begin{equation}
+  \sigma_{\symup{Co}}=\frac{3}{4}\sigma_{\symup{Th}}
+  \left( \frac{1+\epsilon}{\epsilon^2} \left[ \frac{2+2\epsilon}{1+2\epsilon} -
+  \frac{1}{\epsilon} \ln{(1+2\epsilon)} \right] +
+  \frac{1}{2\epsilon}\ln{(1+2\epsilon)} -
+  \frac{1+3\epsilon}{(1-2\epsilon)^2}\right)
+\end{equation}
+mit
+\begin{equation}
+  \sigma_{\symup{Th}} = \frac{8}{3}\pi \left(\frac{e_0}{4 \pi \epsilon_0 c^2 m_o} \right)^2
+  := \frac{8}{3}\pi r_e^2
+\end{equation}
+wobei $e_o$ die Elementarladung, $c$ die Vakuumlichtgeschwindigkeit,
+$\epsilon_0$ die Influenzkonstante, $m_0$ die Masse eines Elektrons und
+$r_e$ den klassischen Elektronenradius darstellt.
+
+Bei der Paarerzeugung wird ein Elektron und ein Positron erzeugt.
+Hierbei muss ein $\gamma$-Quant aufgrund der Impulserhaltung an einem Potential
+eines Atomkerns oder eines Elektrons gestreut werden, um ein Elektron und ein
+Positron erzeugen zu können.
+Bei einem Atom als Stoßpartner muss die Energie des $\gamma$-Quants
+mindestens gleich der Ruheenergie von einem Elektron und einem Positron sein,
+da hierbei die Energie in Masse umgewandelt wird. Der Impuls wird hierbei
+an das Atom weitergegeben. Bei einem Elektron als Stoßpartner muss das
+$\gamma$-Quant mindestens die vierfache Ruheenergie eines Elektrons besitzen,
+da hier der Impuls nicht komplett an das Stoßelektron übergeben werden kann,
+aufgrund der geringen Masse des Elektrons.
+Der Wirkungsquerschnitt $\sigma_{\symup{Pa}}$ der Paarerzeugung kann mit viel
+Aufwand hergeleitet werden. Hier sind zwei exemplarische Ergebnisse dargestellt,
+wobei unterschieden werden muss für kernnahe und kernferne Paarbildung.
+Für die kernnahe Paarbildung, also Bereiche von 10-25\,\si{\mega\eV}, gilt
+die folgende Gleichung:
+\begin{equation}
+   \sigma_{\symup{Pa}}= \alpha r_e^2Z^2 \left( \frac{28}{9} \ln{(2 \epsilon)} -
+   \frac{218}{27} \right)
+\end{equation}
+Für die kernferne Paarbildung (außerhalb der Elektronenhülle) lässt sich der
+Wirkungsquerschnitt wie folgt berechnen:
+\begin{equation}
+  \sigma_{\symup{Pa}}= \alpha r_e^2Z^2 \left( \frac{28}{9} \ln{\left(\frac{183}{\sqrt[3]{Z}}\right)} -
+  \frac{2}{27} \right)
+\end{equation}
+Diese Gleichung gilt für Energien die größer sind als \SI{500}{\mega\eV}.
+>>>>>>> Korrektur die Erste
+
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.8]{Wechselwirkung.jpeg}
-  \caption{Intensitäten der Wechselwirkungen. \cite{Q2}}
+  \includegraphics[scale=0.8]{Wechselwirkungen.jpeg}
+  \caption{Effekte bei der Wechselwirkung von $\gamma$-Strahlung mit Materie. \cite{Q2}}
   \label{abb:1}
 \end{figure}
 
-\subsection{Aufbau und Wirkungsweise eines Germanium-Detektors}
+\subsection{Aufbau und Wirkungsweise eines Germaniumdetektors}
 Der Halbleiter-Detektor besteht im Wesentlichen aus einer Halbleiterdiode,
-welche aus zwei Schichten besteht: Der n-dotierten Schicht, als
-Elektronen-Donator, und einer p-dortierten Schicht, als Elektronen-Akzeptor.
-In dem Bereich zwischen den beiden Schichten entsteht eine Sperrschicht, durch
-Rekombination der Löcher aus der p-Schicht und den Elektronen aus der n-Schicht.
+welche aus zwei Schichten besteht: Der n-dotierten Schicht als
+Elektronen-Donator und einer p-dortierten Schicht als Elektronen-Akzeptor.
+In dem Bereich zwischen den beiden Schichten entsteht eine Sperrschicht. Durch
+Rekombination der Löcher aus der p-Schicht und der Elektronen aus der n-Schicht,
+entsteht hier eine Zone ohne freie Ladungsträger.
 Die benannten Löcher sind Elektronenlöcher, welche hier wie positiv geladene
-Teilchen angesehen werden können.
-Diese Sperrschicht ist wichtig für die Funktionsweise eines Germaniumdetektors,
-da hier die Wechselwirkung zwischen den Photonen und der Materie stattfindet, bzw.
-nur hier die Wechselwirkung zu einem Zählereignis führt.
+Teilchen angesehen werden können. Diese entstehen durch p-Dotierung von Germanium
+(4 Valenzelektronen) mit Bohr, welche nur 3 Valenzelektronen besitzt. Dadurch
+entsteht durch die Einbindung von Bohr in das Gitter des Germaniums ein
+Elektronenloch, bzw. eine nicht besetzte Elektronenstelle.
+Die Sperrschicht ist wichtig für die Funktionsweise eines Germaniumdetektors,
+da hier die Wechselwirkung zwischen den $\gamma$-Quanten und der Materie
+stattfindet, bzw. nur hier die Wechselwirkung zu einem Zählereignis führt.
 In der Sperrschicht werden Elektronen durch die vorher benannten Wechselwirkungen
 mit sehr hohen kinetischen Energien freigesetzt. Diese widerum regen andere
 Elektronen an, die zwar geringere kinetische Energien haben, aber genug um die
@@ -112,10 +185,9 @@ rekombinieren. Durch diesen Vorgang entsteht ein Stromfluss, welcher zu einem
 Zählereignis führt.
 Um ein möglichst genaues Messergebnis zu erhalten, ist es sinnvoll die
 ladungsträgerarme Zone zu verbreitern, denn die Breite beträgt ohne äußere Einflüsse
-nur einige \si{\micro\meter}, da nur in diesem Bereich Photonen detektiert werden
-können. Eine hohe außen angelegte Spannung (einige \si{\kilo\volt}), vergrößert
-die ladungsträgerarme Zone auf einige \si{\centi\meter}, dies ist nur begrenzt
-möglich, da sich die Halbleiterdiode durch die hohe Spannung erhitzt und somit
+nur einige \si{\micro\meter}. Eine hohe außen angelegte Spannung (einige \si{\kilo\volt}), vergrößert
+die ladungsträgerarme Zone auf einige \si{\centi\meter}. Dies ist nur begrenzt
+möglich, da sich die Halbleiterdiode durch die hohe Spannung erhitzt und somit mehr
 thermische Elektronen freigesetzt werden, die somit auch in das Leitungsband
 übergehen können und somit für einen Strom sorgen, der die Messergebnisse
 verfälscht. Deswegen wird während der Messung der Germaniumkristall mit
@@ -126,45 +198,49 @@ der Schichten, wie in Gleichung \eqref{eq:1} zu sehen.
 \begin{equation}
   \label{eq:1}
   d = d_p + d_n \approx d_p \approx \sqrt{\frac{2 \epsilon \epsilon_0}
-  {e_0}(U_D+U) \frac{1}{n_A}}
+  {e_0}(U_D+U) \frac{1}{n_A}},
 \end{equation}
-Um die Dicke also zu vergrößern ist es sinnvoll die Akzeptorendichte $n_A$ so
-gering wie möglich zu halten, deswegen wird für einen Germaniumdetektor ein
+wobei $d_p$ die Breite der Sperrschicht in der p-dotierten Schicht, $d_n$
+die Breite der Sperrschicht in der n-dotierten Schicht, $U$ die angelegte
+Sperrspannung und $U_D$ das Diffusionspotential beschreibt.
+Um die Dicke also zu vergrößern ist es sinnvoll, die Akzeptorendichte $n_A$ so
+gering wie möglich zu halten. Deswegen wird für einen Germaniumdetektor ein
 sehr reiner Germanium-Kristall mit $n_A \approx 10^{10}\,
-\frac{\symup{Atome}}{\symup{cm}} $.
+\frac{\symup{Atome}}{\symup{cm}} $ verwendet.
 
-Der schematische Aufbau eines Germanium-Detektors ist in Abbildung \ref{abb:3}
+Der schematische Aufbau eines Germaniumdetektors ist in Abbildung \ref{abb:3}
 zu sehen.
 
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{AufbauDetektor.png}
-  \caption{Schematischer Aufbau eines Germanium-Detektors. \cite{Q1}}
+  \caption{Schematischer Aufbau eines Germaniumdetektors. \cite{Q1}}
   \label{abb:3}
 \end{figure}
 
-Als p-dotierte Schicht wird der sehr reine Germaniumkristall genommen und als
-n-Schicht eine sehr dünne Lithiumschicht. Eine zusätzliche leitfähige
-Goldschicht wird im inneren des Kristalls aufgetragen, um als Anschluss für
-die Gleichspannung zu dienen. Der Detektor ist außerdem mit einer Aluminium
-Schutzhaube umgeben. Zusätzlich wird die natürliche Untergrundstrahlung durch
-eine Blei-Schicht abgeschrimt, um die Messergebnisse nicht zu verfälschen.
+Als p-dotierte Schicht und zusätzlich als Anschluss für die Hochspannung wird
+eine dünne Goldfolie auf die Innenseite des Germaniumskristalls aufgetragen.
+Als n-dotierte Schicht ist der Germaniumkristall auf der Außenseite von einer
+Lithiumschicht umgeben. Der Detektor ist außerdem mit einer Aluminium
+Schutzhaube umgeben üfr eine thermische Isolation. Zusätzlich wird die natürliche
+Untergrundstrahlung durch eine Blei-Schicht abgeschirmt, um die Messergebnisse
+nicht zu verfälschen.
 Um gegebenenfalls strahlende Isotope aus dem Blei abzuschirmen, wird noch eine
-weiter Schicht aus Kupfer unter der Blei-Schicht angebracht.
+weitere Schicht aus Kupfer unter der Blei-Schicht angebracht.
 
 \subsection{Energiespektrum}
 In Abbildung \ref{abb:4} ist das Energiespektrum eines monochromatischen
 $\gamma$-Strahlers zu sehen.
 \begin{itemize}
-  \item Der \textbf{Photopeak} ensteht durch vollständige Abgabe der Enerige
+  \item Der Photopeak ensteht durch vollständige Abgabe der Enerige
   durch den Photoeffekt.
-  \item Das \textbf{Compton-Kontinuum} wird die Comptonstreuung hervorgerufen,
-  hierbei wird nur ein Teil der Energie abgegeben, deswegen ist dies für die
-  Energiebestimmung des Photons nicht nützlich. Die Comptonkante entsteht durch
-  den maximalen Energieübertrag bei einer Richtungsänderung des Photons von 2\pi.
-  Nach der Compton-Kante ist dennoch eine Intensität zu erkennen, dieser kommt
-  durch mehrfach compton-gestreute Photonen zustande.
-  \item Der \textbf{Rückstreupeak} ensteht auch durch Comptonstreuung, aber
+  \item Das Compton-Kontinuum wird durch die Comptonstreuung hervorgerufen.
+  Hierbei wird nur ein Teil der Energie abgegeben, deswegen ist dies für die
+  Energiebestimmung des $\gamma$-Quants nicht nützlich. Die Comptonkante entsteht durch
+  den maximalen Energieübertrag bei einer Richtungsänderung des Photons von $\pi$.
+  Nach der Compton-Kante ist dennoch eine Intensität zu erkennen. Diese kommt
+  durch mehrfach compton-gestreute $\gamma$-Quants zustande.
+  \item Der Rückstreupeak ensteht auch durch Comptonstreuung, aber
   nicht in dem Detektor, sondern in der Umgebung, beispielsweise in der
   Abschirmung.
 \end{itemize}
@@ -178,13 +254,13 @@ $\gamma$-Strahlers zu sehen.
 
 \subsection{Energetisches Auflösungsvermögen und Effizienz}
 Eine Kenngröße des Halbleiter-Detektors ist das energetische Auflösungsvermögen.
-Als Maß hierfür die Halbwertsbreite des Photopeaks angegeben (bei
-monochromatischer \gamma-Strahlung). Diese ist vor allem abhängig von der
-Anzahl der Elektronenlochpaare.
-Durch einige Einfüsse wird das energetische Auflösungsvermögen dennoch vermindert:
+Als Maß hierfür ist die Halbwertsbreite des Photopeaks angegeben (bei
+monochromatischer $\gamma$-Strahlung). Diese ist vor allem abhängig von der
+Anzahl der erzeugten Elektronenlochpaare.
+Durch einige Einflüsse wird das energetische Auflösungsvermögen vermindert:
 \begin{itemize}
   \item Rauschen des Leckstroms, durch Eigenleitung und Restverunreinigung.
-  Dies wird durch Abkühlen der Aperatur verringert.
+  Dies wird durch Abkühlen der Apperatur verringert.
   \item Rauschen des Verstärkers
   \item unvollständige Ladungssammlung durch Feldinhomogenitäten
 \end{itemize}
