@@ -215,6 +215,9 @@ $\SI{200}{\kilo \hertz}$ reicht das Feld der Sweepspule aus, bei größer werden
 Frequenzen ist das Feld der Horizontalfeldspule hinzuzunehmen. Die Wertepaare aus
 Frequenz und Spulenstrom werden notiert.
 
+
+
+
 \section{Auswertung}
 
 \subsection{Berechnung der Horizontalkomponente des Erdmagnetfelds}
@@ -276,12 +279,19 @@ Form
 \begin{equation*}
   \nu = m \cdot B + b
 \end{equation*}
-durchgeführt. Die Steigungen und $y$-Achsenabschnitte sind in Tabelle \ref{tab:2}
+durchgeführt. Bei der Regression wurde jedoch der erste Werte aus der Berechnung
+ausgeschlosse, da es eindeutig erkennbar ist, dass dieser falsch gemessen wurde.
+Das kann daran liegen, dass wir die Justierschraube auf einer Wert weniger als 0
+drehen konnten und es somit nicht ist, ob das B-Feld bei dieser Frequenz vernünftig
+eingestellt werden konnte. Deswegen wird der erste Wert bei einer Frequenz von
+etwa \SI{100}{\kilo\hertz} in den weiteren Berechnungen vernachlässigt.
+
+Die Steigungen und $y$-Achsenabschnitte sind in Tabelle \ref{tab:2}
 aufgelistet. Daraus folgt für das horizontale Erdmagnetfeld
 Erdmagnetfeld
 \begin{align*}
-  B_{\symup{Erde, horizontal, 1}} &= b_1 = \SI{10(4)}{\micro\tesla}\\
-  B_{\symup{Erde, horizontal, 2}} &= b_2 = \SI{9(4)}{\micro\tesla}\\
+  B_{\symup{Erde, horizontal, 1}} &= b_1 = \SI{10(10)}{\micro\tesla}\\
+  B_{\symup{Erde, horizontal, 2}} &= b_2 = \SI{9(12)}{\micro\tesla}\\
 \end{align*}
 
 \begin{table}
@@ -292,8 +302,8 @@ Erdmagnetfeld
     \toprule
     & $m$ / \si{\tesla\second} & $b$ / \si{\tesla} \\
     \midrule
-    1. Isotop & \num{1,31(7)e-10} & \num{10(4)e-6} \\
-    2. Isotop & \num{2,03(7)e-10} & \num{9(4)e-6} \\
+    1. Isotop & \num{1,423(15)e-10} & \num{10(10)e-6} \\
+    2. Isotop & \num{2,147(18)e-10} & \num{9(12)e-6} \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -305,13 +315,13 @@ Erdmagnetfeld
   \label{abb:1}
 \end{figure}
 
-\subsection{Berechnung der landéschen Faktoren und des Kernspins}
-Die landéschen Faktoren werden ebenfalls durch die oben berechnete
+\subsection{Berechnung der Landéschen Faktoren und des Kernspins}
+Die Landéschen Faktoren werden ebenfalls durch die oben berechnete
 lineare Regression bestimmt, indem die Regression mit Gleichung \eqref{eq:3}
 verglichen wird:
 \begin{align*}
-  g_{F1} &= \frac{h}{\mu_B m_1} = \num{0,547(28)} \\
-  g_{F2} &= \frac{h}{\mu_B m_2} = \num{0,352(12)} \\
+  g_{F1} &= \frac{h}{\mu_B m_1} = \num{0,502(5)} \\
+  g_{F2} &= \frac{h}{\mu_B m_2} = \num{0,3328(27)} \\
 \end{align*}
 
 Zur Berechnung des Kernspins muss zunächst durch Gleichung \eqref{eq:La-Fa.gj}
@@ -319,8 +329,8 @@ der Faktor $g_J$ berechnet werden mit $J=S=0,5$, $L=0$ und $g_S = 2,0023$.
 Daraus lässt sich dann der Kernspin $I$ mit der Gleichung \eqref{eq:La-Fa.gf}
 berechnen:
 \begin{align*}
-  I_1 &= \num{1,33(10)} \\
-  I_2 &= \num{2,35(10)} \\
+  I_1 &= \num{1,494(21)} \\
+  I_2 &= \num{2,508(25)} \\
 \end{align*}
 Aus dem Vergleich mit den Literaturwerten lässt sich somit eine Verbindung
 zu den verwendeten Isotopen herstellen. $^{85}\text{Rb}$ (mit einem Kernspin
@@ -347,8 +357,8 @@ Isotopenverhältnis schließen:
 Damit folgt, dass die Verteilung bei $\approx \SI{33,5}{\percent}$
 ($^{87}\text{Rb}$) und $\approx \SI{66,5}{\percent}$ ($^{85}\text{Rb}$) liegt.
 In der Natur liegen die Isotope in dem
-Verhältnis $\approx \SI{72}{\percent}$ ($^{87}\text{Rb}$) und
-$\approx \SI{28}{\percent}$ ($^{85}\text{Rb}$) vor.
+Verhältnis $\approx \SI{72}{\percent}$ ($^{85}\text{Rb}$) und
+$\approx \SI{28}{\percent}$ ($^{87}\text{Rb}$) vor.
 
 \subsection{Abschätzung des quadratischen Zeeman-Effekts}
 Zur Abschätzung des quadratischen Zeeman-Effekts wird zunächst der lineare Teil
@@ -356,11 +366,59 @@ berechnet, um diesen mit dem quadratischen Teil zu vergleichen. Hierbei wird das
 maximal gemessene Feld zur Berechnung genommen ( \SI{144,90}{\micro\tesla} und
 \SI{217,27}{\tesla} für die jeweiligen Resonanzstellen). Mit $M_F=3$ für
 $^{85}\text{Rb}$ und $M_F=2$ für $^{87}\text{Rb}$ und den
-Hyperfeinstrukturaufspaltungen lässt sich mittels Gleichung \eqref{eq_qZeeman}
+Hyperfeinstrukturaufspaltungen \cite{Q1} lässt sich mittels Gleichung \eqref{eq_qZeeman}
 die linearen und quadratischen Teile berechnen:
 \begin{align*}
-  E_{1, linear} &= \SI{4,59(24)e-9}{\eV} \\
-  E_{1, linear} &= \SI{4,42(15)e-9}{\eV} \\
-  E_{1, quadratisch} &= \SI{-2,23(23)e-12}{\eV} \\
-  E_{1, quadratisch} &= \SI{-7,8(5)e-12}{\eV} \\
+  E_{1, linear} &= \SI{4,21(4)e-9}{\eV} \\
+  E_{2, linear} &= \SI{4,186(35)e-9}{\eV} \\
+  E_{1, quadratisch} &= \SI{-1,88(4)e-12}{\eV} \\
+  E_{2, quadratisch} &= \SI{-6,98(12)e-12}{\eV} \\
 \end{align*}
+
+\section{Diskussion}
+Das horizontale Erdmagnetfeld hat ist in etwa \SI{20}{\micro\meter} groß.
+Unsere Messung mit \SI{10(10)}{\micro\tesla} und \SI{9(12)}{\micro\tesla}
+liegt jeweils in dem Fehlerintervall, der Fehler ist jedoch sehr hoch.
+
+Der Vergleich der Theoriewerte und der Messwerte des Kernspins zeigen nur sehr
+geringe Abweichungen von maximal \SI{0,4}{\percent} und die Theoriewerte liegen
+in den Fehlerintervallen der Messwerte (siehe Tabelle \ref{tab:diskussion}).
+Daraus zeigt sich, dass dies ein sehr genaues Verfahren zu Messung der
+Landéschen Faktoren und des Kernspins ist.
+
+\begin{table}
+  \centering
+  \caption{Vergleich: Theoriewerte und Messwerte des Kernspins}
+  \label{tab:diskussion}
+  \begin{tabular}{c| c c c}
+    \toprule
+    Isotop & Theoriewert & Messwert & Abweichung/\si{\percent}\\
+    \midrule
+    $^{87}\text{Rb}$ & 1,5 &  \num{1,494(21)} & 0,4 \\
+    $^{85}\text{Rb}$ & 2,5 &  \num{2,508(25)} & 0,32 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Die Verteilung der Isotope ist nicht identisch mir der Verteilung der Isotopen
+in der Natur. Dieser weicht um etwa 5,5 Prozentpunkte ab.
+
+Bei der Abschätzung des quadratischen Zeeman-Effektes ist zu erkennen, dass sich
+die Werte des linearen und des quadratischen Terms um 3 Größenordnungen
+unterscheiden (siehe Tabelle \ref{tab:diskussion2}).
+Somit kann davon ausgegangen werden, dass der quadratische
+Zeeman-Effekt in diesem Versuch vernachlässigt werden kann.
+
+\begin{table}
+  \centering
+  \caption{Berechnungen der Energie des quadratischen Zeeman-Effektes.}
+  \label{tab:diskussion2}
+  \begin{tabular}{c c c}
+    \toprule
+    Isotop & E linearer Term \si{eV} & E quadratischer Term / \si{\eV} \\
+    \midrule
+    $^{87}\text{Rb}$ & \num{4,21(4)e-9} & \num{-1,88(4)e-12} \\
+    $^{85}\text{Rb}$ & \num{4,186(35)e-9} & \num{-6,98(12)e-12} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
