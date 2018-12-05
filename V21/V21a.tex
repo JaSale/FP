@@ -161,24 +161,59 @@ wird unter Berücksichtigung der magnetischen Momente $\vec{\mu}_{\text{J}}$ und
 \end{align}
 Hierbei ist $E_{\text{Hy}}$ ist die Energiedifferenz der Niveaus F und F$+1$ ist.
 
-\subsection{Transiente Effekte}
-Im Falle, dass sich das angelegte Magnetfeld periodisch ändert, müssen einige Betractungen angepasst werden.
-In diesem Fall sollte die Frequenz, mit der sich das Magnetfeld ändert auf die Resonanzstelle eingestellt werden.
-Die Frequenz ist dann gegeben durch:
-\begin{align*}
-    \omega_0 &= 2\pi f_0 \\
-    &= \text{g}_{\text{F}} \frac{\mu_{\text{B}}}{h} \text{B}_0 \\
-    &= \gamma \text{B}_0 \; ,
-\end{align*}
-wobei $\gamma$ das gyromagnetische Verhältnis ist.
-Das Problem lässt sich als Summe von einem konstanten Magnetfeld und dem
-Magnetfeld ${}^\omega\!/\!_\gamma$ auffasen, was durch das Lösen einer klassischen Differentialgleichung zeigen lässt.
-Das effektive Magnetfeld lässt sich somit wie folgt berechnen:
-\begin{align*}
-    \text{B}_{\text{Eff}} = \text{B} + \frac{\omega}{\gamma} \; .
-\end{align*}
-Im Resonanzfall gilt |$\text{B}_{\text{Eff}} = \text{B}_{\text{res}}$|, woraus sich ergibt, dass es mit der Larmorfrequenz $f= \gamma_{\text{res}}$
-rotiert.
+\section{Durchführung}
+\FloatBarrier
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{Aufbau.PNG}
+    \caption{schmeatischer Versuchsaufbau}
+    \label{abb:Aufbau}
+\end{figure}
+\FloatBarrier
+Der schematische Versuchsaufbau ist in Abbildung \ref{abb:Aufbau} zu sehen.
+Zunächst durchläuft das Licht eine Kollimationslinse, die das Licht bündelt. Darauf folgt
+ein sogenannter $\text{D}_1$-Filter, der das Licht der Spektrallampe so filtert, dass
+lediglich Licht mit einer Wellenlänge von $\lambda = \SI{794,8}{\nano\meter}$ hindurchtritt, was dem Rubidiumspektrum entspricht.
+Der Linearpolarisator, der dahinter aufgestellt ist, macht aus dem gebündelten
+Lichtstrahl dann zunächst linear polarisiertes Licht, welches dann durch den $\lambda\:/\:4$-Filter zu rechts polarisiertem Licht wird.
+Der gebündelte Lichtstrahl durchläuft dann eine Dampfzelle, in der sich $^{85}$Rb
+und $^{87}$Rb Isotope als gemisch befinden. Zwischen Dampfzelle und Photodiode befindet
+sich abermals eine Sammellinse, um den Lichtstrahl auf den Eingang der Photodiode zu fokussieren. Die Photodiode ihrerseits ist mit einem Oszollospkop verbunden, welches in
+Abhängigkeit von der gemessenen Intesität einen Ausschlag in y-Richtung anzeigen wird.
+
+\noindent Um die Zelle herum befinden sich zwei Helmholtzspulenpaare. Eine, um das vertikale Erdmagnetfeld auszugleichen. Um die Spule, die ein horizontales Magnetfeld
+erzeugt, ist eine weitere Spule, die Sweep-Spule gewickelt. Diese beiden Spulen werden
+benötigt, um die Zeeman-Aufspaltung der Energieniveaus hervorzurufen.
+Direkt um die Dampfzelle herum befindet sich eine weitere Spule, die durch einen H
+ochfrequenzgenerator mit einer Sinusspannung betrieben wird und somit das RF-Feld
+erzeugt. Somit muss nicht die
+Energie der einfallenden Photoquanten verändert werden, um Übergänge in den beiden
+Rubidiumspektren hervorzurufen, sondern die Übergänge finden in Abhängigkeit zu dem sich ä
+ndernden Magnetfeld periodisch statt.
+Vor Beginn der Messungen werden zunächst alle optischen Elemente außer der beiden
+Kollimationslinsen herausgenommen, um diese so einzustellen, dass eine maximale
+Strahlenintensität am Photodetektor ankommt. Ist der Abstand der beiden Linsen
+entsprechend justiert, so werden die anderen Elemente in der oben beschriebenen
+Reihenfolge eingesetzt.
+
+
+\subsection{Kompensation des Erdmagnetfeldes}
+Da das Erdmagnetfeld einen erheblichen Einfluss auf den Versuchsaufbau hat, muss dieses
+ausgegelichen werden. Die horizontale Komponente lässt sich leicht kompensieren, indem
+der Versuchsaufbau entlang der Nord-Süd-Achse ausgerichtet wird.
+Zur Kompensation der vertikalen Komponente des Erdmagnetfeldes wird das Signal der
+Photodiode auf Kanal 2 des Oszilloskops gegeben. Der Recorder-Ausgang der Sweep-Spule
+wird auf Kanal 1 gegeben und das Oszilloskop in XY-Betrieb genommen. Im Oszilloskop
+stellt sich dann ein breiter, nach unten gerichteter Peak dar, der mit Hilfe der
+vertiaklen Spule zu verschmählern ist.
+
+\subsection{Vermessung der Resonanzstellen}
+Der Hochfrequenzgenerator des RF-Feldes wird für diesen Veruschsteil von $\SI{100}{\kilo \hertz}$ auf $\SI{1}{\mega \hertz}$ in $\SI{100}{\kilo \hertz}$-Schritten heraufgeregelt.
+Zu jeder Frequenz wird das Feld der Horizontalfeldspule so lange heraufgeregelt, bis die
+beiden Resonanzstellen im Oszolloskop sichtbar sind. Bei kleineren Frequenzen bis ca.
+$\SI{200}{\kilo \hertz}$ reicht das Feld der Sweepspule aus, bei größer werdenden
+Frequenzen ist das Feld der Horizontalfeldspule hinzuzunehmen. Die Wertepaare aus
+Frequenz und Spulenstrom werden notiert.
 
 \section{Auswertung}
 
