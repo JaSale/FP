@@ -15,7 +15,8 @@ Die Größen $g_{\text{i}}$ geben hierbei die Anzahl der zu den Energien $W_1$ u
 Zustände an.
 Mittels des Verfahrens des optischen Pumpens ist es möglich, dieses Verhältnis zu verändern
 oder gar zu invertieren ($N_{2} > N_{1}$).
-Zunächst soll im Folgenden betrachtet werden, wie sich die Energieniveaus eines Atoms autspalten können.
+Zunächst soll im Folgenden betrachtet werden, wie sich die Energieniveaus eines Atoms aufspalten können.
+
 \subsection{Energieaufspaltung}
 In einer ersten Näherung soll zunächst der Fall betrachtet werden, in dem davon ausgegangen wird, der
 Kernspin verschwindend ist.
@@ -39,7 +40,7 @@ Vektoriell beschrieben, sieht die Kopplung der magnetischen Momente, die aus dem
 \end{align*}
 Nun lässt sich mit Hilfe des Cosinussatzes, angewendet auf das Dreieck, das von $\vec{\mu}_{\text{L}}, \vec{\mu}_{\text{J}} \text{und} \vec{\mu}_{\text{S}}$ aufgesapnnt wird, eine Formel zur Berechnung des Landé-Faktors herleiten:
 \begin{align}
-    \text{g}_{\text{J}} &= \frac{(\text{g}_{\text{s}} + 1) \cdot \text{J} (\text{J} + 1) + (\text{g}_{\text{s}}-1) \cdot \left[\text{S}
+    \text{g}_{\text{J}} = \frac{(\text{g}_{\text{s}} + 1) \cdot \text{J} (\text{J} + 1) + (\text{g}_{\text{s}}-1) \cdot \left[\text{S}
     \cdot (\text{S}+1) - \text{L} (\text{L} + 1) \right]}{2 \cdot \text{J} (\text{J} +1 )}
     \label{eq:La-Fa.gj}
 \end{align}
@@ -81,10 +82,10 @@ Mittels vektorieller Betrachtung lässt sich der Landé-Faktor für die Zeeman-A
 \end{align*}
 Hierbei beschreibt $\mu_{\text{K}}$ das magnetische Moment des Kerns und $\text{g}_{\text{I}}$ den zugehörigen Landé-Faktor.
 Allerdings ist auf Grund der großen Massendifferenz zwischen Elektron und Nukleon ( $\rightarrow \mu_{\text{K}} \ll \mu_{\text{B}} $ ) zu beachten, dass in obiger Gleichung der zweite Summand zumeist vernachlässigt wird, womit für den Landé-Faktor folgendes gilt:
-\begin{align*}
+\begin{align}
     \text{g}_{\text{F}} \approx \text{g}_{\text{J}} \frac{\text{F} (\text{F} + 1)+\text{J} (\text{J} + 1) - \text{I}(\text{I} + 1)}{2\text{F}(\text{F}+1)} \; .
 	\label{eq:La-Fa.gf}
-\end{align*}
+\end{align}
 
 \subsection{Optisches Pumpen}
 Wie bereits erwähnt, kann die Besetzung höherer Energieniveaus mit Hilfe der Boltzmannstatistik beschrieben werden.
@@ -126,10 +127,11 @@ In diesem Bereich ist der Einfluss des Erdmagnetfeldes zu bestimmen und mit dem 
 Wird das Magnetfeld eingeschaltet, so findet das optische Pumpen statt und es kommt zur oben beschriebenen Besetzungsinversion.
 Im Falle, dass die Energie eines eintreffenden Photons der Energiedifferenz, die es zur Zeeman-Aufspaltung braucht, entspricht, so kommt es hier wieder zur induzierten Emission, was wiederum dazu führt, dass das energieärme Besetzungsniveau ${}^2S_{{}^1\!/\!_2}$, $M=-^1\!/\!_2$ wieder aufgefüllt wird.
 Die Magnetfeldstärke an der Resonanzstelle berechnet sich wie folgt:
-\begin{align*}
-    hf &= E_{\text{HF}} &= \mu_{\text{B}} \text{g}_{\text{J}} \cdot \text{B}_{\text{res}} \\
+\begin{align}
+  \label{eq:2}
+    h \nu &= E_{\text{HF}} = \mu_{\text{B}} \text{g}_{\text{J}} \cdot \text{B}_{\text{res}} \\
     \text{B}_{\text{Res}} &= \frac{4\pi m_0}{e_0 \text{g}_{\text{J}}}f \; .
-\end{align*}
+\end{align}
 \FloatBarrier
 \begin{figure}
     \centering
@@ -153,9 +155,10 @@ Die Eigenwertgleichung
     H \Psi = E \Psi
 \end{align*}
 wird unter Berücksichtigung der magnetischen Momente $\vec{\mu}_{\text{J}}$ und $\vec{\mu}_{\text{I}}$ und unter Abhängigkeit der Orientierungsquantenzahl $\text{M}_{\text{F}}$ lässt sich dann die Energie wie folgt beschreiben:
-\begin{align*}
-    E_{\text{HF}} &= \text{g}_{\text{F}} \mu_{\text{B}} + \text{g}_{\text{F}}^2 \mu_{\text{B}}^2 \frac{1- \text{M}_{\text{F}}}{\Delta E_{\text{Hy}}}- \cdots  \; .
-\end{align*}
+\begin{align}
+  \label{eq_qZeeman}
+    E_{\text{HF}} &= \text{g}_{\text{F}} \mu_{\text{B}} B+ \text{g}_{\text{F}}^2 \mu_{\text{B}}^2 B^2 \frac{1- \text{M}_{\text{F}}}{\Delta E_{\text{Hy}}}- \cdots  \; .
+\end{align}
 Hierbei ist $E_{\text{Hy}}$ ist die Energiedifferenz der Niveaus F und F$+1$ ist.
 
 \subsection{Transiente Effekte}
@@ -176,3 +179,153 @@ Das effektive Magnetfeld lässt sich somit wie folgt berechnen:
 \end{align*}
 Im Resonanzfall gilt |$\text{B}_{\text{Eff}} = \text{B}_{\text{res}}$|, woraus sich ergibt, dass es mit der Larmorfrequenz $f= \gamma_{\text{res}}$
 rotiert.
+
+\section{Auswertung}
+
+\subsection{Berechnung der Horizontalkomponente des Erdmagnetfelds}
+Zur Berechnung des B-Feldes müssen die gemessenen Umdrehungen in einen Strom
+$I$ umgerechnet werden, wobei der Umrechnungsfaktor des Sweepfeldes 1 Umdrehung
+= \SI{0,1}{\ampere} und der des Horizontalfeldes 1 Umdrehung = \SI{0,3}{\ampere}
+beträgt.
+Durch die Helmholtzgleichung \eqref{eq:1} kann aus dem Strom $I$ das angelegte
+Magnetfeld berechnet werden. Die Messwerte und die daraus berechneten,
+überlagerten Magnetfelder sind
+in Tabelle \ref{tab:1} zu sehen.
+\begin{equation}
+  \label{eq:1}
+  B = \mu_0 \cdot \frac{8IN}{\sqrt{125}R}
+\end{equation}
+(Magnetfeld $B$, magnetische Feldkonstante $\mu_0$, Strom $I$, Windungszahl $N$
+und Radius $R$)
+
+\begin{table}
+  \centering
+  \caption{Messwerte und berechnete Magnetfelder}
+  \label{tab:1}
+  \begin{tabular}{c|ccc}
+    \toprule
+    $\nu$/\si{\kilo\hertz} & \text{Sweep}/ \text{Umdrehungen} &
+    \text{horizontales B-Feld} / \text{Umdrehungen} & $B$/\si{\micro\tesla} \\
+    \midrule
+    & \multicolumn{3}{l}{1. Isotop} \\
+    \midrule
+    98,8   &  6,04 &  7,2   & 36,45 \\
+    200    &  4,02 &  6,61  & 29,52 \\
+    298    &  6,09 &  9,57  & 42,01 \\
+    402    &  3,81 &  8,55  & 59,82 \\
+    498    &  2,02 &  7,92  & 72,70 \\
+    602    &  1,08 &  8,21  & 85,45 \\
+    702    &  1,17 &  9,46  & 101,77  \\
+    800    &  1,51 &  7,01  & 114,34  \\
+    900    &  2,92 &  8,38  & 128,12  \\
+    1006   &  5,70 &  7,23  & 144,90  \\
+    \midrule
+    & \multicolumn{3}{l}{2. Isotop} \\
+    \midrule
+    98,8  &  7,2   &  0     &  43,45 \\
+    200   &  6,61  &  0,02  &  45,15 \\
+    298   &  9,57  &  0,02  &  63,01 \\
+    402   &  8,55  &  0,14  &  88,43 \\
+    498   &  7,92  &  0,23  &  108,31 \\
+    602   &  8,21  &  0,30  &  128,47 \\
+    702   &  9,46  &  0,36  &  151,80 \\
+    800   &  7,01  &  0,49  &  171,22 \\
+    900   &  8,38  &  0,55  &  195,27 \\
+    1006  &  7,23  &  0,66  &  217,27 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Zur Berechnung des horizontalen Erdmagnetfeldes wird eine lineare Regression der
+Form
+\begin{equation*}
+  \nu = m \cdot B + b
+\end{equation*}
+durchgeführt. Die Steigungen und $y$-Achsenabschnitte sind in Tabelle \ref{tab:2}
+aufgelistet. Daraus folgt für das horizontale Erdmagnetfeld
+Erdmagnetfeld
+\begin{align*}
+  B_{\symup{Erde, horizontal, 1}} &= b_1 = \SI{10(4)}{\micro\tesla}\\
+  B_{\symup{Erde, horizontal, 2}} &= b_2 = \SI{9(4)}{\micro\tesla}\\
+\end{align*}
+
+\begin{table}
+  \centering
+  \caption{Parameter der Ausgleichsrechnungen}
+  \label{tab:2}
+  \begin{tabular}{c c c}
+    \toprule
+    & $m$ / \si{\tesla\second} & $b$ / \si{\tesla} \\
+    \midrule
+    1. Isotop & \num{1,31(7)e-10} & \num{10(4)e-6} \\
+    2. Isotop & \num{2,03(7)e-10} & \num{9(4)e-6} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Bfeld.pdf}
+  \caption{Messwerte und lineare Regression.}
+  \label{abb:1}
+\end{figure}
+
+\subsection{Berechnung der landéschen Faktoren und des Kernspins}
+Die landéschen Faktoren werden ebenfalls durch die oben berechnete
+lineare Regression bestimmt, indem die Regression mit Gleichung \eqref{eq:3}
+verglichen wird:
+\begin{align*}
+  g_{F1} &= \frac{h}{\mu_B m_1} = \num{0,547(28)} \\
+  g_{F2} &= \frac{h}{\mu_B m_2} = \num{0,352(12)} \\
+\end{align*}
+
+Zur Berechnung des Kernspins muss zunächst durch Gleichung \eqref{eq:La-Fa.gj}
+der Faktor $g_J$ berechnet werden mit $J=S=0,5$, $L=0$ und $g_S = 2,0023$.
+Daraus lässt sich dann der Kernspin $I$ mit der Gleichung \eqref{eq:La-Fa.gf}
+berechnen:
+\begin{align*}
+  I_1 &= \num{1,33(10)} \\
+  I_2 &= \num{2,35(10)} \\
+\end{align*}
+Aus dem Vergleich mit den Literaturwerten lässt sich somit eine Verbindung
+zu den verwendeten Isotopen herstellen. $^{85}\text{Rb}$ (mit einem Kernspin
+$I=5/2$) lässt sich der zweiten Resonanzstelle und $^{87}\text{Rb}$
+($I=1/2$) der erste Resonanzstelle zuordnen.
+
+\subsection{Signalbild}
+In Abbildung \ref{abb:2} sind die zwei Resonanzstellen eines typischen Signalbildes
+zu erkennen.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.3]{Foto.png}
+  \caption{Signalbild mit Resonanzstellen.}
+  \label{abb:2}
+\end{figure}
+
+Aus dem Amplitudenverhältnis der beiden Resonanzstellen lässt sich auf das
+Isotopenverhältnis schließen:
+\begin{align*}
+  A_1 &= 195\text{px} \\
+  A_2 &= 387\text{px} \\
+\end{align*}
+Damit folgt, dass die Verteilung bei $\approx \SI{33,5}{\percent}$
+($^{87}\text{Rb}$) und $\approx \SI{66,5}{\percent}$ ($^{85}\text{Rb}$) liegt.
+In der Natur liegen die Isotope in dem
+Verhältnis $\approx \SI{72}{\percent}$ ($^{87}\text{Rb}$) und
+$\approx \SI{28}{\percent}$ ($^{85}\text{Rb}$) vor.
+
+\subsection{Abschätzung des quadratischen Zeeman-Effekts}
+Zur Abschätzung des quadratischen Zeeman-Effekts wird zunächst der lineare Teil
+berechnet, um diesen mit dem quadratischen Teil zu vergleichen. Hierbei wird das
+maximal gemessene Feld zur Berechnung genommen ( \SI{144,90}{\micro\tesla} und
+\SI{217,27}{\tesla} für die jeweiligen Resonanzstellen). Mit $M_F=3$ für
+$^{85}\text{Rb}$ und $M_F=2$ für $^{87}\text{Rb}$ und den
+Hyperfeinstrukturaufspaltungen lässt sich mittels Gleichung \eqref{eq_qZeeman}
+die linearen und quadratischen Teile berechnen:
+\begin{align*}
+  E_{1, linear} &= \SI{4,59(24)e-9}{\eV} \\
+  E_{1, linear} &= \SI{4,42(15)e-9}{\eV} \\
+  E_{1, quadratisch} &= \SI{-2,23(23)e-12}{\eV} \\
+  E_{1, quadratisch} &= \SI{-7,8(5)e-12}{\eV} \\
+\end{align*}
