@@ -2,7 +2,7 @@
 Der Germaniumdetektor wird zur $\gamma$-Spektroskopie verwendet, da dieser
 gegenüber eines Szintillations-Detektors eine viel höhere Auflösung besitzt.
 (Szintialltionsdetektor: $\approx \SI{70}{\kilo\eV} $,
-Germaniumdetektor:$\approx \SI{500}{\kilo\eV} $)
+Germaniumdetektor:$\approx \SI{895}{\kilo\eV} $ \cite{Q1})
 
 \subsection{Wechselwirkung von Gamma-Strahlung mit Materie}
 In Abbildung \ref{abb:1} sind die verschiedenen Wechselwirkungen mit Materie zu
@@ -95,7 +95,7 @@ Diese Gleichung gilt für Energien die größer sind als \SI{500}{\mega\eV}.
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.8]{Wechselwirkungen.jpeg}
+  \includegraphics[scale=0.8]{Wechselwirkungen.png}
   \caption{Effekte bei der Wechselwirkung von $\gamma$-Strahlung mit Materie. \cite{Q2}}
   \label{abb:1}
 \end{figure}
@@ -193,10 +193,39 @@ $\gamma$-Strahlers zu sehen.
 \end{figure}
 
 \subsection{Energetisches Auflösungsvermögen und Effizienz}
-Eine Kenngröße des Halbleiter-Detektors ist das energetische Auflösungsvermögen.
-Als Maß hierfür ist die Halbwertsbreite des Photopeaks angegeben (bei
-monochromatischer $\gamma$-Strahlung). Diese ist vor allem abhängig von der
-Anzahl der erzeugten Elektronenlochpaare.
+
+Eine Kenngröße für das energetische Auflösungsvermögen ist die Halbwertsbreite
+$\Delta E_{1/2}$ der Impulsverteilung bei monochromatischer $\gamma$-Strahlung,
+denn Spektrallinien mit einem Energieunterschied von $\Delta E_{1/2}$
+können noch gut voneinander unterschieden werden.
+Die Halbwertsbreite wird durch die Anzahl der erzeugten
+Elektronen-Loch-Paare durch ein $\gamma$-Quant festgelegt.
+Außerdem werden bei der Erzeugung von einem Elektronen-Loch-Paar zusätzlich
+Phononen erzeugt. Das kann aus der Differenz der Bildungsenergie des
+Elektronen-Loch-Paars (hier etwa \SI{2,90}{\eV}) und der Energielücke zwischen
+dem Leitungs- und Valenzband (hier etwa \SI{0,67}{\eV}) gefolgert werden, da
+diese Energiedifferenz statistisch auf das Elektronen-Loch-Paar und die Phononen
+verteilt wird.
+
+Da die Ladungsträgerverteilung nicht komplett unkorreliert verläuft, sondern
+die Fluktuation der Ladungsträgererzeugung durch die Fluktuation der
+Phononenanregung kompensiert wird, wird der Fano-Faktor $F$ eingeführt ($F<1$).
+Bei diesem Versuch liegt der Fano-Faktor bei etwa $F=0,1$
+Damit folgt für die Standardabweichung $\sigma$
+\begin{equation}
+  \sigma = \sqrt{F\overline{n}} = \sqrt{F \frac{E_{\gamma}}{E_{\symup{El}}}}
+\end{equation}
+(Fano-Faktor $F$, Energie der $\gamma$-Quanten $E_{\gamma}$, Bildungsenergie der
+Elektronen-Loch-Paare $ E_{\symup{El}}$).
+Da die Anzahl der erzeugten Elektronen-Loch-Paare $n>>1$ ist, kann die
+Poissonverteilung mit einer Gaußverteilung angenähert werden:
+\begin{equation}
+  \Delta E_{1/2} = \sqrt{2\ln{(2)}}\sigma_E =\sqrt{8\ln{(2)}}\frac{\sigma}{\overline{n}}
+  E_{\gamma} = 2,35\sqrt{0,1E_{\gamma}E_{\symup{El}}}
+\end{equation}
+Die Halbwertsbreite des Germanium-Detektors bei einer typischen Energie von
+\SI{500}{\kilo\eV} liegt bei $\Delta E_{1/2}(\SI{500}{\eV})\approx \SI{895}{\eV}$.
+
 Durch einige Einflüsse wird das energetische Auflösungsvermögen vermindert:
 \begin{itemize}
   \item Rauschen des Leckstroms, durch Eigenleitung und Restverunreinigung.
@@ -204,8 +233,11 @@ Durch einige Einflüsse wird das energetische Auflösungsvermögen vermindert:
   \item Rauschen des Verstärkers
   \item unvollständige Ladungssammlung durch Feldinhomogenitäten
 \end{itemize}
+Diese Störeinflüsse addieren sich unkorreliert zur theoretischen Halbwertsbreite
+dazu.
+
 Die Effizienz bezeichnet die Energieabhängigkeit der Nachweiswahrscheinlichkeit
-bei der Detektion von Photonen.
+bei der Detektion von $\gamma$-Quanten.
 Die Effizienz Q eines Germaniumdetektors kann mit Hilfe einiger Parameter berechnet werden:
 \begin{equation}
     \label{eq:effizienz}
