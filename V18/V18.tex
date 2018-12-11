@@ -241,38 +241,47 @@ bei der Detektion von $\gamma$-Quanten.
 Die Effizienz Q eines Germaniumdetektors kann mit Hilfe einiger Parameter berechnet werden:
 \begin{equation}
     \label{eq:effizienz}
-    \text{Q} = \frac{4 \pi \text{Z}}{\Omega \text{A} \text{W}}
+    \text{Q} = \frac{4 \pi \text{Z}}{\Omega \text{A} \Delta \text{t} \text{W}}
 \end{equation}
-Hierbei beschreibt A die Aktivität der Probe am Versuchstag, W die Emissionswahrscheinlichkeit, Z das gemessene Zählergebniss als Summe der Impulse in einem Peak und $\Omega$ dem Raumwinkel.
+Hierbei beschreibt A die Aktivität der Probe am Versuchstag, W die Emissionswahrscheinlichkeit, Z das gemessene Zählergebniss als Summe der Impulse in einem Peak und $\Omega$ den Raumwinkel.
 Das Raumwinkelelement $\frac{\Omega}{4\pi}$ berechnet sich wie folgt:
 \begin{equation}
     \label{eq:Omega}
     \frac{\Omega}{4 \pi} = \frac{1}{2} \left(1- \frac{a}{\sqrt{a^2 + r^2}} \right)
 \end{equation}
 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Raumwinkel.png}
+  \caption{Berechnung des Raumwinkels}
+  \label{abb:Raumwinkel}
+\end{figure}
+
 \subsection{Aufbau}
 
-Der Aufbau des Versuchs ist in Abbildung \ref{abb:2} zu sehen. Folgende
+Der Blockschaltbild des Versuchs ist in Abbildung \ref{abb:2} zu sehen. Folgende
 Komponenten sind in dem Aufbau enthalten:
 \begin{itemize}
-  \item \textbf{Detektor}: Zur Detektion der $\gamma$-Strahlen mit Hilfe
+  \item Detektor: Zur Detektion der $\gamma$-Strahlen mit Hilfe
   einer Halbleiterdiode.
-  \item \textbf{Vorverstärker}: Der Vorverstärker integriert die vom Detektor
-  kommende Ladungsmenge in einen Spannungsimpuls, da Spannung mit geringeren
-  Verlusten weitergeleitet werden kann als Strom. Damit durch die Integration
-  theoretisch keine unendlich hohe Spannung ensteht, muss der Kondensator am
-  Vorverstärker nach jedem Ladungsimpuls entladen werden. Da durch eine
+  \item Vorverstärker: Der Vorverstärker integriert den vom Detektor
+  kommende Strom in einen Spannungsimpuls, da Spannung mit geringeren
+  Verlusten weitergeleitet werden kann als Strom. Damit die eintreffenden Signale
+  nicht nacheinander aufaddiert werden und somit keine Aussage über die Höhe der
+  einzelnen Signale mehr getroffen werden kann, muss der Kondensator nach jedem
+  Ladungsimpuls entladen werden. Da durch eine
   Entladung über einen Widerstand ein Rauschen entsteht, wird der Kondensator
-  durch eine optoelektrische Rückkopplung entladen, bei der die Gate-Drain-Schicht
+  durch eine optoelektronische Rückkopplung entladen, bei der die Gate-Drain-Schicht,
+  bzw. hier die Feldeffekttransistoren
   des Operationsverstärkers mit einer LED beleuchtet wird, wobei die
-  Sperrschicht kurz leitend wird und die LAdung somit abfließen kann.
-  \item \textbf{Hauptverstärker}: Der Hauptverstärker verstärkt die Spannung
-  nach dem Vorverstärker. Wobei darauf geachtet werden muss, dass die Bandbreite
-  des Operationsverstärkers weder zu klein noch zu groß ist, um alle Signale zu
+  Sperrschicht kurz leitend wird und die Ladung somit abfließen kann.
+  \item Hauptverstärker: Der Hauptverstärker verstärkt die Spannung
+  nach dem Vorverstärker. Dabei muss darauf geachtet werden, dass die Bandbreite
+  des Verstärkers weder zu klein noch zu groß ist, um alle Signale zu
   übertragen und das Rauschen nicht zu groß werden zu lassen.
-  Zusätzlich differenziert und integriert der Hauptverstärker, als Hoch- und
+  Zusätzlich differenziert und integriert der Hauptverstärker als Hoch- und
   Tiefpassfilter.
-  \item \textbf{Vielkanalanalysator}: Im Vielkanalanalysator sortiert
+  \item Vielkanalanalysator: Der Vielkanalanalysator sortiert
   die Spannungsimpulse nach ihrer Größe und zählt diese, indem ein Kondensator
   durch den zu messenden Spannungsimpuls geladen wird und die Zeit der
   Entladung erfasst wird. Der Kondensator ist zusätzlich an eine
@@ -283,23 +292,23 @@ Komponenten sind in dem Aufbau enthalten:
   den Kondensator auflädt und somit die Messung verfälscht.
   Die Messungen des Vielkanalanalysators werden auf dem angeschlossenen
   Computer gespeichert.
-  \item \textbf{Temperaturregler}: Während der Messung wird die Aperatur
-  durchgehgend durch flüssigen Stickstoff gekühlt, aufgrund der oben genannten
-  Störstellen.
+  \item \textbf{Temperaturregler}: Während der Messung wird die Apperatur
+  durchgehend durch flüssigen Stickstoff gekühlt, um z.B. die Rauschen des
+  Leckstroms zu verringern.
 \end{itemize}
 
 Um keine Verstärkung von Gleichspannungen und Offsetspannungen zu erhalten, wird
 zwischen dem Vorverstärker und dem Hauptverstärker ein RC-Glied geschaltet. Ein
 unerwünschter Nebeneffekt sind Unterschwingungen, welche zur Verschlechterung
-des 1auflösungsvermögen führen. Um dies zu vermeiden wird ein Teil der
-Gleichspannung über das RC-Glied geleitet ("Pole-Zero-Kompensation"). Das gleiche
-Verfahren wird am Ausgang des Hauptverstärkers durchgeführt
+des Auflösungsvermögens führen. Um dies zu vermeiden, wird ein Teil der
+Gleichspannung direkt vom Vorverstärker zum Hauptverstärker geleitet, ohne das
+RC-Glied zu passieren ("Pole-Zero-Kompensation"). 
 ("Base-Line-Restorer").
 
 \begin{figure}
   \centering
   \includegraphics[scale=0.4]{Aufbau.png}
-  \caption{Versuchsaufbau. \cite{Q1}}
+  \caption{Blockschaltbild zum Versuchsaufbau. \cite{Q1}}
   \label{abb:2}
 \end{figure}
 
