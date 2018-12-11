@@ -221,42 +221,45 @@ Frequenz und Spulenstrom werden notiert.
 \section{Auswertung}
 
 \subsection{Berechnung der Horizontalkomponente des Erdmagnetfelds}
-Zur Berechnung des B-Feldes müssen die gemessenen Umdrehungen in einen Strom
-$I$ umgerechnet werden, wobei der Umrechnungsfaktor des Sweepfeldes 1 Umdrehung
-= \SI{0,1}{\ampere} und der des Horizontalfeldes 1 Umdrehung = \SI{0,3}{\ampere}
+Zur Berechnung des B-Feldes müssen die gemessenen Umdrehungen $U$ an den
+Potentionmetern in einen Strom
+$I$ umgerechnet werden, wobei der Umrechnungsfaktor des Sweepfeldes $U_{\symup{Sweep}}$
+= \SI{0,1}{\ampere} und der des Horizontalfeldes $U_{\symup{hor}}$= \SI{0,3}{\ampere}
 beträgt.
 Durch die Helmholtzgleichung \eqref{eq:1} kann aus dem Strom $I$ das angelegte
-Magnetfeld berechnet werden. Die Messwerte und die daraus berechneten,
+Magnetfeld $ B = B_{\symup{Sweep}}+B_{\symup{hor}}$ berechnet werden. Die Messwerte
+für beide Isotope und die daraus berechneten,
 überlagerten Magnetfelder sind
 in Tabelle \ref{tab:1} zu sehen.
 \begin{equation}
   \label{eq:1}
   B = \mu_0 \cdot \frac{8IN}{\sqrt{125}R}
 \end{equation}
-(Magnetfeld $B$, magnetische Feldkonstante $\mu_0$, Strom $I$, Windungszahl $N$
-und Radius $R$)
+(magnetische Feldkonstante $\mu_0$, Strom $I$, Windungszahl $N$
+und Radius $R$ der Spule)
 
 \begin{table}
   \centering
-  \caption{Messwerte und berechnete Magnetfelder}
+  \caption{Berechnete Magnetfelder im Resonanzfall für verschiedene Frequenzen
+  an der ... Spule}
   \label{tab:1}
   \begin{tabular}{c|ccc}
     \toprule
-    $\nu$/\si{\kilo\hertz} & \text{Sweep}/ \text{Umdrehungen} &
-    \text{horizontales B-Feld} / \text{Umdrehungen} & $B$/\si{\micro\tesla} \\
+    $\nu$/\si{\kilo\hertz} & $B_{\symup{Sweep}}$ &
+    $U_{\symup{hor}}$ & $B$/\si{\micro\tesla} \\
     \midrule
     & \multicolumn{3}{l}{1. Isotop} \\
     \midrule
-    98,8   &  6,04 &  7,2   & 36,45 \\
-    200    &  4,02 &  6,61  & 29,52 \\
-    298    &  6,09 &  9,57  & 42,01 \\
-    402    &  3,81 &  8,55  & 59,82 \\
-    498    &  2,02 &  7,92  & 72,70 \\
-    602    &  1,08 &  8,21  & 85,45 \\
-    702    &  1,17 &  9,46  & 101,77  \\
-    800    &  1,51 &  7,01  & 114,34  \\
-    900    &  2,92 &  8,38  & 128,12  \\
-    1006   &  5,70 &  7,23  & 144,90  \\
+    98,8   &  6,04 &  0     & 36,45 \\
+    200    &  4,02 &  0,02  & 29,52 \\
+    298    &  6,09 &  0,02  & 42,01 \\
+    402    &  3,81 &  0,14  & 59,82 \\
+    498    &  2,02 &  0,23  & 72,70 \\
+    602    &  1,08 &  0,30  & 85,45 \\
+    702    &  1,17 &  0,36  & 101,77  \\
+    800    &  1,51 &  0,40  & 114,34  \\
+    900    &  2,92 &  0,42  & 128,12  \\
+    1006   &  5,70 &  0,42  & 144,90  \\
     \midrule
     & \multicolumn{3}{l}{2. Isotop} \\
     \midrule
@@ -274,10 +277,9 @@ und Radius $R$)
   \end{tabular}
 \end{table}
 
-Zur Berechnung des horizontalen Erdmagnetfeldes wird eine lineare Regression der
-Form
+Es wird eine lineare Regression der Form
 \begin{equation*}
-  \nu = m \cdot B + b
+  B(\nu) = m\nu+B_{\symup{Erd,hor}}
 \end{equation*}
 durchgeführt. Bei der Regression wurde jedoch der erste Werte aus der Berechnung
 ausgeschlossen, da es eindeutig erkennbar ist, dass dieser falsch gemessen wurde.
@@ -287,9 +289,8 @@ vernünftig
 eingestellt werden konnte. Deswegen wird der erste Wert bei einer Frequenz von
 etwa \SI{100}{\kilo\hertz} in den weiteren Berechnungen vernachlässigt.
 
-Die Steigungen und $y$-Achsenabschnitte sind in Tabelle \ref{tab:2}
+Die Steigungen $m$ und $y$-Achsenabschnitte $B_{\symup{Erd,hor}}$ sind in Tabelle \ref{tab:2}
 aufgelistet. Daraus folgt für das horizontale Erdmagnetfeld
-Erdmagnetfeld
 \begin{align*}
   B_{\symup{Erde, horizontal, 1}} &= b_1 = \SI{10(10)}{\micro\tesla}\\
   B_{\symup{Erde, horizontal, 2}} &= b_2 = \SI{9(12)}{\micro\tesla}\\
@@ -336,7 +337,7 @@ berechnen:
 Aus dem Vergleich mit den Literaturwerten lässt sich somit eine Verbindung
 zu den verwendeten Isotopen herstellen. $^{85}\text{Rb}$ (mit einem Kernspin
 $I=5/2$) lässt sich der zweiten Resonanzstelle und $^{87}\text{Rb}$
-($I=1/2$) der erste Resonanzstelle zuordnen.
+($I=3/2$) der erste Resonanzstelle zuordnen.
 
 \subsection{Signalbild}
 In Abbildung \ref{abb:2} sind die zwei Resonanzstellen eines typischen Signalbildes
@@ -355,11 +356,17 @@ Isotopenverhältnis schließen:
   A_1 &= 195\text{px} \\
   A_2 &= 387\text{px} \\
 \end{align*}
-Damit folgt, dass die Verteilung bei $\approx \SI{33,5}{\percent}$
-($^{87}\text{Rb}$) und $\approx \SI{66,5}{\percent}$ ($^{85}\text{Rb}$) liegt.
-In der Natur liegen die Isotope in dem
-Verhältnis $\approx \SI{72}{\percent}$ ($^{85}\text{Rb}$) und
-$\approx \SI{28}{\percent}$ ($^{87}\text{Rb}$) vor.
+Damit folgt für die prozentualen Verteilungen $p$:
+\begin{align*}
+  p_{^{87}\text{Rb}} = \SI{33,5}{\percent} \\
+  p_{^{85}\text{Rb}} = \SI{66,5}{\percent} \\
+\end{align*}
+
+In der Natur liegen die Isotope in dem folgenden Verhältnis vor : \cite{Q2}
+\begin{align*}
+  p_{^{87}\text{Rb}, theo} = \SI{28}{\percent} \\
+  p_{^{85}\text{Rb}, theo} = \SI{72}{\percent} \\
+\end{align*}
 
 \subsection{Abschätzung des quadratischen Zeeman-Effekts}
 Zur Abschätzung des quadratischen Zeeman-Effekts wird zunächst der lineare Teil
@@ -377,9 +384,11 @@ die linearen und quadratischen Teile berechnen:
 \end{align*}
 
 \section{Diskussion}
-Das horizontale Erdmagnetfeld hat ist in etwa \SI{20}{\micro\meter} groß.
-Unsere Messung mit \SI{10(10)}{\micro\tesla} und \SI{9(12)}{\micro\tesla}
-liegt jeweils in dem Fehlerintervall, der Fehler ist jedoch sehr hoch.
+Das horizontale Erdmagnetfeld hat ist in etwa \SI{20}{\micro\meter} groß \cite{Q3}.
+
+Der Theoriewert liegt im Fehlerintevall unserer Messwerte
+(\SI{10(10)}{\micro\tesla} und \SI{9(12)}{\micro\tesla}), jedoch ist der Fehler
+bei der Messung sehr groß.
 
 Der Vergleich der Theoriewerte und der Messwerte des Kernspins zeigen nur sehr
 geringe Abweichungen von maximal \SI{0,4}{\percent} und die Theoriewerte liegen
@@ -416,7 +425,7 @@ Zeeman-Effekt in diesem Versuch vernachlässigt werden kann.
   \label{tab:diskussion2}
   \begin{tabular}{c c c}
     \toprule
-    Isotop & E linearer Term \si{eV} & E quadratischer Term / \si{\eV} \\
+    Isotop & E linearer Term / \si{eV} & E quadratischer Term / \si{\eV} \\
     \midrule
     $^{87}\text{Rb}$ & \num{4,21(4)e-9} & \num{-1,88(4)e-12} \\
     $^{85}\text{Rb}$ & \num{4,186(35)e-9} & \num{-6,98(12)e-12} \\
