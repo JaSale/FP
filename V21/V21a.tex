@@ -1,13 +1,17 @@
 \section{Zielsetzung}
-Im Versuch sollen durch das Verfahren des optischen Pumpens die Energieaufspaltungen
-in der Hyperfeinstruktur oder der Zeeman-Aufspaltung mit hoher Präzision gemessen werden.
-Konkret werden die Energieaufspaltungen zweier Rubidium-Isotope ermittelt.
+Durch das Verfahren des optischen Pumpens ist es möglich, eine Umkehr in den Besetzungszahlen
+zu erzeugen. Damit können mit hoher Präzision die Energeiaufspaltungen der Hyperfeinstruktur oder
+der Zeemanaufspaltung, die durch die Anlage eines äußeren Magnetfeldes hervorgerufen werden,
+gemessen werden. Hieraus lassen sich die Landéschen g-Faktoren und der
+Spin der Elektronenhülle und des Kerns bestimmen.
+Konkret werden im Versuch die beiden Rubidiumisotope $^{85}$Rb und $^{87}$Rb untersucht.
 
 \section{Theorie}
-Während die Besetzung der innersten Elektronenschalen nach dem Pauliprinzip vollständig besetzt
-wird, so erfolgt die Besetzung der äußeren Schalen temperaturabhängig.
+\label{Theorie}
+Während die innersten Elektronenschalen nach dem Pauliprinzip vollständig besetzt
+werden, so erfolgt die Besetzung der äußeren Schalen temperaturabhängig.
 Für die zwei Zustände mit den Energien $W_1$ und $W_2$ und den Besetzungszahlen $N_1$ und
-$N_2$ gilt demnach folgendes Verhältnis zwischen den Besetzungszahlen:
+$N_2$ gilt für das Verhältnis zwischen den Besetzungszahlen die Boltzmann'sche Gleichung:
 \begin{align*}
     \frac{N_{2}}{N_{1}} = \frac{g_{2}}{g_{1}}\frac{\exp(-W_{2}/\text{kT})}{\exp(-W_{1}/\text{kT})} \; .
 \end{align*}
@@ -15,19 +19,20 @@ Die Größen $g_{\text{i}}$ geben hierbei die Anzahl der zu den Energien $W_1$ u
 Zustände an.
 Mittels des Verfahrens des optischen Pumpens ist es möglich, dieses Verhältnis zu verändern
 oder gar zu invertieren ($N_{2} > N_{1}$).
-Zunächst soll im Folgenden betrachtet werden, wie sich die Energieniveaus eines Atoms aufspalten können.
+
 
 \subsection{Energieaufspaltung}
+In einem Atom können sich dessen Energieniveaus auf unterschiedliche Weise aufteilen.
 In einer ersten Näherung soll zunächst der Fall betrachtet werden, in dem davon ausgegangen wird, der
-Kernspin verschwindend ist.
+Kernspin sei Null.
 Der Gesamtdrehimpuls der Valenzelektronen des Atoms $\vec{\text{J}}$ erzeugt hierbei
-ein magnetisches Moment $\vec{\mu}_{\text{J}}$, welche in folgendem Zusammenhang stehen:
+ein magnetisches Moment $\vec{\mu}_{\text{J}}$, welches wie folgt definiert ist:
 \begin{align*}
     \vec{\mu}_{\text{J}} &= -\text{g}_{\text{J}} \cdot \mu_{\text{B}} \cdot \vec{\text{J}} \\
     |\vec{\mu}_{\text{J}}| &= \hspace{1em} \text{g}_{\text{J}} \cdot \mu_{\text{B}} \cdot \sqrt{ \text{J} (\text{J}+1) }
 \end{align*}
 Hier beschreibt $\mu_{\text{B}}$ das Bohr'sche Magneton.
-Der Landé-Faktor $\text{g}_{\text{J}}$ dient zur Berücksichtigung des Umstandes, dass sich der Gesamtdrehimpuls aus dem Bahndrehimpuls $\vec{\text{L}}$ und dem Spin $\vec{\text{S}}$ des Valenzelektrons zusammensetzt.
+Der Landé-Faktor $\text{g}_{\text{J}}$ dient zur Berücksichtigung des Umstandes, dass sich der Gesamtdrehimpuls aus dem Bahndrehimpuls $\vec{\text{L}}$ und dem Spin $\vec{\text{S}}$ desr Valenzelektronen zusammensetzt.
 Für die magnetischen Momente, die durch Spin und Bahndrehimpuls hervorgerufen werden $\vec{\mu}_{\text{L,S}}$, gilt:
 \begin{align*}
     |\vec{\mu}_{\text{L}}| &= \mu_{\text{B}} \sqrt{\text{L} (\text{L}+1)} \\
@@ -44,7 +49,7 @@ Nun lässt sich mit Hilfe des Cosinussatzes, angewendet auf das Dreieck, das von
     \cdot (\text{S}+1) - \text{L} (\text{L} + 1) \right]}{2 \cdot \text{J} (\text{J} +1 )}
     \label{eq:La-Fa.gj}
 \end{align}
-Durch Anlage eines äußeren Magnetfeldes B, kommt es nun zur Aufspaltung der Energieniveaus, was als Zeeman-Effekt bekannt ist. Die Energie der magnetischen Wechselwirkung wird wie folgt beschrieben:
+Beim Anlegen eines äußeren Magnetfeldes B, kommt es zur Aufspaltung der Energieniveaus, was als Zeeman-Effekt bekannt ist. Die Energie der magnetischen Wechselwirkung wird wie folgt beschrieben:
 \begin{align}
     E_{\text{mag}} &= \vec{\mu}_{\text{J}} \cdot \vec{\text{B}} \\
     &= \text{M}_\text{J} \cdot \text{g}_\text{J} \cdot \mu_{\text{B}} \cdot \text{B} \; .
@@ -52,14 +57,14 @@ Durch Anlage eines äußeren Magnetfeldes B, kommt es nun zur Aufspaltung der En
 \end{align}
 Hierbei gilt für die Orientierungsquantenzahl $\text{M}_\text{J}$ auf Grund der Richtungsquantelung: $\text{M}_{\text{J}} \in [-\text{J}, -\text{J}+1,\hdots,\text{J}-1,\text{J}]$ .
 
-\noindent Nun sollen die fälle betrachtet werden, in denen der Kernspin nicht verschwindet.
-Bei hinreichend schwachem Magnetfeld, wovon im Falle des Versuches ausgegangen werden kann, koppeln der Gesamtdrehimpuls der Elektronenhülle $\vec{\text{J}}$ und der Kernspin $\vec{\text{I}}$ vektoriell aneinander zu einem Gesamtdrehimpuls des Systems $\vec{\text{F}}$:
+\noindent Folgend wird der Fall betrachtet, in denen der Kernspin nicht verschwindet.
+Bei hinreichend schwachem Magnetfeld, wovon im Falle des Versuches ausgegangen werden kann, koppeln der Gesamtdrehimpuls der Elektronenhülle $\vec{\text{J}}$ und der Kernspin $\vec{\text{I}}$ vektoriell aneinander zu einem Gesamtdrehimpuls $\vec{\text{F}}$ des Atoms:
 \begin{align*}
     \vec{\text{F}} = \vec{\text{I}} + \vec{\text{J}} \; .
 \end{align*}
-Durch den nicht mehr verschwindenden Kernspin, spalten sich die Energieniveaus nun in die Hyperfeinstruktur auf.
+Durch den Kernspin, spalten sich die Energieniveaus in die Hyperfeinstruktur auf.
 Die Anzahl der Niveaus wird durch $2\text{J}+1$ oder $2\text{I}+1$ ermittelt, je nachdem, ob J größer als I ist oder anders herum.
-Die Quantenzahl F beschreibt dabei, wie sich die einzelnen Niveaus aufspalten und läuft von I+J bis $|\text{I}-\text{J}|$.
+Die Aufspaltung eines Niveaus kann mit Hilfe der Quantenzahl F bestimmt werden, die von I+J bis $|\text{I}-\text{J}|$ läuft. Sie ist als Index für die Niveaus der Hyperfeinstruktur zu betrachten.
 Die Hyperfeinstruktur kann wiederum in $2\text{F}+1$ Zeeman-Niveaus aufgespalten werden, indem ein äußeres Magnetfeld angelegt wird.
 Eine Beispielhafte Aufspaltung ist in Abbildung \ref{abb:Aufspaltung} zu sehen.
 \FloatBarrier
@@ -74,7 +79,7 @@ Zwischen zwei benachbarten Energieniveaus herrscht eine Energiedifferenz, die wi
 \begin{align*}
     E_{\text{HF}} = \text{g}_{\text{F}} \mu_{\text{B}} \text{B} \; .
 \end{align*}
-Mittels vektorieller Betrachtung lässt sich der Landé-Faktor für die Zeeman-Aufspaltung bestimmen:
+Mittels vektorieller Betrachtung lässt sich der Landé-Faktor $\text{g}_{\text{F}}$ für das Atom bestimmen:
 \begin{align*}
     |\vec{\mu}_{\text{F}}| &= \text{g}_{\text{F}} \cdot \mu_{\text{B}} \sqrt{\text{F} (\text{F}+1)} \\
     &=\text{g}_{\text{J}} \cdot \mu_{\text{B}} \sqrt{\text{J} (\text{J} + 1)} \cdot \cos\left(\measuredangle(\vec{\text{J}},\vec{\text{F}})\right) +
@@ -88,15 +93,15 @@ Allerdings ist auf Grund der großen Massendifferenz zwischen Elektron und Nukle
 \end{align}
 
 \subsection{Optisches Pumpen}
-Wie bereits erwähnt, kann die Besetzung höherer Energieniveaus mit Hilfe der Boltzmannstatistik beschrieben werden.
+Wie bereits im Kapitel \ref{Theorie} erwähnt, kann die Besetzung höherer Energieniveaus mit Hilfe der Boltzmannstatistik beschrieben werden.
 Mit Hilfe des Verfahrens des optischen Pumpens ist es möglich diese Verteilung zu invertieren, also eine größere Bestzung eines höheren Energiezustandes zu erzeugen.
 Um von einem Atom absorbiert zu werden, benötigt ein Photon folgende Energie:
 \begin{align*}
     hf = W_{2} - W_{1}
 \end{align*}
 Diese Energie entspricht der Energie des Photons, was bei einem Übergang von $W_{2}$ auf $W_{1}$ frei würde.
-Zunächst soll der Einfachheit halber ein Alkaliatom betrachtet werden, da dies lediglich ein Valenzelektron und keinen Kernspin besitzt.
-Der Grundzustand dieses Atoms ist dann ${}^2S_{{}^1\!/\!_2}$ und die ersten beiden angeregten Zustände sind dann ${}^2P_{{}^1\!/\!_2}$ und ${}^2S_{{}^3\!/\!_2}$. Wie in Abbildung \ref{abb:Aufspaltung2} zu sehen, sind zwei Übergänge möglich: $D_{1}$ und $ D_{2} $.
+Zunächst wird ein hypothetisches Alkaliatom betrachtet, welches ein Valenzelektron und keinen Kernspin besitzt.
+Der Grundzustand dieses Atoms ist druch ${}^2S_{{}^1\!/\!_2}$ und die ersten beiden angeregten Zustände sind durch ${}^2P_{{}^1\!/\!_2}$ und ${}^2S_{{}^3\!/\!_2}$ gegeben. Wie in Abbildung \ref{abb:Aufspaltung2} zu sehen, entstehen durch optische Übergänge zwischen diesen Zuständen zwei Linien: $D_{1}$ und $ D_{2} $.
 Der Gesamtspin J der Zustände ${}^2S_{{}^1\!/\!_2}$ und ${}^2P_{{}^1\!/\!_2}$ beträgt $\text{J}= {}^1\!/\!_2$. Daraus ergeben sich für die Orientierungsquantenzahl $\text{M}_\text{J}$ folgende mögliche Werte für die Aufspaltung und für die Differenz $\Delta \text{M}_\text{J}$:
 \begin{align*}
     \text{M}_\text{J} &= \pm \frac{1}{2} \\
@@ -105,32 +110,37 @@ Der Gesamtspin J der Zustände ${}^2S_{{}^1\!/\!_2}$ und ${}^2P_{{}^1\!/\!_2}$ b
 \FloatBarrier
 \begin{figure}
     \centering
-    \includegraphics[width= 0.49\textwidth, height=0.3\textwidth]{Aufspaltung2.PNG}
-    \includegraphics[width=0.40\textwidth, height=0.3\textwidth]{Aufspaltung3.PNG}
-    \caption{Dublettstruktur des Alkali-Atoms mit zugehörigen Quantenzahlen, sowie die Zeeman-Aufspaltung des Grundniveaus und des ersten angeregten Zustands mit möglichen Übergängen. \cite{Q1}}
-    \label{abb:Aufspaltung2}
+        \begin{subfigure}
+            \includegraphics[width= 0.49\textwidth, height=0.3\textwidth]{Aufspaltung2.PNG}
+            \subcaption{Dublettstruktur des Alkali-Atoms mit zugehörigen Quantenzahlen. \cite{Q1}}
+            \label{abb:D1D2}
+        \end{subfigure}
+        \begin{subfigure}
+            \includegraphics[width=0.40\textwidth, height=0.3\textwidth]{Aufspaltung3.PNG}
+            \caption{Zeeman-Aufspaltung des Grundniveaus und des ersten angeregten Zustands mit möglichen Übergängen des hypothetischen Alkaliatoms. \cite{Q1}}
+            \label{abb:Aufspaltung2}
+        \end{subfigure}
 \end{figure}
+\FloatBarrier
+Durch Anlage eines externen Magnetfeldes, spalten sich die Grundniveaus und der erste angeregte Zustand auf und es sind gemäß den Auswahlrgelen $\Delta \text{M}_{\text{J}} = 0, \pm1$ Übergänge zwischen den Niveaus möglich, wie in Abbildung \ref{abb:Aufspaltung2} zu sehen ist.
 Je nach dem, welcher Übergang stattfindet, ist das dabei emittierte Licht unterschiedlich polarisiert.
 Beim $\sigma^+$-Übergang ( $\Delta \text{M} = +1$ ) ist der Spin der emittierten Lichtquanten antiparallel zur Ausbreitungsrichtung und es entsteht rechts zirkular-polarisiertes Licht. Beim $\sigma^-$-Übergang ( $\Delta \text{M} = -1$ ) hingegen sind Spin und Ausbreitungsrichtung parallel. Die beiden $\sigma$-Übergänge werden entlang des Magnetfeldes emittiert, wohingegen der $\pi$-Übergang ( $\Delta \text{M} = +0$ ) senkrecht zum Magnetfeld abgestrahlt wird, wo das Intensitätsmaximum auftreten, und linear polarisiertes Licht emittiert wird.
 Nun besteht die Möglichkeit ein Gas aus diesem hypotetischen Alkali-Atom, das sich im thermischen Gleichgewicht befindet,
-mit zirkular polarisiertem Licht ($D_1$-Licht) anzuregen und ein äußeres Magnetfeld anzulegen. Da die Orientierungsquantenzahl M hierbei nur +1 oder -1 betragen kann, sind nur Übergänge von ${}^2S_{^1\!/\!_2}$ mit  $M_J=-^1\!/\!_2$ nach ${}^2P_{^1\!/\!_2}$, $M_J=+^1\!/\!_2$ möglich.
+mit rechts zirkular polarisiertem Licht ($D_1$-Licht) anzuregen und ein äußeres Magnetfeld anzulegen. Da die Orientierungsquantenzahl M hierbei nur +1 oder -1 betragen kann, sind nur Übergänge von ${}^2S_{^1\!/\!_2}$ mit  $M_J=-^1\!/\!_2$ nach ${}^2P_{^1\!/\!_2}$, $M_J=+^1\!/\!_2$ möglich.
 Der Übergang vom ersten angeregten Zustand ${}^2P_{^1\!/\!_2}$ mit $M_J=+^1\!/\!_2$ zurück in den Grundzustand findet hierbei durch spontane
 Emission statt. Dabei wird sowohl der Grundzustand mit $M_J=-^1\!/\!_2$
-als auch der mit $M_J=+^1\!/\!_2$ besetzt. Diese beiden Vorgänge sorgen dafür, dass der energetisch niedrigere Zustand entgegen der thermischen Verteilung ohne Anregung und Magnetfeld, immer weniger besetzt ist und sozusagen "leer" gepumpt wird.
-Je weniger der energetisch niedrigere Zustand besetzt ist, umso weniger Lichtquanten werden hier dann absorbiert und das anregende $D_1$-Licht
-kann vollständig mit einem Photoddetektor gemessen werden. Die gemessene
-Transmission nähert sich asymptotisch dem Wert 1, der nur erreicht werden kann, falls es gelingt, den niedrigeren Zustand mit $M_J=-^1\!/\!_2$ völlig leer zu pumpen.
+als auch der mit $M_J=+^1\!/\!_2$ besetzt. Diese beiden Vorgänge sorgen dafür, dass der energetisch niedrigere Zustand entgegen der thermischen Verteilung, immer weniger besetzt ist und sozusagen "leer" gepumpt wird.
+Je weniger der energetisch niedrigere Zustand besetzt ist, umso weniger Lichtquanten werden absorbiert. Mit einem Photodetektor kann ein Maximum des anregenden $D_1$-Lichts gemessen werden. Die gemessene
+Transmission nähert sich in der Theorie asymptotisch dem Wert 1, der nur erreicht werden kann, falls es gelingt, den niedrigeren Zustand mit $M_J=-^1\!/\!_2$ völlig leer zu pumpen. Jedoch geht auch durch Streuung Intensität verloren, weshalb es unmöglich sein wird, eine Maximale Intensität von 1 mit dem Photodetektor zu bestimmen.
 
 \subsection{Resonanzstellen}
-In Abhängigkeit vom angelegten Magnetfeld existieren für das Alkali Atom zwei Resonanzstellen, die in Abbildung \ref{abb:Resonanz} zu sehen sind. Die erste liegt bei $\text{B}=0$, was daran liegt, dass es durch das Fehlen des Magnetfeldes zu keiner Aufspaltung der Spektrallinien und somit auch zu keinen induzierten Übergängen zwischen den Niveaus kommt und folglich auch das optische Pumpen nicht funktionieren kann.
-In diesem Bereich ist der Einfluss des Erdmagnetfeldes zu bestimmen und mit dem angelegten Magnetfeld auszugleichen.
-Wird das Magnetfeld eingeschaltet, so findet das optische Pumpen statt und es kommt zur oben beschriebenen Besetzungsinversion.
-Im Falle, dass die Energie eines eintreffenden Photons der Energiedifferenz, die es zur Zeeman-Aufspaltung braucht, entspricht, so kommt es hier wieder zur induzierten Emission, was wiederum dazu führt, dass das energieärme Besetzungsniveau ${}^2S_{{}^1\!/\!_2}$, $M=-^1\!/\!_2$ wieder aufgefüllt wird.
+Durch Anlage eines frequenzvariablen Hochfrequenzfeldes (RF) an die Dampfzelle, wird ein externes Magnetfeld erzeugt. So findet das optische Pumpen statt und es kommt zur oben beschriebenen Besetzungsinversion und in Folge dessen zu einer höheren Transmission des $D_1$- Lichtes.
+Im Falle, dass die Energie eines eintreffenden Photons der Energiedifferenz der Zeeman-Aufspaltung entspricht, so kommt es zur induzierten Emission, was wiederum dazu führt, dass das energieärme Besetzungsniveau ${}^2S_{{}^1\!/\!_2}$, $M=-^1\!/\!_2$ wieder aufgefüllt wird, weshalb die Transparenz des Gasgemisches abnimmt und weniger Photonen den Detektor erreichen. Die Theoriekurve in Abbildung \ref{abb:Resonanz} zeigt ein lokales Minimum an der Resonanzstelle $\text{B}_{\text{m}}$.
 Die Magnetfeldstärke an der Resonanzstelle berechnet sich wie folgt:
 \begin{align}
   \label{eq:2}
-    h \nu &= E_{\text{HF}} = \mu_{\text{B}} \text{g}_{\text{J}} \cdot \text{B}_{\text{res}} \\
-    \text{B}_{\text{Res}} &= \frac{4\pi m_0}{e_0 \text{g}_{\text{J}}}f \; .
+    h \nu &= E_{\text{HF}} = \mu_{\text{B}} \text{g}_{\text{J}} \cdot \text{B}_{\text{m}} \\
+    \text{B}_{\text{m}} &= \frac{4\pi m_0}{e_0 \text{g}_{\text{J}}}f \; .
 \end{align}
 \FloatBarrier
 \begin{figure}
@@ -140,56 +150,68 @@ Die Magnetfeldstärke an der Resonanzstelle berechnet sich wie folgt:
     \label{abb:Resonanz}
 \end{figure}
 \FloatBarrier
+Das erste Minimum der Transparenz liegt bei $\text{B}=0$, was daran liegt, dass es durch das Fehlen des Magnetfeldes zu keiner Aufspaltung der Spektrallinien und somit auch zu keinen induzierten Übergängen zwischen den Niveaus kommt und folglich auch das optische Pumpen nicht funktionieren kann.
+In diesem Bereich ist der Einfluss des Erdmagnetfeldes zu bestimmen und mit dem angelegten Magnetfeld auszugleichen.
 
 \subsection{Betrachtung für nicht verschwindende Kernspins}
-Der nicht verschwindende Kernspin sorgt für weitere Aufspaltungen der Zeeman-Niveaus.
-Wird dieses System mit zirkular polarisiertem Licht bestrahlt, so kommt
-es lediglich zu Übergängen mit $\Delta \text{M}_{\text{F}} = +1$.
-Dies wiederum hat zur Folge, dass lediglich der Zustand $\text{F}=2$ mit $M_F=+2$ besetzt sein wird, da von hier aus kein Übergang mehr induziert werden kann, da kein Niveau mit $\text{M}_{\text{F}}=+3$ existiert und dieser Zustand lediglich durch spontane Emission immer weiter besetzt werden kann.
+Der Kernspin sorgt für weitere Aufspaltungen der Zeeman-Niveaus.
+Wird dieses System mit rechts zirkular polarisiertem Licht bestrahlt, so kommt
+es zu Übergängen mit $\Delta \text{M}_{\text{F}} = +1$.
+Dies wiederum hat zur Folge, dass nach Beendigung des Pumpvorgangs lediglich der Zustand $\text{F}=2$ mit $M_F=+2$ besetzt sein wird. Von hier aus kann kein Übergang mehr induziert werden, da kein Niveau mit $\text{M}_{\text{F}}=+3$ existiert und dieser Zustand lediglich durch spontane Emission immer weiter besetzt werden kann.
 Somit wird auch hier das Grundniveau "leer gepumpt".
 
 \subsection{Quadratischer Zeeman-Effekt}
 Bei stärkeren Magnetfeldern, müssen bei der Berechnung von $E_{\text{HF}}$ Terme höherer Ordnung berücksichtigt werden.
-Die Eigenwertgleichung
+Durch das Lösen der Eigenwertgleichung
 \begin{align*}
     H \Psi = E \Psi
 \end{align*}
-wird unter Berücksichtigung der magnetischen Momente $\vec{\mu}_{\text{J}}$ und $\vec{\mu}_{\text{I}}$ und unter Abhängigkeit der Orientierungsquantenzahl $\text{M}_{\text{F}}$ lässt sich dann die Energie wie folgt beschreiben:
+unter Berücksichtigung der magnetischen Momente $\vec{\mu}_{\text{J}}$ und $\vec{\mu}_{\text{I}}$, wird die
+Energie abhängig von
+der  Orientierungsquantenzahl $\text{M}_{\text{F}}$. Die Energie für den Übergang von $\text{M}_{\text{F}}$
+nach $\text{M}_{\text{F-
+1}}$ lässt sich wie folgt beschreiben:
 \begin{align}
   \label{eq_qZeeman}
-    E_{\text{HF}} &= \text{g}_{\text{F}} \mu_{\text{B}} B+ \text{g}_{\text{F}}^2 \mu_{\text{B}}^2 B^2 \frac{1- \text{M}_{\text{F}}}{\Delta E_{\text{Hy}}}- \cdots  \; .
+    E_{\text{HF}} &= \text{g}_{\text{F}} \mu_{\text{B}} B+ \text{g}_{\text{F}}^2 \mu_{\text{B}}^2 B^2
+    \frac{1- \text{M}_{\text{F}}}{\Delta E_{\text{Hy}}}- \cdots  \; .
 \end{align}
-Hierbei ist $E_{\text{Hy}}$ ist die Energiedifferenz der Niveaus F und F$+1$ ist.
-
+Hierbei ist $E_{\text{Hy}}$ ist die Energiedifferenz der Niveaus F und F$+1$.
+\newpage
 \section{Durchführung}
 \FloatBarrier
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{Aufbau.PNG}
-    \caption{schmeatischer Versuchsaufbau}
+    \caption{Schematischer Versuchsaufbau}
     \label{abb:Aufbau}
 \end{figure}
 \FloatBarrier
 Der schematische Versuchsaufbau ist in Abbildung \ref{abb:Aufbau} zu sehen.
-Zunächst durchläuft das Licht eine Kollimationslinse, die das Licht bündelt. Darauf folgt
-ein sogenannter $\text{D}_1$-Filter, der das Licht der Spektrallampe so filtert, dass
-lediglich Licht mit einer Wellenlänge von $\lambda = \SI{794,8}{\nano\meter}$ hindurchtritt, was dem Rubidiumspektrum entspricht.
-Der Linearpolarisator, der dahinter aufgestellt ist, macht aus dem gebündelten
-Lichtstrahl dann zunächst linear polarisiertes Licht, welches dann durch den $\lambda\:/\:4$-Filter zu rechts polarisiertem Licht wird.
+Zunächst durchläuft das Licht der Rubidiumdampflampe eine Kollimationslinse, die das Licht bündelt. Darauf
+folgt
+ein sogenannter $\text{D}_1$-Filter, der den Lichtstrahl so filtert, dass
+lediglich die $\text{D}_1$-Linie aus dem Rubidiumspektrum mit einer Wellenlänge von
+$\SI{794,8}{\nano\meter}$ hindurchgelassen wird.
+Der Linearpolarisator, der dahinter aufgestellt ist, macht aus dem unpolarisierten
+Lichtstrahl zunächst linear polarisiertes Licht, welches durch den $\lambda\:/\:4$-Filter zu rechts polarisiertem Licht
+wird.
 Der gebündelte Lichtstrahl durchläuft darauf hin eine Dampfzelle, in der sich $^{85}$Rb
-und $^{87}$Rb Isotope als gemisch befinden. Zwischen Dampfzelle und Photodiode befindet
-sich abermals eine Sammellinse, um den Lichtstrahl auf den Eingang der Photodiode zu fokussieren. Die Photodiode ihrerseits ist mit einem Oszollospkop verbunden, welches in
+und $^{87}$Rb Isotope als Gemisch befinden. Zwischen Dampfzelle und Photodiode befindet
+sich abermals eine Sammellinse, um den Lichtstrahl auf den Eingang der Photodiode zu fokussieren. Die Photodiode ist mit
+einem Oszillospkop verbunden, welches in
 Abhängigkeit von der gemessenen Intesität einen Ausschlag in y-Richtung anzeigen wird.
 
-\noindent Um die Zelle herum befinden sich zwei Helmholtzspulenpaare. Eine, um das vertikale Erdmagnetfeld auszugleichen. Um die Spule, die ein horizontales Magnetfeld
-erzeugt, ist eine weitere Spule, die Sweep-Spule gewickelt. Diese beiden Spulen werden
+\noindent Um die Zelle herum befinden sich zwei Helmholtzspulenpaare. Eine, um das vertikale Erdmagnetfeld auszugleichen. Um die
+Spule, die ein horizontales Magnetfeld
+erzeugt, ist eine weitere Spule, die Sweep-Spule, gewickelt. Diese beiden Spulen werden
 benötigt, um die Zeeman-Aufspaltung der Energieniveaus hervorzurufen.
-Direkt um die Dampfzelle herum befindet sich eine weitere Spule, die durch einen 4
+Direkt um die Dampfzelle herum befindet sich eine weitere Spule, die durch einen
 Hochfrequenzgenerator mit einer Sinusspannung betrieben wird und somit das RF-Feld
 erzeugt. Somit muss nicht die
 Energie der einfallenden Photoquanten verändert werden, um Übergänge in den beiden
-Rubidiumspektren hervorzurufen, sondern die Übergänge finden in Abhängigkeit zu dem sich ä
-ndernden Magnetfeld periodisch statt.
+Rubidiumspektren hervorzurufen, sondern die Übergänge finden in Abhängigkeit zu dem sich
+ändernden Magnetfeld periodisch statt.
 Vor Beginn der Messungen werden zunächst alle optischen Elemente außer der beiden
 Kollimationslinsen herausgenommen, um diese so einzustellen, dass eine maximale
 Strahlenintensität am Photodetektor ankommt. Ist der Abstand der beiden Linsen
@@ -198,8 +220,9 @@ Reihenfolge eingesetzt.
 
 
 \subsection{Kompensation des Erdmagnetfeldes}
-Da das Erdmagnetfeld einen erheblichen Einfluss auf den Versuchsaufbau hat, muss dieses
-ausgegelichen werden. Die horizontale Komponente lässt sich leicht kompensieren, indem
+Da sich die Feldstärken der Spulenfelder in der selben Größenordnung
+wie das Erdmagnetfeld bewegen, muss dieses zunächst ausgegelichen werden.
+Die horizontale Komponente lässt sich leicht kompensieren, indem
 der Versuchsaufbau entlang der Nord-Süd-Achse ausgerichtet wird.
 Zur Kompensation der vertikalen Komponente des Erdmagnetfeldes wird das Signal der
 Photodiode auf Kanal 2 des Oszilloskops gegeben. Der Recorder-Ausgang der Sweep-Spule
