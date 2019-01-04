@@ -292,7 +292,7 @@ Komponenten sind in dem Aufbau enthalten:
   den Kondensator auflädt und somit die Messung verfälscht.
   Die Messungen des Vielkanalanalysators werden auf dem angeschlossenen
   Computer gespeichert.
-  \item \textbf{Temperaturregler}: Während der Messung wird die Apperatur
+  \item Temperaturregler: Während der Messung wird die Apperatur
   durchgehend durch flüssigen Stickstoff gekühlt, um z.B. die Rauschen des
   Leckstroms zu verringern.
 \end{itemize}
@@ -302,8 +302,11 @@ zwischen dem Vorverstärker und dem Hauptverstärker ein RC-Glied geschaltet. Ei
 unerwünschter Nebeneffekt sind Unterschwingungen, welche zur Verschlechterung
 des Auflösungsvermögens führen. Um dies zu vermeiden, wird ein Teil der
 Gleichspannung direkt vom Vorverstärker zum Hauptverstärker geleitet, ohne das
-RC-Glied zu passieren ("Pole-Zero-Kompensation"). 
-("Base-Line-Restorer").
+RC-Glied zu passieren ("Pole-Zero-Kompensation").
+Da am Ausgang des Hauptverstärkers die Nulllinie abhängig von der Impulsrate in
+die negative Richtung verschoben werden kann, wird eine elektronische Schaltung
+eingebaut, die verhindert, dass die Nulllinie am Verstärkerausgang nicht
+unterschritten wird ("Base-Line-Restorer").
 
 \begin{figure}
   \centering
@@ -322,7 +325,7 @@ um die Hintergrundstrahlung abzuschirmen. Außerdem ist die Bleischicht im Inner
 noch zusätzlich mit einer Kupferschicht umgeben, um gegebenenfalls strahlende
 Blei-Isotope aus der Bleischicht abzuschirmen.
 Nacheinander werden die jeweiligen Proben mit Hilfe eines Abstandhalters
-vor dem Detektor befestigt. Die Messung wird für jede Probe je eine Stunde lang
+vor dem Detektor befestigt. Die Messung wird für jede Probe ca. eine Stunde lang
 durchgeführt.
 
 \section{Auswertung}
