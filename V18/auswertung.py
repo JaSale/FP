@@ -248,6 +248,25 @@ plt.legend(loc='best')
 plt.savefig('Cs_fit.pdf')
 plt.clf()
 
+x=np.linspace(1,8192,8192)
+plt.plot(lin(x, *paramsI), Cs, 'r--', label = 'Messwerte des Detektors')
+plt.plot(lin(index_2,*paramsI), Cs[index_2], 'g+', label = 'Detektierte Peaks')
+#plt.axhline(y=0.5*Cs[index_2[-1]], color='y', linestyle='dashed')
+#print('Halbwertshöhe =====>', 0.5*Cs[index_2[-1]])
+#print('Zehntelwertshöhe =====>', 0.1*Cs[index_2[-1]])
+#plt.axhline(y=0.1*Cs[index_2[-1]], color='y', linestyle='dashed')
+plt.xlim(600,700)
+plt.xlabel(r'E / keV')
+plt.yscale('log')
+plt.ylabel(r'counts $N$')
+plt.legend(loc='best')
+plt.savefig('Cs_fit_photopeak.pdf')
+plt.clf()
+
+
+
+
+
 a= index_2[-1].astype('int')-55
 b= index_2[-1].astype('int')+55
 

@@ -452,3 +452,41 @@ plt.ylabel(r'counts $N$')
 plt.legend(loc='best')
 plt.savefig('unbekannterStrahler.pdf')
 plt.clf()
+
+###########################GAUSSFIT########################################
+print('------------------------------------------------------------------')
+
+y_photo = np.genfromtxt('137Cs.txt' , unpack=True)
+a = np.arange(1,len(y_photo)+1)
+a_lin = lin(a, *paramsI)
+
+
+def gauss_photo (a_lin, sigma, h, a, mu):
+    return a+h*np.exp(-(a_lin-mu)**2/(2*sigma**2))
+
+ParamsI_photo, CovarianceI_photo = curve_fit(gauss_photo, a_lin[1640:1656], y_photo[1640:1656], p0=[1,1,1,660])
+i = np.linspace(658, 665, 1000)
+
+def funktion_flanken(x, m, b):
+    return m*x+b
+
+ParamsI_photo2, CovarianceI_photo2 = curve_fit(funktion_flanken, a_lin[1644:1648], y_photo[1644:1648])
+i2= np.linspace(659.7, 661.7, 1000)
+ParamsI_photo3, CovarianceI_photo3 = curve_fit(funktion_flanken, a_lin[1649:1652], y_photo[1649:1652])
+i3= np.linspace(662, 663.5, 1000)
+
+plt.plot(i, gauss_photo(i, *ParamsI_photo), 'g-', label='Gauß-Fit')
+plt.plot(i2, funktion_flanken(i2, *ParamsI_photo2), 'b--')
+plt.plot(i3, funktion_flanken(i3, *ParamsI_photo3), 'b--', label='lineare Regression')
+plt.plot(a_lin[1640:1656], y_photo[1640:1656],'r+', label='Messwerte')
+plt.xlabel(r'E / keV')
+plt.ylabel(r'counts $N$')
+plt.legend(loc='best')
+plt.savefig('Cs_photo.pdf')
+
+
+
+
+
+
+#print(e_photo)
