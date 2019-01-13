@@ -1,0 +1,226 @@
+\section{Auswertung}
+\subsection{Vermessung der Moden}
+Zur Untersuchung dreier Moden werden jeweils die Reflektorspannungen an den rechten ($U_2$)
+und linken Nullstellen ($U_1$), sowie im Maximum ($U_0$) ermittelt.
+Die Ergebnisse sind gemeinsam mit den Amplituden der drei Moden in Tabelle
+\ref{tab:Moden} zu sehen. In Abbildung \ref{fig:Moden} sind die Messwerte graphisch
+zusammen mit den angedeuteten Modenkurven abgebildet.
+\FloatBarrier
+\begin{table}
+    \centering
+    \begin{tabular}{c c c c c c}
+        \toprule
+        Mode & Reflektorspannung & Reflektorspannung & Reflektorspannung & Amplitude & Frequenz \\
+        {}     & {$U_0$ \,/\,$\si{V}$} & {$U_1$ \,/\,$\si{V}$} & {$U_2$ \,/\,$\si{V}$ }& {$A$ \,/\,$\si{V}$ }& {$f_0$\, / \, $\si{MHz}$} \\
+        \midrule
+        Mode 1  &  215  &  200  &  230  &  0,124  &  9000     \\
+        Mode 2  &  135  &  120  &  150  &  0,134  &  9005     \\
+        Mode 3  &   80  &   70  &   90  &  0,108  &  9010     \\
+        \bottomrule
+    \end{tabular}}
+    \caption{Messwerte für die Reflektorspannungen, bei denen jeweils die rechte und linke Nullstelle, sowie das Maximum
+    auf dem Referenzpunkt im Oszillographen lagen und die zugehörigen Amplituden und Frequenzen.}
+    \label{tab:Moden}
+\end{table}
+\FloatBarrier
+
+\noindent Die Messwerte können durch eine Funktion folgender Form gefittet werden, um die
+Modenkurven graphisch darzustellen:
+\begin{align*}
+    A(U) = x \cdot U^2 + y \cdot U + z \; .
+\end{align*}
+
+\noindent Die Fitparameter, die sich für die drei Moden ergeben, sind in Tabelle
+\ref{tab:Modenfit} zu sehen. Da die Fitfunktion eine Parabel darstellt und ledigleich
+drei Messwerte genommen werden, können keine Fehler angegeben werden, da sich eine
+Parabel stets fehlerfrei durch drei Punkte legen lässt.
+\FloatBarrier
+\begin{table}
+    \centering
+    \begin{tabular}{c c c c}
+        \toprule
+            {}    &  {Paramter x}  &  {Parameter y } &  {Paramter  z }\\
+        \midrule
+        Mode 1 &  -0,00055  &  0,23698  &  -25,35111          \\
+        Mode 2 &  -0,00060  &  0.16080  &  -10,72000          \\
+        Mode 3 &  -0.00108  &  0.17280  &  -6.804000          \\
+        \bottomrule
+    \end{tabular}
+    \caption{Fitparamter zur Erstellung des Plots \ref{fig:Moden}.}
+    \label{tab:Modenfit}
+\end{table}
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics[width = 12 cm]{moden.pdf}
+  \caption{Graphen der drei Moden.}
+  \label{fig:Moden}
+\end{figure}
+Die Reflektorspannungen und Frequenzen, bei denen sich im Oszilloskop ein Einsattelung
+im Maximun, sowie auf der linken oder rechten Flanke der Mode ergaben, sind in Tabelle
+\ref{tab:elektronische_Abstimmung} zu sehen.
+\FloatBarrier
+\begin{table}
+    \centering
+    \begin{tabular}{c c c c}
+        \toprule
+        {}    & {Einsattelung auf dem Maximun & Einsattelung re. } & {Einsattelung li.} \\
+        \midrule
+        Reflektorspannung / $\si{\V}$ & 215 & 205 & 225                           \\
+        Frequenz / $\si{\MHz}$ & 9000 & 8983 & 9021                               \\
+        \bottomrule
+    \end{tabular}
+    \caption{Messwerte zur elektronischen Abstimmung des Klystrons.}
+    \label{tab:elektronische_Abstimmung}
+\end{table}
+\FloatBarrier
+Die Bandbreite $\Delta f_{E}$ wird mit folgender Formel berechnet:
+\begin{align*}
+    \Delta f_E = f^{\prime\prime} - f^{\prime}
+\end{align*}
+\FloatBarrier
+und beträgt $\SI{38}{MHz}$.
+Daraus lässt sich nun die Abstimmempfindlichkeit $E$ mittels folgender Formel berechnen:
+\begin{align*}
+    E &= \frac{\Delta f_{E}}{V^{\prime \prime}-V^{\prime}}
+      &= \SI{1,9}{\MHz \per \V} \;.
+\end{align*}
+
+\subsection{Messung von Frequenz, Wellenlänge und Dämpfung}
+Zur Bestimmung der Wellenlänge im Hohlleiter wurde die Lage zweier aufeinander
+folgende Minima, sowie die eingestellte Frequenz aufgenommen. Die Werte finden
+sich in Tabelle \ref{tab:Frequenz}. Der doppelte Abstand der Minima entspricht dabei
+der Hohlleiterwellenlänge ($\lambda_{g}$) und ergibt sich mit den aufegnommenen Messwerten zu:
+\begin{align*}
+    \lambda_{g} = \SI{58}{\mm}
+\end{align*}
+\begin{table}
+    \centering
+    \begin{tabular}{c c c}
+        \toprule
+        {Frequenz / $\si{\MHz}$ } & {1. Minimum / $\si{\mm}$ } & { 2. Minimum / $\si{\mm}$} \\
+        \midrule
+        9010   &  84  &  55  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Messwerte zweier aufeinander folgender Minima und zugehöriger Frequenz.}
+    \label{tab:Frequenz}
+\end{table}
+Mit Hilfe der Gleichung \ref{eq:Frequenz} und der Angabe für die Länge der Längsseite
+des Hohlleiters ($a= \SI{22,860{46}}{\mm}$) aus der Versuchsanleitung \cite{Q1} lässt
+sich die Frequenz im Hohlleiter berechnen:
+\begin{align*}
+    f = \SI{8355(10)}{\MHz} \; .
+\end{align*}
+\\
+Die aufegnommenen Werte für die Dämpfung, die zugehörige Mikrometereinstellung,
+sowie die aus der Eichkurve abgelesene Dämpfung sind in Tabelle \ref{tab:Daempfung}
+zu sehen.
+\FloatBarrier
+\begin{table}
+    \centering
+    \begin{tabular}{c c c }
+        \toprule
+        {SWR-Meter Ausschlag / $\si{\dB}$ } & { Mikrometereinstellung / $\si{\mm}}$} & {Dämpfung aus Eichkurve / $\si{\dB}$ } \\
+        \midrule
+         0       &       3,38        &       22      \\
+         2       &       3,60        &       24      \\
+         4       &       3,81        &       26      \\
+         6       &       3,98        &       29      \\
+         8       &       4,07        &       30      \\
+        10       &       4,26        &       33      \\
+        \bottomrule
+    \end{tabular}
+    \caption{Gemessene Werte für die Dämpfung, Mikrometereinstellung, sowie abgelesene, zugehörige Werte aus der Eichkurve.}
+    \label{tab:Daempfung}
+\end{table}
+
+\noinden Die graphische Darstellung der gemessenen Dämpfungswerte, sowie die Eichkurve ist in
+Abbildung \ref{fig:Daempfung} zu sehen.
+\FloatBarrier
+\begin{figure}
+    \includegraphics{Daempfung.pdf}
+    \caption{Eichkurve und gemessene Werte für die Dämpfung.}
+    \label{fig:Daempfung}
+\end{figure}
+\FloatBarrier
+
+\subsection{Bestimmung des Stehwellenverhältnisses}
+In Tabelle \ref{tab:SWR_Methode} sind die am SWR-Meter gemessenen Ausschläge für
+das Stehwellenverhältnis in Abhängigkeit der Sondentiefe am Gleitschraubentransformator
+zu sehen.
+\FloatBarrier
+\begin{table}
+    \centering
+    \begin{tabular}{c c}
+        \toprule
+        {SWR-Meter Ausschlag / $\si{\dB}$} & Sondentiefe / $\si{\mm}$ \\
+        \midrule
+        1,02    &   3       \\
+        1,06    &   5       \\
+        1,55    &   7       \\
+        4,0     &   1,55    \\
+        \bottomrule
+    \end{tabular}
+    \caption{Messwerte für die SWR-Methode.}
+    \label{tab:SWR_Methode}
+\end{table}
+\FloatBarrier
+Tabelle \ref{tab:3dB_Methode} zeigt die Messwerte, die zur Bestimmung des Stehwellenverhältnisses
+mittels der 3dB Methode aufgenommen wurden. Aus der Lage der beiden Minima lässt sich zunächst
+die Wellenlänge $\lambda_{g}$ berechnen. Mit Hilfe von Formel \ref{eq:3dB} lässt sich dann
+das Stehwellenverhältnis berechnen.
+\FloatBarrier
+\begin{table}
+    \centering
+    \begin{tabular}{c c c c c c}
+        \toprule
+        {$d_1$\,/\,mm} & {$d_2$\,/\,mm} & {1. Minimum\,/\,mm} & {2. Minimum\,/\,mm} & {$\lambda_g$ / } & {genähertes Stehwellenverhältnis $S$}\\
+        \midrule
+        95,5    &   71,0    &   96,2    &   71,7    &   49    &     0,64
+        \bottomrule
+    \end{tabular}
+    \caption{Messwerte zur Bestimmung des Stehwellenverältnisses mittels 3dB Methode.}
+    \label{tab:3dB_Methode}
+\end{table}
+\FloatBarrier
+Bei der letzten Methode zur Bestimmund des Stehwellenverhältnisses wurden die Dämpfungseinstellungen
+$A_{1}= \SI{20}{\dB}$ und $A_{2}=\SI{43}{\dB}$ gemessen.
+Aus den beiden Parametern ergibt sich nach Gleichung \ref{eq:Abschwaechermethode}
+für das Stehwellenverhältnis ein Wert von:
+\begin{align*}
+    S_{\text{Abschw.}} = \SI{11,5}{} \; .
+\end{align*}
+
+\section{Diskussion}
+Die im ersten Versuchsteil aufgenommenen Werte für die Reflektorspannung und die Amplituden
+zeigen den zu erwartenden Verlauf. Hier sei darauf hingewiesen, dass die Parabeln
+lediglich durch drei Messpunkte gefittet wurden, weshalb keine Fehler für die Fitparameter auftauchen.
+Entsprechend der Theorie können Moden mit höheren Frequenzen bei niedrigeren Reflektorspannung festgestellt werden.
+Die zunächst mit steigender Reflektorspannung größer werdende Amplitude entspricht der Theorie,
+nicht so jedoch die dritte Amplitude, die bei höherer Reflektorspannung wieder kleiner wird.
+
+\nodindent Bei der Frequenzbestimmung mittels der Wellenlänge im Hohlleiter ($\lambda_{g}$), fällt
+eine Abweichung von $\SI{7,27}{\percent}$ auf. Diese kann durch das, am Oszilloskop schwierige
+Auffinden der beiden Minima erklärt werden. Dennoch kann der experimentell ermittelte Wert als verhältnismäßig genau
+eingestuft werden.
+
+\noindent Bei der Betrachtung der mit dem SWR-Meter gemessenen Werte für die Dämpfung
+zeigt sich in beiden Kurven ein sehr ähnlicher Verlauf, der sich lediglich in der Größe
+der Funktionswerte unterscheidet. Somit kann auch hier davon ausgegangen werden, dass die
+Messwerte plausibel sind.
+
+\noindent
+Zum Vergleich der drei Methoden zur Bestimmung des Stehwellenverhältnisses, werden die
+drei Ergebnisse bei einer Sondentiefe von $\SI{9}{\mm}$ betrachtet:
+\begin{align*}
+    S_{\text{SWR-Meter}} &= 4,00
+    S_{\text{3dB}} &= 0,64
+    S_{\text{Abschw.}} &=11,5
+\end{align*}
+Es fällt auf, dass sich der Wert für die 3dB-Methode extrem stark von den anderen beiden
+Werten unterscheidet, weshalb hier davon ausgegangen werden muss, dass ein Fehler bei der Bestimmung der
+Minima entstanden sein muss.
+Eine Begründung für den großen Wert, der bei der Abschwächermethode entstand, könnte sein,
+dass kein Präzisionsabschwächer verwendet wurde. So kam es bei der Lokalisation der 3dB-Punkte zu
+abrupten Vollausschlägen am SWR-Meter.
