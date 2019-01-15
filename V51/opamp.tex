@@ -26,7 +26,10 @@ The output voltage can only swing within the following range:
     -U_{\text{B}} < U_{\text{A}} < U_{\text{B}} \ .
 \end{align*}
 Outside of this interval the output voltage $U_{\text{A}}$ equals the operational
-voltage $\pm U_{\text{B}}$ an the operational amplifier is in a saturation condition. The saturation curve can be seen in the figure \ref{abb2}.
+voltage $\pm U_{\text{B}}$ and the operational amplifier is in a saturation
+condition. Within the intervall the amplification can be described as
+linear.
+The saturation curve can be seen in the figure \ref{abb2}. It has to be said that this is a graphic demonstration in which the gradient of the straight line is pictured excessively low.
 
 \FloatBarrier
 \begin{figure}
@@ -42,9 +45,9 @@ a few more parameters such as the two input resistances $r_{\text{e}_{{}_\text{p
 and $r_{\text{e}_{{}_\text{N}}}$ and the output resistance $r_{\text{a}}$.
 Usually the open loop gain $V$ is very high and dependent on the frequency of the
 input voltage, in the case of an ideal operational amplifier it is considered to
-be infinite. The same applies to the two input restistances. They are usually very
+be infinite. The same applies to the two input resistances. They are usually very
 high and are considered to be infinite when talking about the ideal operational
-amplifier. The output restistance is to be kept as small as possible which is why
+amplifier. The output resistance is to be kept as small as possible which is why
 it is considered to be zero for the ideal case.
 \begin{align*}
     V_{\text{id}}=\infty,~ r_{\text{e}_{\text{id}}}=\infty,~ r_{\text{a}_{\text{id}}}=0
@@ -97,18 +100,17 @@ All the above currents and voltage dissapear in the case of the ideal operationa
 amplifier and the impedances $r_{\text{D}}$ and $r_{\text{Gl}}$ are considered to
 be infinite.
 
-\subsection{Linear amplifier}
+\subsection{Linear inverting amplifier}
 Due to the already mentioned very high open loop gain $V$ it is impossible to use
 an operational amplifier as a linear amplifier without making any modifications to
 the circuit. The modified circuit is displayed in figure \ref{abb3}. The difference
-to figure \ref{abb1} is the degenerative feedback which puts a part of the output
-voltage back to the inverting input. This leads to a decrease of the input voltage if
-the output voltage gets bigger.
+to figure \ref{abb1} is the feedback network which puts a part of the output
+voltage back to the inverting input. This leads to a decrease of the input voltage $U_{\text{N}}$, being $U_{\text{A}}$ opposite in sign with respect to $U_{1}$.
 \FloatBarrier
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{degenerative.PNG}
-  \caption{Circuit of the degenerative inverting amplifier. \cite{Q1}}
+  \caption{Circuit of the linear inverting amplifier. \cite{Q1}}
   \label{abb3}
 \end{figure}
 \FloatBarrier
@@ -119,14 +121,14 @@ voltage that goes into the inverting input is approxiamtely zero:
 \end{align*}
 as well as the input current $I_{\text{N}}$ because the input impedance is extremely
 high.
-In the circuit shown in figure \ref{abb3} the amplification factor $V$ for an ideal
-oerational amplifier can be calculated according to the Kirchhoff Current Law
+In the circuit shown in figure \ref{abb3} the amplification factor $V^{\prime}$ for an ideal
+oerational amplifier with this feedback network, can be calculated according to the Kirchhoff Current Law
 applied to point A in the figure:
 \begin{align}
     V'=-\frac{\text{R}_{\text{N}}}{\text{R}_1}.
     \label{eq:ampfactor}
 \end{align}
-In order to calculate the amplification factor $V'$ for an ideal operational amplifier
+In order to calculate the amplification factor $V'$ for a real operational amplifier
 the following equation is used:
 \begin{align}
     \frac{1}{V'} \approx \frac{1}{V} + \frac{\text{R}_1}{\text{R}_{\text{N}}}
@@ -136,8 +138,8 @@ Taking a look at the equation \ref{eq:ampfactor_real} it can be seen that $V'$ h
 the same value in \ref{eq:ampfactor} as in \ref{eq:ampfactor_real} in the case of
 $R_{\text{N}}/R_1 \ll V$.
 The fact that the amplification $V'$ is modified by the outer resistance and the
-relation between $R_{\text{N}}$ and $\text{R}_1$ makes the amplifier independent from
-influences coming from the outside for example temperature which could influence $V$.
+relation between $R_{\text{N}}$ and $\text{R}_1$ makes the amplifier less sensitive to
+external factors such as temperature which could influence $V$.
 Therefore by including the negative feedback into the circuit the linear amplifier becomes
 much more stable.
 At the same time the output resistance $r_{\text{a}}$ is decreased by the factor
@@ -152,7 +154,7 @@ factor $V'$ are also reduced by the factor $g$:
 \end{align*}
 Finally the bandwidth of the operational amplifier is broadened by the factor of
 $g$ which means that higher frequencies are transmitted wihtout distortion as shown
-in figure \ref{abb4}. The highest freuquency that is transmitted without distortion
+in figure \ref{abb4}. The highest frequency that is transmitted without distortion
 is called cut off frequency. The amplification factor $V'$ has decreased to a value of
 1 and the amplifier does not show a linear behaviour anymore.
 \FloatBarrier
@@ -165,15 +167,16 @@ is called cut off frequency. The amplification factor $V'$ has decreased to a va
 \FloatBarrier
 
 \subsection{Reverse Integrator}
-If the resistance in the circuit shown in \ref{abb3} is replaced by a capacitor \textbf{C}
+If the feedback resistance in the circuit shown in \ref{abb3} is replaced by a capacitor \textbf{C}
 as shown in \ref{abb5} the operational amplifier can be used as a reverse integrator
 of the input signal so the output signal can be calculated by:
-\begin{align*}
+\begin{align}
     U_{\text{A}} = -\frac{1}{\text{RC}} \int U_1(t) dt
-\end{align*}
-The '-' in the above formula is the reason for the integrator being called a reverse
+    \label{eq:U_A}
+\end{align}
+The '-' in the formula \ref{eq:U_A} is the reason for the integrator being called a reverse
 integrator and $U_{\text{N}} \approx 0$.
-It can be seen that the amplitude of the output voltage depends on the inverse frequency
+In case of a sinusodial input ($U_{1}=U_0 sin(\omega t)$) of frequency \omega the output voltage depends on the inverse frequency
 of the input voltage.
 \FloatBarrier
 \begin{figure}
@@ -185,27 +188,28 @@ of the input voltage.
 \FloatBarrier
 
 \section{Experimental set-up}
-The circuits that are previously described can be easily built up on an electrical
-pin board. At the sight of the experiment is a short explanation of the various inputs
-of the operational amplifier, various resistances, capacitors as well as a voltage generator which is able to
-generate sine-, cosine-, triangle- or rightangle- voltages that can be fed into the
-input of the operational amplifier.
+The circuits that are previously described can be easily built up on a bread
+board. The operational amplifier being used in the experient is a LMRS1, a
+collection of resistors and capacitors were used for the realization of the
+circuits.\\
+input voltage wavefronts were generated by means of a signal generator, input
+and output time dependent signals were measured with an agilent oscilloscope.
+Constant voltages, as well as resistor and capacitor values were measured
+with a digital multimeter.
 
 \section{Lead-through}
 
 In the first part of the experiment the circuit from figure \ref{abb3} is used to
 figure out the characteristic roll off and although the cut-off frequency of the
-operational amplifier that is used. Therefore a constant fed of the operational
-amplifier of $\SI{12}{\volt}$has to be guaranteed for each part of the experiment.
-As soon as the circuit from figure \ref{abb3} is set up the frequency of the input
+operational amplifier . A constant supply voltage of the operational
+amplifier of $\pm \SI{12}{\volt}$ has to be guaranteed for each part of the experiment.
+As soon as the circuit from figure \ref{abb3} is set up the frequency of an input
 sine-voltage is increased from $\SI{10}{\hertz}$ up to $\SI{1}{\mega \hertz}$ for
-two different set ups of resistances.
+two different ratios of the feedback network resistances.
 The second part of the experiment includes the circuit of the reverse integrator as
-shown in figure \ref{abb5}. In the first subsection the picture shown in the oscilloscope
-is analyzed in regard to the fact that an integration if the input voltage is expected.
-Afterwards the frequency of the input voltage is increased from $\SI{570}{\hertz}$
-to $\SI{16}{\kilo \hertz}$ in order to show that with an increase of the input frequency
-the output voltage tends to a certain value.
+shown in figure \ref{abb5}. In the first subsection the qualitative behaviour of the integrator is shown by a simple comparison of the input and output waveforms.
+Afterwards the frequency of a sinusodial input voltage is increased from $\SI{570}{\hertz}$
+to $\SI{16}{\kilo \hertz}$ in order to verify the relationship of equation \ref{eq:U_A}.
 
 \section{Analysis}
 
