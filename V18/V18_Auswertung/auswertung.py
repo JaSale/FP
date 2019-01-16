@@ -212,7 +212,7 @@ plt.savefig('effizienz.pdf')
 plt.clf()
 
 
-#Teil b)
+###############Teil b)##############################################
 
 Cs = np.genfromtxt('137Cs.txt', unpack=True)
 peaks_2= find_peaks(Cs, height=70, distance=20)
@@ -231,7 +231,7 @@ ascii.write(
 'monochromat.tex', format='latex', overwrite='True')
 print('Energie des Photopeaks====', e_photo)
 
-#Vergleich der expermintell ermittelten Werte für die Comptonkante und Rueckstreupeak mit Theoriewerten
+#######################Vergleich der expermintell ermittelten Werte für die Comptonkante und Rueckstreupeak mit Theoriewerten
 m_e=511
 
 e_comp_th= 2*e_photo**2/(m_e*(1+2*e_photo/m_e))
@@ -241,6 +241,9 @@ e_rueck_th= e_photo/(1+2*e_photo/m_e)
 print('Theoretischer Wert für den Rückstreupeak =====>', e_rueck_th)
 print('Vergleich mit Theorie =====>', 1-e_rueck/e_rueck_th)
 
+
+
+##########################halbwertsbreite#######################################
 links= 1641
 rechts= 1653
 print(Cs[links], Cs[rechts])
@@ -251,42 +254,25 @@ params_l, covariance_l= curve_fit(lin, Cs[links:index_2[-1]+1],lp)
 errors_l = np.sqrt(np.diag(covariance_l))
 m_l=ufloat(params_l[0], errors_l[0])
 n_l=ufloat(params_l[1], errors_l[1])
-print('Fitparameter für links Streuung=====>', 'm_l=', m_l, 'n_l=', n_l)
+#print('Fitparameter für links Streuung(energie)=====>', 'm_l=', lin(m_l, *paramsI), 'n_l=',lin(n_l, *paramsI) )
+print('Fitparameter für links Streuung=====>', 'm_l=', lin(m_l,*paramsI), 'n_l=', lin(n_l, *paramsI) )
 
 params_r, covariance_r= curve_fit(lin, Cs[index_2[-1]:rechts+1],rp)
 errors_r = np.sqrt(np.diag(covariance_r))
-m_r=ufloat(params_r[0], errors_r[0])
-n_r=ufloat(params_r[1], errors_r[1])
-print('Fitparameter für rechts Streuung=====>', 'm_r=', m_r, 'n_r=', n_r)
+m_r= ufloat(params_r[0], errors_r[0])
+n_r= ufloat(params_r[1], errors_r[1])
+#print('Fitparameter für rechts Streuung (Energie)=====>', 'm_r=', lin(m_r, *paramsI), 'n_r=', lin(n_r,*paramsI) )
+print('Fitparameter für rechts Streuung=====>', 'm_r=', lin(m_r, *paramsI), 'n_r=', lin(n_r, *paramsI) )
 
-half= m_r*0.5*Cs[index_2[-1]]+n_r - (m_l*0.5*Cs[index_2[-1]]+n_l)
-ten= m_r*0.1*Cs[index_2[-1]]+n_r - (m_l*0.1*Cs[index_2[-1]]+n_l)
+half= m_r*0.5*Cs[index_2[-1]] +n_r  - (m_l*0.5*Cs[index_2[-1]] +n_l)
+ten = m_r*0.1*Cs[index_2[-1]] +n_r  - (m_l*0.1*Cs[index_2[-1]] +n_l)
 
 print('Halbwertsbreite =====>', lin(half, *paramsI))
 print('Zehntelwertsbreite =====>', lin(ten, *paramsI))
 print('Zehntel nach half =====>', lin((1.823*half),*paramsI))
 print('Verhältnis zehntel zu halbwertsbreite =====>', 1 - lin(ten,*paramsI)/lin((1.823*half),*paramsI))
 
-#Gausfit über Photopeak mit angefitteten Geraden plotten:
-
-x=np.linspace(1,8192,8192)
-plt.plot(lin(x, *paramsI), Cs, 'r--', label = 'Messwerte des Detektors')
-#plt.plot(lin(index_2,*paramsI), Cs[index_2], 'g+', label = 'Detektierte Peaks')
-#plt.axhline(y=0.5*Cs[index_2[-1]], color='y', linestyle='dashed')
-#print('Halbwertshöhe =====>', 0.5*Cs[index_2[-1]])
-#print('Zehntelwertshöhe =====>', 0.1*Cs[index_2[-1]])
-#plt.axhline(y=0.1*Cs[index_2[-1]], color='y', linestyle='dashed')
-
-gauss_photo = index_2[-1]
-plt.xlim(0,2000)
-plt.xlabel(r'E / keV')
-plt.yscale('log')
-plt.ylabel(r'counts $N$')
-plt.legend(loc='best')
-plt.savefig('Cs_fit.pdf')
-plt.clf()
-
-
+#######################################################################################
 
 x=np.linspace(1,8192,8192)
 plt.plot(lin(x, *paramsI), Cs, 'r--', label = 'Messwerte des Detektors')
@@ -472,9 +458,10 @@ def funktion_flanken(x, m, b):
 
 ParamsI_photo2, CovarianceI_photo2 = curve_fit(funktion_flanken, a_lin[1644:1648], y_photo[1644:1648])
 i2= np.linspace(659.7, 661.7, 1000)
+print('m_l = ', m, 'n_l= ',n )
 ParamsI_photo3, CovarianceI_photo3 = curve_fit(funktion_flanken, a_lin[1649:1652], y_photo[1649:1652])
 i3= np.linspace(662, 663.5, 1000)
-
+print('m_r = ', m, 'n_r = ', n)
 plt.plot(i, gauss_photo(i, *ParamsI_photo), 'g-', label='Gauß-Fit')
 plt.plot(i2, funktion_flanken(i2, *ParamsI_photo2), 'b--')
 plt.plot(i3, funktion_flanken(i3, *ParamsI_photo3), 'b--', label='lineare Regression')
