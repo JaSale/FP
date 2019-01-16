@@ -458,10 +458,18 @@ def funktion_flanken(x, m, b):
 
 ParamsI_photo2, CovarianceI_photo2 = curve_fit(funktion_flanken, a_lin[1644:1648], y_photo[1644:1648])
 i2= np.linspace(659.7, 661.7, 1000)
-print('m_l = ', m, 'n_l= ',n )
+errors_photo2= np.sqrt(np.diag(CovarianceI_photo2))
+m_l=ufloat(ParamsI_photo2[0], errors_photo2[0])
+n_l=ufloat(ParamsI_photo2[1], errors_photo2[1])
+print('m_l = ', m_l, 'n_l= ',n_l )
+
 ParamsI_photo3, CovarianceI_photo3 = curve_fit(funktion_flanken, a_lin[1649:1652], y_photo[1649:1652])
 i3= np.linspace(662, 663.5, 1000)
-print('m_r = ', m, 'n_r = ', n)
+errors_photo3= np.sqrt(np.diag(CovarianceI_photo3))
+m_r=ufloat(ParamsI_photo3[0], errors_photo3[0])
+n_r=ufloat(ParamsI_photo3[1], errors_photo3[1])
+print('m_r = ', m_r, 'n_r = ', n_r)
+
 plt.plot(i, gauss_photo(i, *ParamsI_photo), 'g-', label='Gauß-Fit')
 plt.plot(i2, funktion_flanken(i2, *ParamsI_photo2), 'b--')
 plt.plot(i3, funktion_flanken(i3, *ParamsI_photo3), 'b--', label='lineare Regression')
@@ -470,10 +478,3 @@ plt.xlabel(r'E / keV')
 plt.ylabel(r'counts $N$')
 plt.legend(loc='best')
 plt.savefig('Cs_photo.pdf')
-
-
-
-
-
-
-#print(e_photo)
