@@ -27,7 +27,7 @@ b = ufloat(ParamsI[1], ErrorsI[1])
 print('a:', a)
 print('b:', b)
 
-v= unp.exp((np.log(np.exp(V_0)/np.sqrt(2))-b)/a)
+v= unp.exp((np.log(V_0/np.sqrt(2))-b)/a)
 print('Frequenz:', v)
 
 plt.plot(f_log, V_log, 'b.', label='data')

@@ -215,11 +215,11 @@ to $\SI{16}{\kilo \hertz}$ in order to verify the relationship of equation \ref{
 
 The data of the first two measurements are written in the table \ref{tab:1}. In
 figures \ref{abb:1} and \ref{abb:2} you can see the data on logarithmic scales
-together a linear regression of the foam 
+together a linear regression of the form
 \begin{equation*}
   ln(U) = a \cdot ln(\nu) + b
 \end{equation*}
-with
+best fit results are
 
 \begin{align*}
   a_1 &= \num{-0.783(25)} \\
@@ -234,23 +234,23 @@ and
 The critical frequency $\nu_g$ is defined as the frequency, when the amplification drops
 to $\frac{V_0}{\sqrt{2}}$.
 \begin{align*}
-  \nu_{\symup{g,1}} = \SI{8(4)}{\per\second} \\
-  \nu_{\symup{g,2}} = \SI{1.09(24)}{\per\second}
+  \nu_{\symup{g,1}} = \SI{0.44(22)}{\mega\hertz} \\
+  \nu_{\symup{g,2}} = \SI{0.62(17)}{\mega\hertz}
 \end{align*}
 
 The normal amplification $V_0$ can be calculated with the arithmetic mean of
-the first data.
+the first data. In the ideal case this value is set by ... ?
 
 \begin{align*}
   V_{0, 1} = 7.612 \\
-  V_{0, 1} = 99.302
+  V_{0, 2} = 99.302
 \end{align*}
 
 The product of the normal amplification $V_0$ and the critical frequency should
 be a constant:
 \begin{align*}
-  V_{0, 1} \cdot \nu_{\symup{g,1}} = \SI{1.6(9)e5}{\per\second} \\
-  V_{0, 2} \cdot \nu_{\symup{g,2}} = \SI{0.50(11)e5}{\per\second}
+  V_{0, 1} \cdot \nu_{\symup{g,1}} = \SI{0.9(5)}{\mega\hertz} \\
+  V_{0, 2} \cdot \nu_{\symup{g,2}} = \SI{2.9(8)}{\mega\hertz}
 \end{align*}
 
 
@@ -339,9 +339,9 @@ You can calculate the value of $RC$ by comparing the slope with the formula
   U = \frac{U_0}{\omega R C} \cos{(\omega t)}
 \end{equation}
 \begin{equation*}
-  RC = \SI{7.08(4)e-6}{\farad\ohm}
+  RC = \SI{7.08(4)e-6}{\second}
 \end{equation*}
-Compared with the theoretical value of $RC_{theory}= \SI{6.15e-6}{\farad\ohm}$ there is a
+Compared with the theoretical value of $RC_{theory}= \SI{6.15e-6}{\second}$, we measured before,  there is a
 deviation of $\SI{15}{\percent}$.
 \begin{table}
   \centering
@@ -378,13 +378,13 @@ deviation of $\SI{15}{\percent}$.
 \begin{figure}
   \centering
   \includegraphics[scale=0.4]{scope_2.png}
-  \caption{Integral of square-wave-voltage.}
+  \caption{Integral of square-wave-voltage. Output (yellow line) and input (green line) of the integator circuit. The expectet integral relationship between the two wavesforms is evident.}
   \label{abb:3}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[scale=0.4]{scope_3.png}
-  \caption{Integral of triangle-oscillation.}
+  \caption{Integral of triangle-oscillation. Output (yellow line) and input (green line) of the integator circuit. The expectet integral relationship between the two wavesforms is evident.}
   \label{abb:4}
 \end{figure}
 \begin{figure}
@@ -402,10 +402,10 @@ The product of the constant amplifier-factor and the cut off frequency
 should be a constant value. Here you can see, that it is in the same magnitude,
 but just different:
 \begin{align*}
-  V_{0, 1} \cdot \nu_{\symup{g,1}} = \SI{1.6(9)e5}{\per\second} \\
-  V_{0, 2} \cdot \nu_{\symup{g,2}} = \SI{0.50(11)e5}{\per\second}
+  V_{0, 1} \cdot \nu_{\symup{g,1}} = \SI{0.9(5)}{\mega\hertz} \\
+  V_{0, 2} \cdot \nu_{\symup{g,2}} = \SI{2.9(8)}{\mega\hertz}
 \end{align*}
-We cannot give a statement if this value ist constant, because we did just two
+We cannot give a statement if this value is constant, because we did just two
 measurements, but need more to obtain a significant result.
 
 Out of the data of the amplitude as a function of the frequency you get the
