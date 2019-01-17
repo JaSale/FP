@@ -431,7 +431,7 @@ Q_ba.append(potenz(E_ba_det[5],*params2))
 Q_ba.append(potenz(E_ba_det[6],*params2))
 
 sigma=ufloat(1417,23)
-A_ba= peakinhalt_ba[3:]/(tba*omega_4pi*W_ba[3:]*potenz(E_ba_det[3:], *params2))
+A_ba= peakinhalt_ba[3:]/(tba*omega_4pi*W_ba[3:]*0.01*potenz(E_ba_det[3:], *params2))
 A_det = [0,0,0,0]
 #A_ba_2= sigma/(tba*omega_4pi*7.2*potenz(278.466,*params2))
 #print('Aktivität von 276 =========>',A_ba_2)
