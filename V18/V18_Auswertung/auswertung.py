@@ -144,12 +144,12 @@ def gaussian_fit_peaks(test_ind) :
 
 index_f, peakinhalt, hoehe, unter, sigma = gaussian_fit_peaks(bin.astype('int'))
 
-print('Binindizes ====>', bin)
-print('mu_i =====>',index_f)
-print('Peakinhalt =====>',peakinhalt)
-print('sigma_i =====>',sigma)
-print('Untergrund =====>',unter)
-print('Höhe=====>', hoehe)
+#print('Binindizes ====>', bin)
+#print('mu_i =====>',index_f)
+#print('Peakinhalt =====>',peakinhalt)
+#print('sigma_i =====>',sigma)
+#print('Untergrund =====>',unter)
+#print('Höhe=====>', hoehe)
 
 E_det = []
 for i in range(len(index_f)):
@@ -198,147 +198,156 @@ print('b=', params2[1], '±', errors2[1] )
 
 #print(noms(Q))
 
-a=ufloat(params2[0],errors2[0])
-b=ufloat(params2[1],errors2[1])
+#a=ufloat(params2[0],errors2[0])
+#b=ufloat(params2[1],errors2[1])
+#
+#
+#x= np.linspace(200,1600, 10000)
+#plt.plot(x, potenz(x,*params2), 'r--', label='Energie-Effizienz-Fit')
+#plt.plot(E, noms(Q),'g+', label='Messwerte')
+#plt.legend(loc='best')
+#plt.xlabel(r'E / keV')
+#plt.ylabel(r'Q(E)')
+#plt.savefig('effizienz.pdf')
+#plt.clf()
 
 
-x= np.linspace(200,1600, 10000)
-plt.plot(x, potenz(x,*params2), 'r--', label='Energie-Effizienz-Fit')
-plt.plot(E, noms(Q),'g+', label='Messwerte')
-plt.legend(loc='best')
-plt.xlabel(r'E / keV')
-plt.ylabel(r'Q(E)')
-plt.savefig('effizienz.pdf')
-plt.clf()
-
-
-###############Teil b)##############################################
-
-Cs = np.genfromtxt('137Cs.txt', unpack=True)
-peaks_2= find_peaks(Cs, height=70, distance=20)
-index_2= peaks_2[0]
-peaks_heights= peaks_2[1]
-energie_2=lin(index_2, *paramsI)
-#print('Peaks',index_2)
-#print('Peakhöhe', peaks_heights)
-#print('Energie_2=====', energie_2)
-e_rueck=energie_2[-4]
-e_comp=energie_2[-2]
-e_photo=energie_2[-1]
-
-ascii.write(
-[[index_2[-4], index_2[-2], index_2[-1]], [e_rueck, e_comp, e_photo]],
-'monochromat.tex', format='latex', overwrite='True')
-print('Energie des Photopeaks====', e_photo)
-
-#######################Vergleich der expermintell ermittelten Werte für die Comptonkante und Rueckstreupeak mit Theoriewerten
-m_e=511
-
-e_comp_th= 2*e_photo**2/(m_e*(1+2*e_photo/m_e))
-print('Theoretischer Wert Comptonkante =====>', e_comp_th)
-print('Vergleich mit exp.-Wert =====>', 1-e_comp/e_comp_th)
-e_rueck_th= e_photo/(1+2*e_photo/m_e)
-print('Theoretischer Wert für den Rückstreupeak =====>', e_rueck_th)
-print('Vergleich mit Theorie =====>', 1-e_rueck/e_rueck_th)
-
-
-
-##########################halbwertsbreite#######################################
-links= 1641
-rechts= 1653
-print(Cs[links], Cs[rechts])
-lp = np.arange(links, index_2[-1]+1)
-rp = np.arange(index_2[-1], rechts+1)
-
-params_l, covariance_l= curve_fit(lin, Cs[links:index_2[-1]+1],lp)
-errors_l = np.sqrt(np.diag(covariance_l))
-m_l=ufloat(params_l[0], errors_l[0])
-n_l=ufloat(params_l[1], errors_l[1])
-#print('Fitparameter für links Streuung(energie)=====>', 'm_l=', lin(m_l, *paramsI), 'n_l=',lin(n_l, *paramsI) )
-print('Fitparameter für links Streuung=====>', 'm_l=', lin(m_l,*paramsI), 'n_l=', lin(n_l, *paramsI) )
-
-params_r, covariance_r= curve_fit(lin, Cs[index_2[-1]:rechts+1],rp)
-errors_r = np.sqrt(np.diag(covariance_r))
-m_r= ufloat(params_r[0], errors_r[0])
-n_r= ufloat(params_r[1], errors_r[1])
-#print('Fitparameter für rechts Streuung (Energie)=====>', 'm_r=', lin(m_r, *paramsI), 'n_r=', lin(n_r,*paramsI) )
-print('Fitparameter für rechts Streuung=====>', 'm_r=', lin(m_r, *paramsI), 'n_r=', lin(n_r, *paramsI) )
-
-half= m_r*0.5*Cs[index_2[-1]] +n_r  - (m_l*0.5*Cs[index_2[-1]] +n_l)
-ten = m_r*0.1*Cs[index_2[-1]] +n_r  - (m_l*0.1*Cs[index_2[-1]] +n_l)
-
-print('Halbwertsbreite =====>', lin(half, *paramsI))
-print('Zehntelwertsbreite =====>', lin(ten, *paramsI))
-print('Zehntel nach half =====>', lin((1.823*half),*paramsI))
-print('Verhältnis zehntel zu halbwertsbreite =====>', 1 - lin(ten,*paramsI)/lin((1.823*half),*paramsI))
+################Teil b)##############################################
+#
+#Cs = np.genfromtxt('137Cs.txt', unpack=True)
+#peaks_2= find_peaks(Cs, height=70, distance=20)
+#index_2= peaks_2[0]
+#peaks_heights= peaks_2[1]
+#energie_2=lin(index_2, *paramsI)
+##print('Peaks',index_2)
+##print('Peakhöhe', peaks_heights)
+##print('Energie_2=====', energie_2)
+#e_rueck=energie_2[-4]
+#e_comp=energie_2[-2]
+#e_photo=energie_2[-1]
+#
+#ascii.write(
+#[[index_2[-4], index_2[-2], index_2[-1]], [e_rueck, e_comp, e_photo]],
+#'monochromat.tex', format='latex', overwrite='True')
+#print('Energie des Photopeaks====', e_photo)
+#
+########################Vergleich der expermintell ermittelten Werte für die Comptonkante und Rueckstreupeak mit Theoriewerten
+#m_e=511
+#
+#e_comp_th= 2*e_photo**2/(m_e*(1+2*e_photo/m_e))
+#print('Theoretischer Wert Comptonkante =====>', e_comp_th)
+#print('Vergleich mit exp.-Wert =====>', 1-e_comp/e_comp_th)
+#e_rueck_th= e_photo/(1+2*e_photo/m_e)
+#print('Theoretischer Wert für den Rückstreupeak =====>', e_rueck_th)
+#print('Vergleich mit Theorie =====>', 1-e_rueck/e_rueck_th)
+#
+#
+#
+###########################halbwertsbreite#######################################
+#links= 1641
+#rechts= 1653
+#print(Cs[links], Cs[rechts])
+#lp = np.arange(links, index_2[-1]+1)
+#rp = np.arange(index_2[-1], rechts+1)
+#
+#params_l, covariance_l= curve_fit(lin, Cs[links:index_2[-1]+1],lp)
+#errors_l = np.sqrt(np.diag(covariance_l))
+#m_l=ufloat(params_l[0], errors_l[0])
+#n_l=ufloat(params_l[1], errors_l[1])
+##print('Fitparameter für links Streuung(energie)=====>', 'm_l=', lin(m_l, *paramsI), 'n_l=',lin(n_l, *paramsI) )
+#print('Fitparameter für links Streuung=====>', 'm_l=', m_l, 'n_l=', n_l )
+#
+#params_r, covariance_r= curve_fit(lin, Cs[index_2[-1]:rechts+1],rp)
+#errors_r = np.sqrt(np.diag(covariance_r))
+#m_r= ufloat(params_r[0], errors_r[0])
+#n_r= ufloat(params_r[1], errors_r[1])
+##print('Fitparameter für rechts Streuung (Energie)=====>', 'm_r=', lin(m_r, *paramsI), 'n_r=', lin(n_r,*paramsI) )
+#print('Fitparameter für rechts Streuung=====>', 'm_r=', m_r, 'n_r=', n_r )
+#
+#half= m_r*0.5*Cs[index_2[-1]] +n_r  - (m_l*0.5*Cs[index_2[-1]] +n_l)
+#ten = m_r*0.1*Cs[index_2[-1]] +n_r  - (m_l*0.1*Cs[index_2[-1]] +n_l)
+#
+#print('Halbwertsbreite =====>', lin(half, *paramsI))
+#print('Zehntelwertsbreite =====>', lin(ten, *paramsI))
+#print('Zehntel nach half =====>', lin((1.823*half),*paramsI))
+#print('Verhältnis zehntel zu halbwertsbreite =====>', 1 - lin(ten,*paramsI)/lin((1.823*half),*paramsI))
 
 #######################################################################################
 
-x=np.linspace(1,8192,8192)
-plt.plot(lin(x, *paramsI), Cs, 'r--', label = 'Messwerte des Detektors')
-#plt.plot(lin(index_2,*paramsI), Cs[index_2], 'g+', label = 'Detektierte Peaks')
-#plt.axhline(y=0.5*Cs[index_2[-1]], color='y', linestyle='dashed')
-#print('Halbwertshöhe =====>', 0.5*Cs[index_2[-1]])
-#print('Zehntelwertshöhe =====>', 0.1*Cs[index_2[-1]])
-#plt.axhline(y=0.1*Cs[index_2[-1]], color='y', linestyle='dashed')
-plt.axvline(195.44, linestyle=':')
-plt.text(196.44, 2000, 'Rückstreupeak', rotation=90)
-plt.axvline(467.87, linestyle=':')
-plt.text(468.87,2000,'Comptonkante', rotation=90)
-plt.axvline(662.35, linestyle=':')
-plt.text(663.35,2000,'Photopeak', rotation=90)
-plt.xlim(0,2000)
-plt.xlabel(r'E / keV')
-plt.yscale('log')
-plt.ylabel(r'counts $N$')
-plt.legend(loc='best')
-plt.savefig('Cs_fit.pdf')
-plt.clf()
+#x=np.linspace(1,8192,8192)
+#plt.plot(lin(x, *paramsI), Cs, 'r--', label = 'Messwerte des Detektors')
+##plt.plot(lin(index_2,*paramsI), Cs[index_2], 'g+', label = 'Detektierte Peaks')
+##plt.axhline(y=0.5*Cs[index_2[-1]], color='y', linestyle='dashed')
+##print('Halbwertshöhe =====>', 0.5*Cs[index_2[-1]])
+##print('Zehntelwertshöhe =====>', 0.1*Cs[index_2[-1]])
+##plt.axhline(y=0.1*Cs[index_2[-1]], color='y', linestyle='dashed')
+#plt.axvline(195.44, linestyle=':')
+#plt.text(196.44, 2000, 'Rückstreupeak', rotation=90)
+#plt.axvline(467.87, linestyle=':')
+#plt.text(468.87,2000,'Comptonkante', rotation=90)
+#plt.axvline(662.35, linestyle=':')
+#plt.text(663.35,2000,'Photopeak', rotation=90)
+#plt.xlim(0,2000)
+#plt.xlabel(r'E / keV')
+#plt.yscale('log')
+#plt.ylabel(r'counts $N$')
+#plt.legend(loc='best')
+#plt.savefig('Cs_fit.pdf')
+#plt.clf()
 
-a= index_2[-1].astype('int')-55
-b= index_2[-1].astype('int')+55
+################################Inhalt Compton und Photo######################################
+#a= index_2[-1].astype('int')-55
+#b= index_2[-1].astype('int')+55
+#
+#params_gauss_b, covariance_gauss_b=curve_fit(gauss, np.arange(a, b+1), Cs[a:b+1], p0=[1, Cs[index_2[-1]], 0, index_2[-1]-0.1])
+#errors_gauss_b= np.sqrt(np.diag(covariance_gauss_b))
+#
+#sigma_fit=ufloat(params_gauss_b[0], errors_gauss_b[0])
+#h_fit=ufloat(params_gauss_b[1], errors_gauss_b[1])
+#a_fit=ufloat(params_gauss_b[2], errors_gauss_b[2])
+#mu_fit=ufloat(params_gauss_b[3], errors_gauss_b[3])
+#
+#inhalt_photo= h_fit*sigma_fit*np.sqrt(2*np.pi)
+#print('Inhalt des Photopeaks =====>', inhalt_photo)
 
-params_gauss_b, covariance_gauss_b=curve_fit(gauss, np.arange(a, b+1), Cs[a:b+1], p0=[1, Cs[index_2[-1]], 0, index_2[-1]-0.1])
-errors_gauss_b= np.sqrt(np.diag(covariance_gauss_b))
-
-sigma_fit=ufloat(params_gauss_b[0], errors_gauss_b[0])
-h_fit=ufloat(params_gauss_b[1], errors_gauss_b[1])
-a_fit=ufloat(params_gauss_b[2], errors_gauss_b[2])
-mu_fit=ufloat(params_gauss_b[3], errors_gauss_b[3])
-
-inhalt_photo= h_fit*sigma_fit*np.sqrt(2*np.pi)
-print('Inhalt des Photopeaks =====>', inhalt_photo)
-
-def compton(E, eps):
-    a_c = Cs[index_2[-2]]/ (1/eps**2 * (2+ e_comp**2 /(e_comp-e_photo)**2*(1/eps**2+(e_photo-e_comp)/e_photo-2/eps*(e_photo - e_comp)/e_photo)))
-    return a_c/eps**2 * (2+ E**2/(E-e_photo)**2*(1/eps**2+(e_photo-E)/e_photo-2/eps*(e_comp-e_photo)/e_photo))
-
-params_comp, covariance_comp= curve_fit(compton, lin(np.arange(1, index_2[-2]+1), *paramsI), Cs[0:index_2[-2]])
-errors_comp= np.sqrt(np.diag(covariance_comp))
-
-eps=ufloat(params_comp[0], errors_comp[0])
-def compton_2(E):
-    eps2 = noms(eps)
-    a_c = Cs[index_2[-2]] / (1/eps2**2 *(2+ e_comp**2/(e_comp-e_photo)**2*(1/eps2**2+(e_photo-e_comp)/e_photo-2/eps2*(e_photo-e_comp)/e_photo)))
-    return a_c/eps2**2 *(2+ E**2/(E-e_photo)**2*(1/eps2**2+(e_photo-E)/e_photo-2/eps2*(e_comp-e_photo)/e_photo))
-print(eps)
-
-inhalt_comp = quad(compton_2, a=lin(0,*paramsI),b=lin(index_2[-2],*paramsI))
-print('Inhalt des Comptonkontinuums =====>', inhalt_comp[0])
-
-mu_ph= 0.002
-mu_comp= 0.38
-l=3.9
-abs_prob_photo= 1-np.exp(-mu_ph*l)
-abs_prob_comp= 1-np.exp(-mu_comp*l)
-print('Absorptionswahrscheinlichkeit für den Photoeffekt =====>', abs_prob_photo)
-print('Absorptionswahrscheinlichkeit für den Comptoneffekt =====>', abs_prob_comp)
+#def compton(E, eps):
+#    a_c = Cs[index_2[-2]]/ (1/eps**2 * (2+ e_comp**2 /(e_comp-e_photo)**2*(1/eps**2+(e_photo-e_comp)/e_photo-2/eps*(e_photo - e_comp)/e_photo)))
+#    return a_c/eps**2 * (2+ E**2/(E-e_photo)**2*(1/eps**2+(e_photo-E)/e_photo-2/eps*(e_comp-e_photo)/e_photo))
+#
+#params_comp, covariance_comp= curve_fit(compton, lin(np.arange(1, index_2[-2]+1), *paramsI), Cs[0:index_2[-2]])
+#errors_comp= np.sqrt(np.diag(covariance_comp))
+#
+#eps=ufloat(params_comp[0], errors_comp[0])
+#def compton_2(E):
+#    eps2 = noms(eps)
+#    a_c = Cs[index_2[-2]] / (1/eps2**2 *(2+ e_comp**2/(e_comp-e_photo)**2*(1/eps2**2+(e_photo-e_comp)/e_photo-2/eps2*(e_photo-e_comp)/e_photo)))
+#    return a_c/eps2**2 *(2+ E**2/(E-e_photo)**2*(1/eps2**2+(e_photo-E)/e_photo-2/eps2*(e_comp-e_photo)/e_photo))
+#print(eps)
+#
+#inhalt_comp = quad(compton_2, a=lin(0,*paramsI),b=lin(index_2[-2],*paramsI))
+#index_compton_kante = index_2[-2]
+#lower_index_compton = 52
+#inhalt_compton_spektrum = ufloat(sum(Cs[lower_index_compton:index_compton_kante]),sum(np.sqrt(Cs[lower_index_compton:index_compton_kante])))
+#
+#
+#print('Inhalt des Comptonkontinuums =====>', inhalt_compton_spektrum)
+#
+#print('Vergleich Compton zu Photo Inhalt =====> ', inhalt_compton_spektrum/inhalt_photo)
+#
+#mu_ph= 0.002
+#mu_comp= 0.38
+#l=3.9
+#abs_prob_photo= 1-np.exp(-mu_ph*l)
+#abs_prob_comp= 1-np.exp(-mu_comp*l)
+#print('Absorptionswahrscheinlichkeit für den Photoeffekt =====>', abs_prob_photo)
+#print('Absorptionswahrscheinlichkeit für den Comptoneffekt =====>', abs_prob_comp)
+#print('Vergleich Compton zu Photo = ', abs_prob_comp/abs_prob_photo)
 
 
 #Teil d), c) gibt es nicht, weil es keinen Positronenstrahler gab
 
 Ba= np.genfromtxt('133Ba.txt', unpack=True)
-peaks_3= find_peaks(Ba, height=90, distance= 15)
+peaks_3= find_peaks(Ba, height=5, distance= 4)
 index_3= peaks_3[0]
 peak_heights_3= peaks_3[1]
 energie_3= lin(index_3, *paramsI)
@@ -348,8 +357,23 @@ energie_3= lin(index_3, *paramsI)
 
 x=np.linspace(1,8192,8192)
 plt.plot(lin(x, *paramsI), Ba,'r--',label='Messwerte des Detektors')
-plt.plot(lin(index_3, *paramsI),Ba[index_3],'g+',label='Detektierte Peaks')
+#plt.plot(lin(index_3, *paramsI),Ba[index_3],'g+',label='Detektierte Peaks')
+
 plt.xlim(0,1000)
+plt.axvline(55.86, linestyle=':')
+plt.text(56.2,3300,'55,86 keV',rotation=90)
+plt.axvline(83.56, linestyle=':')
+plt.text(84.0,3300,'83,58 keV',rotation=90)
+plt.axvline(163, linestyle=':')
+plt.text(163.4,3300,'163,00 keV',rotation=90)
+plt.axvline(276.4, linestyle=':')
+plt.text(277.0,3300,'276,4 keV',rotation=90)
+plt.axvline(304.78, linestyle=':')
+plt.text(305.2,3300,'304,78 keV',rotation=90)
+plt.axvline(357.81, linestyle=':')
+plt.text(358.2,3300,'357,81 keV',rotation=90)
+plt.axvline(385.62, linestyle=':')
+plt.text(386,3300,'385,62 keV',rotation=90)
 plt.xlabel(r'E / keV')
 plt.ylabel(r'counts $N$')
 plt.legend(loc='best')
@@ -400,11 +424,18 @@ ascii.write(
 E_ba_det = []
 for i in range(len(index_ba)):
     E_ba_det.append(lin(index_ba[i], *paramsI))
+tba=3790
+Q_ba=[0,0,0,0]
+Q_ba.append(potenz(E_ba_det[4],*params2))
+Q_ba.append(potenz(E_ba_det[5],*params2))
+Q_ba.append(potenz(E_ba_det[6],*params2))
 
-
-A_ba= peakinhalt_ba[4:]/(omega_4pi*W_ba[4:]*potenz(E_ba_det[4:], *params2))
+sigma=ufloat(1417,23)
+A_ba= peakinhalt_ba[3:]/(tba*omega_4pi*W_ba[3:]*potenz(E_ba_det[3:], *params2))
 A_det = [0,0,0,0]
-
+#A_ba_2= sigma/(tba*omega_4pi*7.2*potenz(278.466,*params2))
+#print('Aktivität von 276 =========>',A_ba_2)
+print('Aktivität vom Rest ==========================>',A_ba)
 for i in A_ba:
     A_det.append(i)
 
@@ -469,6 +500,14 @@ errors_photo3= np.sqrt(np.diag(CovarianceI_photo3))
 m_r=ufloat(ParamsI_photo3[0], errors_photo3[0])
 n_r=ufloat(ParamsI_photo3[1], errors_photo3[1])
 print('m_r = ', m_r, 'n_r = ', n_r)
+
+#half= m_r*0.5*Cs[index_2[-1]] +n_r  - (m_l*0.5*Cs[index_2[-1]] + n_l)
+#ten = m_r*0.1*Cs[index_2[-1]] +n_r  - (m_l*0.1*Cs[index_2[-1]] + n_l)
+#
+#print('Halbwertsbreite =====>', lin(half, *paramsI))
+#print('Zehntelwertsbreite =====>', lin(ten, *paramsI))
+#print('Zehntel nach half =====>', lin((1.823*half),*paramsI))
+#print('Verhältnis zehntel zu halbwertsbreite =====>', 1 - lin(ten,*paramsI)/lin((1.823*half),*paramsI))
 
 plt.plot(i, gauss_photo(i, *ParamsI_photo), 'g-', label='Gauß-Fit')
 plt.plot(i2, funktion_flanken(i2, *ParamsI_photo2), 'b--')

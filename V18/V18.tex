@@ -96,7 +96,7 @@ Diese Gleichung gilt für Energien die größer sind als \SI{500}{\mega\eV}.
 \begin{figure}
   \centering
   \includegraphics[scale=0.8]{Wechselwirkungen.png}
-  \caption{Effekte bei der Wechselwirkung von $\gamma$-Strahlung mit Materie. \cite{Q2}}
+  \caption{Effekte bei der Wechselwirkung von $\gamma$-Strahlung mit Materie. \cite{Q1}}
   \label{abb:1}
 \end{figure}
 
@@ -224,7 +224,12 @@ Poissonverteilung mit einer Gaußverteilung angenähert werden:
   E_{\gamma} = 2,35\sqrt{0,1E_{\gamma}E_{\symup{El}}}
 \end{equation}
 Die Halbwertsbreite des Germanium-Detektors bei einer typischen Energie von
-\SI{500}{\kilo\eV} liegt bei $\Delta E_{1/2}(\SI{500}{\eV})\approx \SI{895}{\eV}$.
+\SI{500}{\kilo\eV} liegt bei:
+\begin{align}
+    \label{eq:halbwertsbreite}
+    \Delta E_{1/2}(\SI{500}{\eV})= 2,35 \sqrt{0,1 \cdot 500000\cdot 2,9} \approx \SI{895}{\eV} \; .
+\end{align}
+
 
 Durch einige Einflüsse wird das energetische Auflösungsvermögen vermindert:
 \begin{itemize}
@@ -329,11 +334,23 @@ vor dem Detektor befestigt. Die Messung wird für jede Probe ca. eine Stunde lan
 durchgeführt.
 
 \section{Auswertung}
-Um die Funktionsweise des Germaniumdetektors zu untersuchen, werden nun im Folgenden die aufgenommenen Spektren ausgewertet.
+Um die Funktionsweise des Germanium-Detektors zu untersuchen, werden nun im Folgenden die aufgenommenen
+Spektren ausgewertet.
 
-\subsection{Kalibrierung und Effizienzbestimmung des Germaniumdetektors}
+\subsection{Kalibrierung und Effizienzbestimmung des Germanium-Detektors}
 
-Zur Kalibrierung des Germaniumdetektors wird das Spektrum eines $^{152}$Eu-Strahlers untersucht. Hierbei werden im Spektrum die Peaks detektiert und dann den im Spektrum von $^{152}$Eu hervorstechenden Energiewerten zugeordnet. Das $^{152}$Eu-Spektrum mit den detektierten Peaks ist in Abbildung \ref{abb:Europiumspektrum} zu sehen. Die fertige Zuordnung von Binwerten zu den Energien ist in Tabelle \ref{tab:Kali} zu sehen.
+Zur Kalibrierung des Germanium-Detektors wird das Spektrum eines $^{152}$Eu-Strahlers untersucht. Hierbei
+werden im aufgenommenen Spektrum die Peaks detektiert und dann den im Energiespektrum von $^{152}$Eu, die der
+Versuchsanleitung \cite{Q1} entnommen wurden, hervorstechenden Energiewerten zugeordnet. Das
+$^{152}$Eu-Spektrum mit den detektierten Peaks ist in
+Abbildung \ref{abb:Europiumspektrum} zu sehen. Die Abbildung des
+Energiespektrums wurde, wie alle folgenden Plots in der Form bearbeitet, als
+dass sie jeweils nur die für die Auswertung relevanten Ausschnitte aus dem
+Spektrum darstellen. Weiter wurden die markierten Peaks bereits mit den, den
+Kanalnummern entsprechenden Energien beschriftet. Die Berechnung der
+Energiewerte erfolgte nach Gleichung \ref{eq:energie}.
+Die fertige Zuordnung von Binwerten zu den Energien ist in Tabelle
+\ref{tab:Kali} zu sehen.
 \FloatBarrier
 \begin{figure}
     \centering
@@ -345,38 +362,40 @@ Zur Kalibrierung des Germaniumdetektors wird das Spektrum eines $^{152}$Eu-Strah
 
 \begin{table}
     \centering
-    \caption{Werte zur Kalibrierung des Germaniumdetektors.}
+    \caption{Werte zur Kalibrierung des Germanium-Detektors.}
     \label{tab:Kali}
     \begin{tabular}{ c c c c }
         \toprule
-        {$\text{E}_{\gamma}$ / $si{\kilo \electronvolt}$} & { Wahrscheinlichkeit W} & {zugeordneter Bin-Index} & {Peakhöhe}     \\
+        {$\text{E}_{\gamma}$ / $\si{\kilo \electronvolt}$} & { Wahrscheinlichkeit W} & {zugeordneter Bin-Index} & {Peakhöhe}     \\
         \midrule
-        121,78 &    28,6 &  309,0 & 4608,0 \\
-        244,7 &     7,6 &   614,0 & 692,0 \\
-        295,94 &    0,4 &   711,0 & 35,0 \\
-        344,3 &     26,5 &  861,0 & 1388,0 \\
-        411,12 &    2,2 &   1027,0 & 94,0 \\
-        443,96 &    3,1 &   1108,0 & 149,0 \\
-        678,0 &     2,0 &   1689,0 & 29,0 \\
-        688,67 &    0,9 &   1715,0 & 35,0 \\
-        778,9 &     12,9 &  1939,0 & 184,0 \\
-        867,37 &    4,2 &   2159,0 & 62,0 \\
-        964,08 &    14,6 &  2398,0 & 134,0 \\
-        1005,3 &    0.6 &   2500,0 & 15,0 \\
-        1085,9 &    10,2 &  2702,0 & 85,0 \\
-        1112,1 &    13,6 &  2766,0 & 106,0 \\
-        1299,1 &    1,6 &   3228,0 & 10,0 \\
-        1408,0 &    21,0 &  3502,0 & 116,0 \\
-        1457,6 &    0,5 &   3633,0 &   6,0 \\
+        121,78 &    28,6 &  309  & 4608 \\
+        244,70 &     7,6 &   614  & 692 \\
+        295,94 &    0,4 &   741  & 35 \\
+        344,30 &     26,5 &  861  & 1388 \\
+        411,12 &    2,2 &   1027 & 94 \\
+        443,96 &    3,1 &   1108 & 149 \\
+        678,00 &     2,0 &   1689 & 29 \\
+        688,67 &    0,9 &   1715 & 35 \\
+        778,90 &     12,9 &  1939 & 184 \\
+        867,37 &    4,2 &   2159 & 62 \\
+        964,08 &    14,6 &  2398 & 134 \\
+        1005,30 &    0,6 &   2500 & 15 \\
+        1085,90 &    10,2 &  2702 & 85 \\
+        1112,10 &    13,6 &  2766 & 106 \\
+        1299,10 &    1,6 &   3229 & 10 \\
+        1408,00 &    21,0 &  3502 & 116 \\
+        1457,60 &    0,5 &   3633 &   6 \\
         \bottomrule
     \end{tabular}
 \end{table}
+\FloatBarrier
 
 \noindent Mittels der Zuordnung der Bin-Indizes zu den Energien kann nun eine lineare Ausgleichsrechunung der Form
-\begin{align*}
-    E = m \cdot x + n
-\end{align*}
-durchgeführt werden.
+\begin{align}
+    E(K) = m \cdot K + n
+    \label{eq:energie}
+\end{align}
+durchgeführt werden. Hierbei beschreibt K die Kanalnummer.
 Für die Werte des linearen Fits ergibt sich dann:
 
 \begin{align*}
@@ -384,78 +403,91 @@ Für die Werte des linearen Fits ergibt sich dann:
     n &= \SI{0,2(16)}{\kilo \electronvolt}
 \end{align*}
 
-\noindent Die zugeordneten Bin-Indizes und Energien sind gemeinsam mit dem linearen Fit in Abbildung \ref{abb:linfit} zu sehen.
+\noindent Die Wertepaare aus bestehend aus dem Bin-Index und der zugeordneten Energie aus den Literaturwerten sind gemeinsam mit dem linearen Fit in Abbildung \ref{abb:linfit} zu sehen.
+
 \FloatBarrier
 \begin{figure}
     \centering
     \includegraphics[scale=0.7]{Kalibrierung.pdf}
-    \caption{Energiekalibrierung des Germaniumdetektors.}
+    \caption{Energiekalibrierung des Germanium-Detektors.}
     \label{abb:linfit}
 \end{figure}
 \FloatBarrier
 
-\noindent Um die Effizienz des Germaniumdetektors gemäß der Formel \ref{eq:effizienz} zu bestimmen, müssen zunächst die Parameter A, Z, W und $\Omega$ ermittelt werden.
-Die Aktivität A der Probe am Versuchstag, dem 07.11.2018 lässt sich mit den Angaben zur Halbwertszeit von $^{152}$Eu ($t_{1/2}=\SI{4943(5)}{\days}$) und der Aktivität am 01.10.2000: $\text{A}_0= \SI{4130(60)}{\becquerel}$ aus der Versuchsanleitung \cite{Q1} einfach berechnen:
+\noindent Um die Effizienz des Germanium-Detektors gemäß Formel \ref{eq:effizienz} zu bestimmen, müssen
+zunächst die Parameter A, Z, W und $\Omega$ ermittelt werden.
+Die Aktivität A der Probe am Versuchstag, dem 07.11.2018, lässt sich mit den Angaben zur Halbwertszeit von
+$^{152}$Eu ($t_{1/2}=\SI{4943(5)}{\day}$) und der Aktivität am 01.10.2000: $\text{A}_0=
+\SI{4130(60)}{\becquerel}$ aus der Versuchsanleitung \cite{Q1} einfach berechnen:
 \begin{align*}
-    \text{A} &= \text{A}_0 \exp \left(-\frac{\ln(2) \Delta t}{t_{1/2}}\right)
+    \text{A} &= \text{A}_0 \exp \left(-\frac{\ln(2) \Delta t}{t_{1/2}}\right) \\
     &= \SI{1634(24)}{\becquerel}
 \end{align*}
-Das Raumwinkelelement $\frac{4 \pi\Omega}{4 \pi}$ berechnet sich nach Gleichung \ref{eq:Omega} mit dem Parameter $a$ für den Abstand zwischen Quelle und Absorptionspunkt ($a=\SI{8,81}{\centi\meter}$) und $r$ für die halbe Breite des Germaniumdetektors ($r= \SI{2,25}{\centi \meter}$). Die Wahl für $r$ ergibt sich aus der Angabe aus der Anleitung zum Versuch \cite{Q1}, dass der wahrscheinlichste Absorptionspunkt im Germanium bei $\SI{1,5}{\centi \meter}$ und der Höhe des Abstandshalters zwischen Probe und Detektor $\SI{7,31}{\centi \meter}$.
-Mit Hilfer dieser Parameter berechnet sich das Raumwinkelelement zu:
+Das Raumwinkelelement $\frac{\Omega}{4 \pi}$ berechnet sich nach Gleichung \ref{eq:Omega} mit dem Parameter
+$a$ für den Abstand zwischen Quelle und Absorptionspunkt ($a=\SI{8,81}{\centi\meter}$) und $r$ für die halbe
+Breite des Germanium-Detektors ($r= \SI{2,25}{\centi \meter}$). Die Wahl für $a$ ergibt sich aus der Angabe
+aus der Anleitung zum Versuch \cite{Q1}, dass der wahrscheinlichste Absorptionspunkt im Germanium
+$\SI{1,5}{\centi \meter}$ unter der Aluminiumhaube liegt und der Höhe des Abstandshalters zwischen Probe und
+Detektor ($\SI{7,31}{\centi \meter}$).
+Mit Hilfe dieser Parameter berechnet sich das Raumwinkelelement zu:
 \begin{align*}
     \frac{\Omega}{4 \pi} = 0,016 \; .
 \end{align*}
 
-\noindent Die Peakinhalte zu den angegebenen Energien wird bestimmt, indem Gaußfits über jeden Peak gelegt werden. Die Gaußfits besitzen folgende Form:
+\noindent Die Peakinhalte zu den angegebenen Energien werden bestimmt, indem Gaußfits über jeden Peak gelegt werden. Die Gaußfits besitzen folgende Form:
 \begin{equation*}
-    f(x) = h \cdot \exp\left(\frac{(x-\mu)^2}{2\sigma^2}\right) +a \;
+    f(K) = h \cdot \exp\left(\frac{-(K-\mu)^2}{2\sigma^2}\right) +a \;
 \end{equation*}
-Hierbei beschreibt $h$ die Höhe des Peaks, $\mu$ den Mittelwert, mit dem der zuvor zugeordnete Bin-Index korrigiert wird, $\sigma$ die Standardabweichung und $a$ die Untergrundstrahlung.
+Hierbei beschreibt $h$ die Höhe des Peaks, $\mu$ den Mittelwert, mit dem der zuvor zugeordnete Bin-Index korrigiert wird, $\sigma$ die Standardabweichung, $K$ die Kananummer und $a$ die Untergrundstrahlung.
 Die Peakinhalte $Z_i$ werden dann über Integration über die Gaußkurven berechnet:
 \begin{equation*}
-    Z_i = \sqrt{2\pi} h_i \sigma_i
+    Z_i = \sqrt{2\pi} \cdot h_i \cdot \sigma_i
 \end{equation*}
 \FloatBarrier
-Die sich ergebenden Parameter und Ergebnisse für die Peakinhalte $Z_i$, sowie die berechneten Effizienzen ($Q(E_i)$) sind in den Tabellen \ref{tab:effizienz1} und \ref{tab:effizienz2} zu sehen.
-Anschließend wird ein nicht linearer Fit der Werte für $E_i$ und $Q(E_i)$ vorgenommen, der folgende Form besitzt:
+Die sich ergebenden Parameter und Ergebnisse für die Peakinhalte $Z_i$, sowie die berechneten Effizienzen
+($Q(E_i)$) sind in den Tabellen \ref{tab:effizienz1} und \ref{tab:effizienz2} zu sehen.
+Anschließend wird ein nicht linearer Fit der Werte für $E_i$ und $Q(E_i)$ vorgenommen, der folgende Form
+besitzt:
 \begin{equation*}
-    Q(E) = b \cdot (E-c)^d + e
+    Q(E) = a \cdot \left( \frac{E}{\si{1}{\kilo \electronvolt}}\right)^{b}
 \end{equation*}
-Hierbei ist zu beachten, dass lediglich Energien berücksichtigt werden, die größer als $\SI{150}{\kilo \electronvolt}$.
+Hierbei ist zu beachten, dass lediglich Energien berücksichtigt werden, die größer als $\SI{150}{\kilo
+\electronvolt}$ sind.
 Für die Fitparameter ergeben sich folgende Werte:
 \begin{align*}
-    b &= 0,014 \pm 0,11 \\
-    c &= 246,79 \pm 123,14 \\
-    d &= 6,54 \pm 3,57 \\
-    e &= 0,84 \pm 1,06  \\
+ a &= \SI{1.21(49)}{} \\
+ b &= \SI{-1.10(6)}{} \; .
 \end{align*}
-Die Wertepaare, als auch die gefittete Potenzfunktion sind in Abbildung \ref{abb:effizienz} zu sehen.
+
+Die Wertepaare, als auch die gefittete Potenzfunktion, sind in Abbildung \ref{abb:effizienz} zu sehen.
+\FloatBarrier
 \begin{table}
     \centering
     \caption{Werte zur Effizienbestimmung aus den Gaußfits}
-    \label{tab:effizienz}
-    \begin{tabular}{ c c c c c }
+    \label{tab:effizienz1}
+    \begin{tabular}{ c c c c }
         \toprule
-        {$\sigma_i$} & {$\mu_i$} & {$h_i$} & {$a$}  \\
+        {$\sigma_i$}            & {$\mu_i$}             & {$h_i$}           & {$a_{i}$}         \\
         \midrule
 
-        1.130 \pm 0.005   &   308.800 \pm 0.005     & 4579 \pm 18       & 90\pm4            & (12970 \pm 80           \\
-        1.293 \pm 0.014   &   613.806 \pm 0.013     & 652 \pm 6         & 38.5\pm1.3        & 2113 \pm 29             \\
-        (0\pm9) $10^3$     &   (1\pm4)$10^3$        & (0\pm5)$10^6$     & 26.6\pm0.9        & (0.0 \pm 3.3)$10^6$       \\
-        1.547 \pm 0.014   &   860.911 \pm 0.013     & 1349 \pm 10       & 20.1\pm2.6        & 5230 \pm 60             \\
-        1.80 \pm 0.08     &   1026.69 \pm 0.07      & 80.6 \pm 2.9      & 17.5\pm0.8        & 364\pm21                \\
-        1.58 \pm 0.06     &   1108.16 \pm 0.06      & 125 \pm 4         & 15.8\pm1.0        & 496\pm24                \\
-        1.3 \pm 0.40       &   1689.2 \pm 0.4        & 12.0 \pm 3.5      & 14.5\pm0.8        & 39\pm17                 \\
-        1.01 \pm 0.27     &   1715.07 \pm 0.26      & 19 \pm 4          & 14.6\pm0.9        & 49\pm17                 \\
-        2.58 \pm 0.06     &   1939.19 \pm 0.05      & 166.9 \pm 3.1     & 12.0\pm1.1        & 1080\pm32               \\
-        2.44 \pm 0.17     &   2158.90 \pm 0.16      & 47.7 \pm 2.7      & 13.0\pm1.0        & 292\pm26                \\
-        3.24 \pm 0.13     &   2398.51 \pm 0.11      & 123 \pm 4         & 6.5\pm1.7         & 1000\pm 50              \\
-        1.01 \pm 0.34     &   2500.23 \pm 0.33      & 9.1 \pm 2.6       & 6.1\pm0.5         & 23\pm10                 \\
-        3.18 \pm 0.14     &   2700.87 \pm 0.12      & 75.9 \pm 2.6      & 9.8\pm1.1         & 604\pm34                \\
-        3.35 \pm 0.13     &   2766.14 \pm 0.11      & 98.5 \pm 3.0      & 5.7\pm1.4         & 830\pm 40               \\
-        0.83 \pm 0.22     &   3228.31 \pm 0.20      & 9.1 \pm 2.0       & 2.40\pm0.35       & 19\pm6                  \\
-        3.63 \pm 0.15     &   3501.10 \pm 0.12      & 103.2 \pm 3.2     & 2.4\pm1.6         & 940\pm 50               \\
-        6.2\pm1.6       &   3630.4\pm1.0            & 3.4 \pm 0.6       & 0.0\pm0.6         & 53\pm17                 \\
+        1,130 \pm  0,005        & 308,800 \pm  0,005    & 4579 \pm  18      & 90 \pm  4         \\
+        1,293 \pm  0,014        & 613,806 \pm  0,013    & 652 \pm  6        & 38,5 \pm  1,3     \\
+        1,40 \pm  0,28          & 741,45 \pm   0,27      & 28 \pm  5         & 26,2 \pm  1,1     \\
+        1,547 \pm  0,014        & 860,911 \pm  0,013    & 1349 \pm  10      & 20,1 \pm  2,6     \\
+        1,80 \pm  0,08          & 1026,69 \pm  0,07     & 80.6 \pm  2,9     & 17,5 \pm  0,8     \\
+        1,58 \pm  0,06          & 1108,16 \pm  0,06     & 125 \pm  4        & 15,8 \pm  1,0     \\
+        1,3 \pm  0,4            & 1689,2  \pm  0,4       & 12.0 \pm  3,5     & 14,5 \pm  0,8     \\
+        1,01 \pm  0,27          & 1715,07 \pm  0,26     & 19 \pm  4         & 14,6 \pm  0,9     \\
+        2,58 \pm  0,06          & 1939,19 \pm  0,05     & 166.9 \pm  3,1    & 12,0 \pm  1,1     \\
+        2,44 \pm  0,17          & 2158,90 \pm  0,16     & 47.7 \pm  2,7     & 13,0 \pm  1,0     \\
+        3,24 \pm  0,13          & 2398,51 \pm  0,11     & 123 \pm  4        & 6,5 \pm  1,7      \\
+        1,01 \pm  0,34          & 2500,23 \pm  0,33     & 9.1 \pm  2,6      & 6,1 \pm  0,5      \\
+        3,18 \pm  0,14          & 2700,87 \pm  0,12     & 75.9 \pm  2,6     & 9,8 \pm  1,1      \\
+        3,35 \pm  0,13          & 2766,14 \pm  0,11     & 98.5 \pm  3,0     & 5,7 \pm  1,4      \\
+        0,84 \pm  0,22          & 3228,31 \pm  0,21     & 9.1 \pm  2,0      & 2,37 \pm  0,35    \\
+        3,63 \pm  0,15          & 3501,10 \pm  0,12     & 103.2 \pm  3,2    & 2,4 \pm  1,6      \\
+        6,2 \pm  1,6            & 3630,4 \pm  1,0       & 3.4 \pm  0,6      & 0,0 \pm  0,6      \\
+
         \bottomrule
     \end{tabular}
 \end{table}
@@ -463,44 +495,60 @@ Die Wertepaare, als auch die gefittete Potenzfunktion sind in Abbildung \ref{abb
 \FloatBarrier
 \begin{table}
     \centering
-    \caption{Werte zur Effizienbestimmung aus den Gaußfits}
-    \label{tab:effizienz}
+    \caption{Werte zur Effizienzbestimmung aus den Gaußfits}
+    \label{tab:effizienz2}
     \begin{tabular}{ c c c }
         \toprule
-        {$Z_i$} & {$E_i$ / $\si{\kilo\electronvolt}$} & {$Q(E_i)$ / $\si{\per\becquerel}$} \\
+        {$Z_i$}             & {$E_i$ / $\si{\kilo\electronvolt}$} & {$Q(E_i)$ }               \\
         \midrule
-        12970\pm 80           &      124.2375\pm0.0021  & 17.86\pm0.28        \\
-        2113\pm29             &     246.795\pm0.005     & 10.94\pm0.22        \\
-        (0.0\pm3.3)$10^6$     &       (0.3\pm1.7)$10^3$ & (0.0\pm3.3)$10^5$     \\
-        5230\pm60             &     346.086\pm0.005     & 7.78\pm0.14         \\
-        364\pm21              &     412.700\pm0.030     & 6.5\pm0.4           \\
-        496\pm24              &     445.436\pm0.022     & 6.30\pm0.32         \\
-        39\pm17               &     678.91\pm0.17       & 0.76\pm0.34         \\
-        49\pm17               &     689.30\pm0.11       & 2.1\pm0.7           \\
-        1080\pm32             &     779.360\pm0.022     & 3.29\pm0.11         \\
-        292\pm26              &     867.64\pm0.06       & 2.73\pm0.25         \\
-        1000\pm 50            &     963.92\pm0.05       & 2.70\pm0.14         \\
-        23\pm10               &     1004.80\pm0.13      & 1.5\pm0.7           \\
-        604\pm34              &     1085.42\pm0.05      & 2.33\pm0.13         \\
-        830\pm 40             &     1111.64\pm0.04      & 2.39\pm0.12         \\
-        19\pm6                &     1297.35\pm0.08      & 0.47\pm0.16         \\
-        940\pm 50             &     1406.96\pm0.05      & 1.76\pm0.09         \\
-        53\pm17               &     1458.9\pm0.4        & 4.2\pm1.3           \\
+        12970 \pm  80       & 122,1847 \pm  0,0021                & -                         \\
+         2113 \pm  29       & 244,989 \pm  0,005                  & 0,284 \pm  0,006          \\
+           97 \pm  25       & 296,38 \pm  0,11                    & 0,25 \pm  0,07            \\
+         5230 \pm  60       & 344,481 \pm  0,005                  & 0,202 \pm  0,004          \\
+          364 \pm  21       & 411,230 \pm  0,030                  & 0,169 \pm  0,010          \\
+          496 \pm  24       & 444,032 \pm  0,022                  & 0,164 \pm  0,008          \\
+           39 \pm  17       & 677,97 \pm  0,17                    & 0,020 \pm  0,009          \\
+           49 \pm  17       & 688,39 \pm  0,11                    & 0,055 \pm  0,019          \\
+         1080 \pm  32       & 778,630 \pm  0,022                  & 0,0856 \pm  0,0028        \\
+          292 \pm  26       & 867,09 \pm  0,06                    & 0,071 \pm  0,007          \\
+         1000 \pm  50       & 963,57 \pm  0,05                    & 0,070 \pm  0,004          \\
+           23 \pm  10       & 1004,52 \pm  0,13                   & 0,039 \pm  0,017          \\
+          604 \pm  34       & 1085,31 \pm  0,05                   & 0,0606 \pm  0,0035        \\
+          830 \pm  40       & 1111,58 \pm  0,05                   & 0,0621 \pm  0,0032        \\
+           19 \pm  6        & 1297,67 \pm  0,08                   & 0,012 \pm  0,004          \\
+          940 \pm  50       & 1407,50 \pm  0,05                   & 0,0458 \pm  0,0024        \\
+           53 \pm  17       & 1459,6 \pm  0,4                     & 0,108 \pm  0,035          \\
         \bottomrule
     \end{tabular}
 \end{table}
-
+\FloatBarrier
 \begin{figure}
     \centering
     \includegraphics[scale=0.7]{effizienz.pdf}
-    \caption{Effizienz des Germaniumdetektors gegen die Energie aufgetragen.}
+    \caption{Effizienz des Germanium-Detektors gegen die Energie aufgetragen.}
     \label{abb:effizienz}
 \end{figure}
-
-\subsection{Bestimmung einiger Detektoreigenschaften an Hand eines $^{137}$Cs-Strahlers}
-
-Um gewisse Detektoreigenschaften zu untersuchen wird das Spektrum eines monochromatischen Gammastrahlers, das von $^{137}$Cs aufgenommen. Das erhaltene Spektrum ist zusammen mit den detektierten Peaks in Abbildung \ref{abb:Cs_fit} zu sehen. Die für die Auswertung wichtigen Peaks sind der Photopeak, der Rückstreupeak, sowie die Compton-Kante. Die erhaltenen Werte für die Bin-Indizes, sowie die zugehörigen Energiewerte sind in Tabelle \ref{tab:Cs_peaks} dargestellt.
 \FloatBarrier
+
+\subsection{Untersuchung der Halbwertsbreite des Photopeaks eines $^{137}$Cs-Strahlers}
+
+Um die Halbwertsbreite des Photopeaks eines $^{137}$Cs-Strahlers zu untersuchen,
+wird das Spektrum eines monochromatischen Gammastrahlers, das von $^{137}$Cs,
+aufgenommen. Das erhaltene Spektrum ist zusammen mit den detektierten Peaks in
+Abbildung \ref{abb:Cs_peaks} zu sehen. Die für die Auswertung wichtigen Peaks sind der
+Photopeak, der Rückstreupeak sowie die Compton-Kante. Die erhaltenen Werte für die
+Bin-Indizes sowie die zugehörigen Energiewerte sind in Tabelle \ref{tab:Cs_peaks}
+dargestellt.
+
+\FloatBarrier
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{Cs_fit.pdf}
+    \caption{Comptonkontinuum und Photopeak des $^{137}$Cs-Strahlers.}
+    \label{abb:Cs_peaks}
+\end{figure}
+\FloatBarrier
+
 \begin{table}
     \centering
     \caption{Lage und Energie der charakteristischen Peaks des $^{137}$Cs-Strahlers}
@@ -525,9 +573,11 @@ Der Theoriewert für Rückstreupeak und Compton-Kante kann wie folgt aus der Ene
 \end{align*}
 In dieser Berechnung beschreibt $\epsilon$ das Verhältnis zwischen der Energie des Photopeaks $E_\text{photo}$ zur Ruheenergie eines Elektrons: $\epsilon = \frac{E_\text{photo}}{m_e c^2}$.
 
-\noindent Im Anschluss daran wird übverprüft, ob der Photopeak Gauß-förmig ist.
-Dies geschieht, indem die Flanken des Peaks mittels linearer Ausgleichsrechnung approximiert werden. Somit kann leicht die Halberts- und Zehntelwertsbreite ermittelt werden. Stehen die beiden Breiten in einem bestimmten Verhältnis zueinander, so kann davon ausgegangen werden, dass der Peak Gauß-förmig ist.
-Die lineare Ausgleichsrechung hat die Form $F(x) = m x + n$.
+\noindent Im Anschluss daran wird überprüft, ob der Photopeak Gauß-förmig ist.
+Dies geschieht, indem die Flanken des Peaks mittels linearer Ausgleichsrechnung approximiert werden. Die graphische Darstellung des Vorgehens ist in Abbildung \ref{fig:Cs_photo} zu sehen.
+Somit kann leicht die Halbwerts- und Zehntelwertsbreite ermittelt werden. Stehen die beiden Breiten in einem bestimmten Verhältnis zueinander, so kann davon ausgegangen werden, dass der Peak Gauß-förmig ist.
+Die graphische Darstellung des Vorgehens ist in Abbildung \ref{fig:Cs_Photo} zu sehen.
+Die lineare Ausgleichsrechung hat die Form $F(K) = m \cdot K + n$. Hierbei beschreibt $K$ die Kanalnummer.
 Für die Parameter links (l) und rechts (r) am Peak ergeben sich folgende Werte:
 \begin{align*}
     m_l &= 0,0028 \pm 0,0003 & m_r &= -0,00213 \pm 0,00018 \\
@@ -535,116 +585,72 @@ Für die Parameter links (l) und rechts (r) am Peak ergeben sich folgende Werte:
 \end{align*}
 Die Berechnung der Halbwerts- und Zehntelwertsbreite erfolgt mittels folgender Rechnung:
 \begin{align*}
-    \Delta_x = m_r x h + n_r - (m_l x h +n_l) \; \text{mit} \; h \in \{0.1, 0.5\} \;
+    \Delta_{h} = m_r K h + n_r - (m_l K h + n_l) \; \text{mit} \; h \in \{0,1 \; , \; 0,5\} \;
 \end{align*}
-und ergibt folgende Werte:
+Hierbei ist $K$ die Kanalnummer des Photopeaks.
+Die Umrechnung des Ergebnisses in Energien, erfolgt gemäß Formel \ref{eq:energie}.
+Für die Halbwerts- und Zehntelwertsbreite ergeben sich somit folgende Werte:
 \begin{align*}
-    \Delta_{0,5} &= \SI{2,45(23)}{\kilo \electronvolt}\\
-    \Delta_{0,1} &= \SI{4,16(18)}{\kilo \electronvolt} \; .
+    \Delta_{0,5} &= \SI{2,45(23)}{\kilo \electronvolt}\\    %An Kommata denken.
+    \Delta_{0,1} &= \SI{4,16(18)}{\kilo \electronvolt} \; . %An Kommata denken.
 \end{align*}
 Für eine Gaußverteilung gilt:
 \begin{align*}
     \Delta_{0,1} &= 1,823 \cdot \Delta_{0,5} \\
-                 &= \SI{4.3(4)}{\kilo \electronvolt} \; .
+                 &= \SI{4,3(4)}{\kilo \electronvolt} \; .
 \end{align*}
-Der mit Hilfe der Halbwertsbreite berechnete Wert für die Zehntelwertsbreite weicht dabei lediglich um $\SI{4}{\percent}$ von dem experimentell ermittelten ab, weshalb davon auszugehen ist, dass eine Gaußverteilung vorliegt.
+Der mit Hilfe der Halbwertsbreite berechnete Wert für die Zehntelwertsbreite weicht
+dabei lediglich um $\SI{4}{\percent}$ von dem experimentell ermittelten ab, weshalb
+davon auszugehen ist, dass eine Gaußverteilung vorliegt.
+Die theoretische Halbwertsbreite und somit der Wert für das theoretische Auflösungsvermögen berechnet sich gemäß Formel \ref{eq:halbwertsbreite} zu:
+\FloatBarrier
+\begin{align}
+    \label{eq:halbwertsbreite_theo}
+    \Delta E_{1/2} = \SI{1,029}{\kilo \electronvolt}
+\end{align}
+\FloatBarrier
+Hierzu wird die zuvor ermittelte Energie des Photopeaks und die
+Anregungsenergie eines Elektrons in Germanium ($\SI{2,9}{\electronvolt}$ )
+verwendet.
 \FloatBarrier
 \begin{figure}
     \centering
-    \includegraphics[scale=0.7]{Cs_fit.pdf}
-    \caption{Comptonkontinuum und Photopeak des $^{137}$Cs-Strahlers.}
-    \label{Comptonkontinuum und Photopeak des $^{137}$Cs-Strahlers.$}
+    \includegraphics[scale=0.7]{Cs_photo.pdf}
+    \caption{Graphische Darstellung des Gaußfits mit an die Flanken gefitteten Geraden zur Ermittlung der Halbwerts- und Zehntelwertsbreite.}
+    \label{fig:Cs_photo}
 \end{figure}
 \FloatBarrier
 
-\noindent Im letzten Teil wird der Inhalt des Photopeaks und des Comptonkontinuums mit der Absorptionswahrscheinlichkeit für Photo- und Comptoneffekt verglichen.
-Die Extinktionskoeffizienten $\mu$ ergeben sich aus der Versuchsanleitung \cite{Q1}, woraus anschließend die Absorptionswahrscheinlichkeiten berechnet werden können ($p = 1-\exp(-\mu l)$). Hierbei beschreibt $l= \SI{3,9}{\centi \meter}$ die Länge des Detektors.
+\noindent Im letzten Teil des Versuchs werden die Verhältnisse der Inhalte des Comptonkontinuums und des Photopeaks und die Absorptionswahrscheinlichkeiten für Photo- und Comptoneffekt verglichen.
+Die Extinktionskoeffizienten $\mu$ ergeben sich aus Abbildung \ref{abb:1}, woraus anschließend die Absorptionswahrscheinlichkeiten berechnet werden können ($p = 1-\exp(-\mu l)$). Hierbei beschreibt $l= \SI{3,9}{\centi \meter}$ die Länge des Detektors.
 \begin{align*}
-    \mu_{\text{comp}} &= \SI{0,38}{\centi \meter} \\
+    \mu_{\text{comp}} &= \SI{0,38}{\per \centi \meter} \\
     p_{\text{comp}} &= \SI{77,28}{\percent}\\
-    \mu_{\text{photo}} &= \SI{0,002}{\centi \meter} \\
-    p_{\text{photo}} &= \SI{0,78}{\percent}
+    \mu_{\text{photo}} &= \SI{0,002}{\per \centi \meter} \\
+    p_{\text{photo}} &= \SI{0,78}{\percent} \\
+    \frac{p_{\text{comp}}}{p_{\text{photo}}} &= \SI{99,47}{}
 \end{align*}
-Der Inhalt des Photopeaks wird auch in diesem Teil des Versuchs ermittelt, indem er mit einem Gaußfit gefittet wird. Das Comptonkontinuum hingegen wird mit einer Funktion gefittet, die proportional zum zugehörigen Wirkungsquerschnitt \ref{eq:WQ} ist. Die Proportionalitätskonstante wird durch das Verhältnis von der Zählrate an der Compton-Kante zum Wert der Funktion definiert.
-Die Funktion, mit der das Comptonkontinuum gefittet wurde, wird anschließend mittels der Funktion "quad" aus scipy.integrate integriert, sodass sich für den Inhalt des Comptonkontinuums und des Photopeaks folgende Werte ergeben:
+Der Inhalt des Photopeaks wird auch in diesem Teil des Versuchs ermittelt, indem er mit einem Gaußfit gefittet wird. Der Inhalt des Comptonkontinuums wird ermittelt, indem über die zugehörigen Kanalinhalte summiert wird:
 \begin{align*}
-    Z_{\text{comp}}  &= 21079,33 \\
-    Z_{\text{photo}} &= 5487 \pm 29
+    Z_{\text{comp}}  &= \SI{55000(800)}{\text{Zählungen}} \\
+    Z_{\text{photo}} &= \SI{12010(100)}{\text{Zählungen}}\\
+    \frac{Z_{\text{comp}}}{Z_{\text{photo}}} &= \SI{4,6(6)}{} \; .
 \end{align*}
-Es ist zu sehen, dass der Inhalt des Photopeaks zwar kleiner als der des  Comptonkontinuums ist, jedoch nicht derart kleiner, wie es die deutlich unterschiedlich großen Absorptionswahrscheinlichkeiten hätten erwarten lassen.
-Somit kann davon ausgegangen werden, dass die Elektronen nicht nur einmalig Energie beim Comptoneffekt abgeben, sondern mehrfach, bevor sie dann ihre komplette Energie im durch den Photoeffekt verlieren.
-Der Extinktionskoeffizient \ref{abb:1} ist höher für den Photoeffekt, was diesen wahrscheinlicher macht.
+Es zeigt sich, dass der Inhalt des Photopeaks zwar kleiner ist, als der des
+Comptonkontinuums, jedoch nicht in der Art, wie es der deutlich größere Absorptionskoeffizient hätte erwarten lassen.
+Es kann daher davon ausgegangen werden, dass die Elektronen nicht nur einmalig Energie beim Comptoneffekt abgeben, sondern mehrfach, bevor sie dann ihre komplette Energie durch den Photoeffekt verlieren.
+
 
 \subsection{Aktivität einer $^{133}$Ba-Quelle}
 
-\noindent In diesem Teil des Versuchs wird das Spektrum einer $^{133}$Ba-Strahlers untersucht. Dafür werden die Peaks zunächst analog zum ersten Teil des Versuchs detektiert, anschließend Gauß-gefittet, die Peakinhalte ermittelt, indem über die Gaußfits integriert wird. Die zugeordneten Bin-indizes, sowie gefitteten Energien sind in Tabelle \ref{tab:BaTab} dargestellt.
-\FloatBarrier
-\begin{table}
-    \centering
-    \caption{Zugeordnete Peaks und Bins einer $^{133}$Ba-Quelle. }
-    \label{tab:BaTab}
-    \begin{tabular}{cccc}
-        \toprule
-        {E / keV} & { W } & zugeordneter Bin-Index & gefittete Energie \\
-        \midrule
-        53.16   &   2.2   &   139.0  &    55.86\pm0.07 \\
-        79.62   &   2.6   &   192.0  &    71.3\pm2.4 \\
-        81.0    &   34.1  &   208.0  &    83.575\pm0.008 \\
-        160.61  &   0.6   &   405.0  &    163.00\pm0.09 \\
-        302.85  &   18.3  &   758.0  &    304.7824\pm0.0026 \\
-        356.02  &   62.1  &   890.0  &    357.8077\pm0.0030 \\
-        383.85  &   8.9   &   960.0  &    385.616\pm0.010 \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-\FloatBarrier
-
-\noindent Mit Hilfe der Formel für die Ermittlung der Effizienz \ref{eq:effizienz}, kann so ein Wert für die Aktivität der Bariumquelle ermittelt werden. Hierbei ist darauf zu achten, da nur Werte mit einer Energie $E_i$ größer als $\SI{150}{\kilo \electronvolt}$, da nur für diese Werte die Effizienz bestimmt werden kann.
-Die Werte, die sich für die Bin-Indizes, die Standardabweichung, die Höhe der Peaks, die Peakinhalte, die Energie, sowie die Aktivität der Quelle ergeben, sind in den Tabellen \ref{tab:BaAkt} \ref{tab:BaAkt2} dargestellt.
-Die Detektormesswerte, sowie die ermittelten Peaks der Bariumquelle sind in Abbildung \ref{abb:BaPlot} dargestellt.
-\FloatBarrier
-\begin{table}
-    \centering
-    \caption{Ergebnisse zur bestimmung der Aktivität der $^{133}$Ba-Quelle aus den Gaußfits der Peaks.}
-    \label{tab_BaAkt}
-    \begin{tabular}{ c c c }
-        \toprule
-        {$\sigma_{\text{ba}}$} & {$h_i$} &  {$a_i$}                     \\
-        \midrule
-        0.85 \pm 0.19     & 64 \pm 12              &     71.6 \pm 1.5   \\
-        -13 \pm 9         & -470 \pm 210           &     470 \pm 170    \\
-        1.081 \pm 0.020   & 3490\pm 50             &     84 \pm 8       \\
-        0.79 \pm 0.23     & 84 \pm 21              &     89.3 \pm 2.6   \\
-        1.384 \pm 0.007   & 930 \pm 4              &     12.9 \pm 0.7   \\
-        1.513 \pm 0.008   & 2403 \pm 10            &     8.0 \pm 1.9    \\
-        1.657 \pm 0.027   & 286 \pm 4              &     2.9 \pm 0.8    \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-\FloatBarrier
-\begin{table}
-    \centering
-    \caption{Ergebnisse zur bestimmung der Aktivität der $^{133}$Ba-Quelle aus den Gaußfits der Peaks.}
-    \label{tab:BaAkt2}
-    \begin{tabular}{ c c c }
-        \toprule
-        {Bin-Index} & {Peakinhalt $Z_i$} & {Aktivität $A_i$} \\
-        \midrule
-        138.62 \pm 0.17   & 130 \pm 40       & - \\
-        170 \pm 8         & 11000 \pm 1000   & - \\
-        207.604 \pm 0.017 & 9480 \pm 200     & - \\
-        405.26 \pm 0.23   & 190 \pm 70       & - \\
-        758.119 \pm 0.006 & 3227 \pm 18         & 1858\pm11 \\
-        890.082 \pm 0.007 & 9120 \pm 50         & 1633\pm10 \\
-        959.288 \pm 0.023 & 1187 \pm 22         & 1525\pm28 \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-\FloatBarrier
-Die erhaltenen Werte für die Aktivität werden anschließend gemittelt, wodurch sich folgender Wert für die Aktivität der $^{133}$Ba-Quelle ergibt:
-\begin{align*}
-    A_\text{Ba} = \SI{1672\pm18}{\becquerel}
-\end{align*}
+\noindent In diesem Teil des Versuchs wird das Spektrum eines $^{133}$Ba-
+Strahlers untersucht.
+Die Detektormesswerte, sowie die ermittelten Peaks der Bariumquelle sind in Abbildung \ref{abb:BaPlot} dargestellt die Messzeit betrug $\SI{3790}{\second}$.
+Dafür werden die Peaks zunächst analog zum ersten Teil
+des Versuchs detektiert, anschließend Gauß-gefittet und die Peakinhalte werden
+ermittelt, indem über die Gaußfits integriert wird. Die zugeordneten Bin-
+Indizes, sowie die gemäß Formel \ref{eq:energie} aus den Kanalnummern
+berechneten Energien, sind in Tabelle \ref{tab:BaTab} dargestellt.
 \FloatBarrier
 \begin{figure}
     \centering
@@ -653,8 +659,77 @@ Die erhaltenen Werte für die Aktivität werden anschließend gemittelt, wodurch
     \label{abb:BaPlot}
 \end{figure}
 \FloatBarrier
+
+\begin{table}
+    \centering
+    \caption{Zugeordnete Peaks und Bins einer $^{133}$Ba-Quelle. }
+    \label{tab:BaTab}
+    \begin{tabular}{cccc}
+        \toprule
+        {E / keV} & { W } & zugeordneter Bin-Index & berechnete Energie \\
+        \midrule
+        53,16   &   2,2     &   139,0  &    55,86\pm0,07      \\
+        810    &   34,1     &   208,0  &    83,575\pm0,008    \\
+        160,61  &   0,6     &   405,0  &    163,00\pm0,09     \\
+        276,40  &   7,2     &   693,0  &    278,466 \pm 0,078  \\
+        302,85  &   18,3    &   758,0  &    304,7824\pm0,0026 \\
+        356,02  &   62,1    &   890,0  &    357,8077\pm0,0030 \\
+        383,85  &   8,9     &   960,0  &    385,616\pm0,010   \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+
+\noindent Mit Hilfe der Formel für die Ermittlung der Effizienz \ref{eq:effizienz}, kann so ein Wert für die Aktivität der Bariumquelle ermittelt werden. Hierbei ist darauf zu achten, dass nur Werte mit einer Energie $E_i$ größer als $\SI{150}{\kilo \electronvolt}$ verwendet werden, da nur für diese Werte die Effizienz bestimmt werden kann.
+Die Werte, die sich für die Bin-Indizes, die Standardabweichung, die Höhe der Peaks, die Peakinhalte, die Energie sowie die Aktivität der Quelle ergeben, sind in den Tabellen \ref{tab:BaAkt} \ref{tab:BaAkt2} dargestellt.
+\FloatBarrier
+\begin{table}
+    \centering
+    \caption{Ergebnisse zur Bestimmung der Aktivität der $^{133}$Ba-Quelle.}
+    \label{tab:BaAkt}
+    \begin{tabular}{ c c c }
+        \toprule
+        {$\sigma_{\text{ba}}$} & {$h_i$} &  {$a_i$}                     \\
+        \midrule
+        0,85 \pm 0,19     & 64 \pm 12              &     71,6 \pm 1,5   \\
+        1,081 \pm 0,020   & 3490\pm 50             &     84 \pm 8       \\
+        0,79 \pm 0,23     & 84 \pm 21              &     89,3 \pm 2,6   \\
+        1,367 \pm 0,017   & 413 \pm 4              &     16,6 \pm 0,8   \\
+        1,384 \pm 0,007   & 930 \pm 4              &     12,9 \pm 0,7   \\
+        1,513 \pm 0,008   & 2403 \pm 10            &     8,0 \pm 1,9    \\
+        1,657 \pm 0,027   & 286 \pm 4              &     2,9 \pm 0,8    \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\begin{table}
+    \centering
+    \caption{Ergebnisse zur Bestimmung der Aktivität der $^{133}$Ba-Quelle.}
+    \label{tab:BaAkt2}
+    \begin{tabular}{ c c c }
+        \toprule
+        {Bin-Index} & {Peakinhalt $Z_i$} & {Aktivität $A_i$ / $\si{\becquerel}$} \\
+        \midrule
+        138,62 \pm 0,17    & 130 \pm 40         & - \\
+        207,604 \pm 0,017  & 9480 \pm 200       & - \\
+        405,26 \pm 0,23    & 190 \pm 70         & 10,24\pm3,88\\
+        692,542 \pm 0,017  & 1417 \pm 23        & 13,21\pm0,21 \\
+        758,119 \pm 0,006  & 3227 \pm 18        & 13,07\pm0,08 \\
+        890,082 \pm 0,007  & 9120 \pm 50        & 13,00\pm0,09 \\
+        959,288 \pm 0,023  & 1187 \pm 22        & 12,83\pm0,27 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+Die erhaltenen Werte für die Aktivität werden anschließend gemittelt, wodurch sich folgender Wert für die Aktivität der $^{133}$Ba-Quelle ergibt:
+\begin{align*}
+    A_\text{Ba} = \SI{12,5(9)}{\becquerel}
+\end{align*}
+\FloatBarrier
+
+
 \subsection{Aktive Nuklide eines unbekannten Strahlers}
-Im finalen Teil des Versuchs wird eine unbekannte Substanz im Germaniumdetektor analysiert. Das Spektrum, sowie die detektierten Peaks sind in Abbildung \ref{abb:unbekannt} zu sehen. Die Position, sowie die Höhe und zugehörige Energie sind in Tabelle \ref{tab:unbekannt} zu sehen.
+Im finalen Teil des Versuchs wird eine unbekannte Substanz im Germanium-Detektor analysiert. Das Spektrum, sowie die detektierten Peaks sind in Abbildung \ref{abb:unbekannt} zu sehen. Die Position sowie die Höhe und zugehörige Energie sind in Tabelle \ref{tab:unbekannt} zu sehen.
 \FloatBarrier
 \begin{figure}
     \centering
@@ -681,11 +756,34 @@ Im finalen Teil des Versuchs wird eine unbekannte Substanz im Germaniumdetektor 
 \noindent Die Energien der ermittelten Peaks werden anschließend mit Literaturwerten für verschiedene Gammastrahler verglichen. Wichtigstes Merkmal des unbekannten Gammastrahlers sind in diesem Spektrum die einzigen zwei deutlich hervorstechenden Peaks bei $\SI{1172,66}{\kilo \electronvolt}$ und $\SI{1331,38}{\kilo \electronvolt}$. Diese beiden Peaks passen sehr gut zu den beiden Peaks des $^{60}$Co, die laut Literaturangaben \cite{Q4} $\SI{1,173}{\mega \electronvolt}$ und $\SI{1,332}{\mega \electronvolt}$ betragen sollen.
 
 \section{Diskussion}
-Im ersten Teil des Versuchs konnte der lineare Zusammenhang zwischen Channel-Eingang und der Energie gut sichtbar gemacht werden.
-Die große Abweichung im Fitparameter $n$ ist eventuell dadurch erklärbar, dass sich die niedrigen Peaks mit wenigen Counts nicht gut über Gaußfits approximieren lassen. Außerdem werden für die Erstellung des Fits die unkorrigierte Channelnummern verwendet.
-Die sehr großen Fehler im nicht linearen Fit zur Bestimmung der Eiffizienz des Detektors lassen sich ebenso durch die schlecht zu fittenden
-niedrigen Peaks erklären. Die großen Abweichungen bei der Bestimmung der Effizienz des Detektors führen dann weiterführend zu großen Abweichungen bei der Bestimmung der Aktivität von $^{133}$Ba.
-Die hohe Präzision des Germaniumdetektors ist an der sehr geringen Abweichung von $\SI{0,1}{\percent}$ des detektierten Wertes für die Energie des Photopeaks vom Literaturwert \cite{Q3}. Ebenso spricht die Abweichung der Compton-Kante mit lediglich zwei Prozent vom Theoriewert für die hohe Präzision des Detektors. Die etwas höhere Abweichung des Theoriewertes für den Rückstreupeak ist dadurch zu erklären, dass der theoretische Wert nur als eine Näherung zu betrachten ist und das Ablesen des Peaks eine gewisse Ungenauigeit birgt.
-Die Emissionslinien des unbekannten Strahlers konnten deutlich dargestellt und mit den Theoriewerten verglichen werden.
+Im ersten Teil des Versuchs konnte der lineare Zusammenhang zwischen Bin-Index
+und der Energie gut sichtbar gemacht werden.
+Die große Abweichung im Fitparameter $n$ ist eventuell dadurch erklärbar, dass
+sich die niedrigen Peaks mit wenigen Counts nicht gut über Gaußfits
+approximieren lassen. Außerdem werden für die Erstellung des Fits die
+unkorrigierten Channelnummern verwendet.
+
+\noindent Die hohe Präzision des Germanium-Detektors ist an der sehr geringen
+Abweichung von $\SI{0,1}{\percent}$ des detektierten Wertes für die Energie des
+Photopeaks vom Literaturwert \cite{Q3} erkennbar. Ebenso spricht die Abweichung
+der Compton-Kante mit lediglich zwei Prozent vom Theoriewert für die hohe
+Präzision des Detektors. Die etwas höhere Abweichung des Theoriewertes für den
+Rückstreupeak ist dadurch zu erklären, dass der theoretische Wert nur als eine
+Näherung zu betrachten ist und das Ablesen des Peaks eine gewisse Ungenauigeit
+birgt.
+Die Emissionslinien des unbekannten Strahlers konnten deutlich dargestellt und
+mit den Theoriewerten verglichen werden. Es ist leicht zu erkennen, dass das
+detektierte Spektrum dem von $^{60}Co$ entspricht. Die Energien weisen eine
+sehr geringe Abweichung von $\SI{0,05}{\percent}$ für den detektierten Peak mit
+$\SI{1331,38}{\kilo \electronvolt}$ und $\SI{0,03}{\percent}$ für den Peak mit
+$\SI{1172,66}{\kilo \electronvolt}$. Dies spricht abermals für das sehr gute
+Auflösungsvermögen des Germaniumdetektors, worauf auch die sehr geringe Halbwertsbreite von $\SI{2,45(23)}{\kilo \electronvolt}$ schon hinweist.
+
+\noindent Bei der Ermittlung der theoretischen Halbwertsbreite
+(siehe Gleichung \ref{eq:halbwertsbreite_theo} ) fällt auf, dass diese deutlich kleiner ist, als
+der experimentell ermittelte Wert. Dies ist durch die immer noch vorhandene
+Untergrundstrahlung zu erklären, die von dem im Versuch verwendeten
+Germaniumdetektor nicht abgeschirmt werden kann.
+
 
 \printbibliography
