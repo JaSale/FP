@@ -199,17 +199,19 @@ with a digital multimeter.
 
 \section{Lead-through}
 
-In the first part of the experiment the circuit from figure \ref{abb3} is used to
-figure out the characteristic roll off and although the cut-off frequency of the
-operational amplifier . A constant supply voltage of the operational
-amplifier of $\pm \SI{12}{\volt}$ has to be guaranteed for each part of the experiment.
-As soon as the circuit from figure \ref{abb3} is set up the frequency of an input
-sine-voltage is increased from $\SI{10}{\hertz}$ up to $\SI{1}{\mega \hertz}$ for
-two different ratios of the feedback network resistances.
-The second part of the experiment includes the circuit of the reverse integrator as
-shown in figure \ref{abb5}. In the first subsection the qualitative behaviour of the integrator is shown by a simple comparison of the input and output waveforms.
-Afterwards the frequency of a sinusodial input voltage is increased from $\SI{570}{\hertz}$
-to $\SI{16}{\kilo \hertz}$ in order to verify the relationship of equation \ref{eq:U_A}.
+In the first part of the experiment the circuit from figure \ref{abb3} is used
+to figure out the characteristic roll off and although the cut-off frequency of
+the operational amplifier . A constant supply voltage of the operational
+amplifier of $\pm \SI{12}{\volt}$ has to be guaranteed for each part of the
+experiment. As soon as the circuit from figure \ref{abb3} is set up the
+frequency of an input sine-voltage is increased from $\SI{10}{\hertz}$ up to
+$\SI{1}{\mega \hertz}$ for two different ratios of the feedback network
+resistances. The second part of the experiment includes the circuit of the
+reverse integrator as shown in figure \ref{abb5}. In the first subsection the
+qualitative behaviour of the integrator is shown by a simple comparison of the
+input and output waveforms. Afterwards the frequency of a sinusodial input
+voltage is increased from $\SI{570}{\hertz}$ to $\SI{16}{\kilo \hertz}$ in order
+to verify the relationship of equation \ref{eq:U_A}.
 
 \section{Analysis}
 
@@ -316,15 +318,14 @@ be a constant:
 \end{figure}
 
 \subsection{Reverse Integrator}
-In figure \ref{abb:3} you can see the integral of a square-wave-voltage and in
-figure \ref{abb:4} the integral of a triangle-oscillation.
-The green line represents the function and the yellow line the integral of
-the function.
+The inputs (square and triangular waveforms) and the outputs of the integrator
+can be seen in figure \ref{abb:3} and \ref{abb:4}. The visual comparison is
+consistent with the integral of the input (reversed in sign).
 
-The data of the voltage amplitude as a function of the frequency is written
-in the table \ref{tab:2} and shown in \ref{abb:5}. To analyse the porportionality of the voltage amplitude
-in function of the inverse frequency or rather the inverse of the phase velocity,
-you have to do a linear regression:
+The data of the voltage amplitude as a function of the frequency is written in
+the table \ref{tab:2} and shown in \ref{abb:5}. To analyse the porportionality
+of the voltage amplitude in function of the inverse frequency or rather the
+inverse of the phase velocity, you have to do a linear regression:
 \begin{equation*}
   \frac{U}{U_0} = a_2 \cdot \frac{1}{\omega} + b_2 = a_2 \cdot \frac{1}{2 \pi \nu} + b_2
 \end{equation*}
