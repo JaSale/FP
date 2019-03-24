@@ -1,18 +1,20 @@
-\section{Theorie}
+Apparatur\section{Theorie}
 Der Germaniumdetektor wird zur $\gamma$-Spektroskopie verwendet, da dieser
 gegenüber eines Szintillations-Detektors eine viel höhere Auflösung besitzt.
-(Szintialltionsdetektor: $\approx \SI{70}{\kilo\eV} $,
-Germaniumdetektor:$\approx \SI{895}{\kilo\eV} $ \cite{Q1})
+(Szintillationsdetektor: $\approx \SI{13}{\kilo\eV} $,
+Germaniumdetektor:$\approx \SI{895}{\eV} $ bei $E_{\gamma}=\SI{500}{\kilo\eV}$
+\cite{Q1})
 
 \subsection{Wechselwirkung von Gamma-Strahlung mit Materie}
-In Abbildung \ref{abb:1} sind die verschiedenen Wechselwirkungen mit Materie zu
-erkennen. Es wurde dabei der Extinktionskoeffizient, ein Maß für die Schwächung
-der elektromagnetischen Welle, gegen die Energie der $\gamma$-Quanten aufgetragen.
+In Abbildung \ref{abb:1} sind die Extinktionskoeffizienten der verschiedenen
+Wechselwirkungen mit Materie zu erkennen.
+Es wurde dabei der Extinktionskoeffizient, ein Maß für den Energieverlust,
+gegen die Energie der $\gamma$-Quanten aufgetragen.
 Zur Beschreibung der Wechselwirkungen, ist es notwendig auch den Wirkungsquerschnitt
 zu betrachten. Dieser beschreibt die Wahrscheinlichkeit der Wechselwirkung mit
-der Materie, diese hängt von der Energie der $\gamma$-Quanten und der
+der Materie. Diese hängt von der Energie der $\gamma$-Quanten und der
 Eigenschaften des Materials ab. Die verschiedenen Wechselwirkungen werden im
-Folgenden näher erklärt:
+Folgenden näher erklärt.
 
 Bei dem Photoeffekt gibt das $\gamma$-Quant die komplette Energie
 an ein Hüllenelektron (meist aus der K-Schale) eines Atoms ab. Übersteigt die
@@ -28,10 +30,10 @@ Der Wirkungsquerschnitt $\sigma_{\symup{Ph}}$ für den Photoeffekt ist stark
 abhängig von der Energie  $E$ der $\gamma$-Quanten und der Kernladungszahl $Z$ des
 Materials:
 \begin{equation}
-  \sigma_{\symup{Ph}} \propto Z^{\alpha}E^{\delta}
+  \sigma_{\symup{Ph}} \propto Z^{\alpha}E^{\delta} \, ,
 \end{equation}
 wobei die Exponenten empirisch festgestellt wurden ($4<\alpha<5$ und
-$\delta \approx -3,5$. Für Energien ab \SI{5}{\mega\eV} kann $\delta$ auf
+$\delta \approx -3,5$). Für Energien ab \SI{5}{\mega\eV} kann $\delta$ auf
 einen Wert bis zu -1 steigen.
 
 Eine weitere wichtige Wechselwirkung ist der Compton-Effekt.
@@ -78,7 +80,7 @@ aufgrund der geringen Masse des Elektrons.
 Der Wirkungsquerschnitt $\sigma_{\symup{Pa}}$ der Paarerzeugung kann mit viel
 Aufwand hergeleitet werden. Hier sind zwei exemplarische Ergebnisse dargestellt,
 wobei unterschieden werden muss für kernnahe und kernferne Paarbildung.
-Für die kernnahe Paarbildung, also Bereiche von 10-25\,\si{\mega\eV}, gilt
+Für die kernnahe Paarbildung, also Bereiche von (10-25)\,\si{\mega\eV}, gilt
 die folgende Gleichung:
 \begin{equation}
    \sigma_{\symup{Pa}}= \alpha r_e^2Z^2 \left( \frac{28}{9} \ln{(2 \epsilon)} -
@@ -90,13 +92,13 @@ Wirkungsquerschnitt wie folgt berechnen:
   \sigma_{\symup{Pa}}= \alpha r_e^2Z^2 \left( \frac{28}{9} \ln{\left(\frac{183}{\sqrt[3]{Z}}\right)} -
   \frac{2}{27} \right)
 \end{equation}
-Diese Gleichung gilt für Energien die größer sind als \SI{500}{\mega\eV}.
+Diese Gleichung gilt für Energien, die größer sind als \SI{500}{\mega\eV}.
 
 
 \begin{figure}
   \centering
   \includegraphics[scale=0.8]{Wechselwirkungen.png}
-  \caption{Effekte bei der Wechselwirkung von $\gamma$-Strahlung mit Materie. \cite{Q1}}
+  \caption{Die Extinktionskoeffizienten der verschiedenen Wechselwirkungen von $\gamma$-Quanten mit Germanium. \cite{Q1}}
   \label{abb:1}
 \end{figure}
 
@@ -108,7 +110,7 @@ In dem Bereich zwischen den beiden Schichten entsteht eine Sperrschicht. Durch
 Rekombination der Löcher aus der p-Schicht und der Elektronen aus der n-Schicht,
 entsteht hier eine Zone ohne freie Ladungsträger.
 Die benannten Löcher sind Elektronenlöcher, welche hier wie positiv geladene
-Teilchen angesehen werden können. Diese entstehen durch p-Dotierung von Germanium
+Teilchen angesehen werden können. Diese entstehen zum Beispiel durch p-Dotierung von Germanium
 (4 Valenzelektronen) mit Bohr, welche nur 3 Valenzelektronen besitzt. Dadurch
 entsteht durch die Einbindung von Bohr in das Gitter des Germaniums ein
 Elektronenloch, bzw. eine nicht besetzte Elektronenstelle.
@@ -117,19 +119,19 @@ da hier die Wechselwirkung zwischen den $\gamma$-Quanten und der Materie
 stattfindet, bzw. nur hier die Wechselwirkung zu einem Zählereignis führt.
 In der Sperrschicht werden Elektronen durch die vorher benannten Wechselwirkungen
 mit sehr hohen kinetischen Energien freigesetzt. Diese widerum regen andere
-Elektronen an, die zwar geringere kinetische Energien haben, aber genug um die
+Elektronen an, die zwar geringere kinetische Energien haben, aber genug, um die
 Lücke zwischen dem Leitungsband und dem Valenzband zu überspringen. So
 entstehen in der Sperrschicht bzw. ladungsträgerarmen Zone Löcher und Elektronen,
 die durch eine außen anliegende Spannung getrennt werden können, ohne wieder zu
 rekombinieren. Durch diesen Vorgang entsteht ein Stromfluss, welcher zu einem
 Zählereignis führt.
-Um ein möglichst genaues Messergebnis zu erhalten, ist es sinnvoll die
+Um ein möglichst genaues Messergebnis zu erhalten, ist es sinnvoll, die
 ladungsträgerarme Zone zu verbreitern, denn die Breite beträgt ohne äußere Einflüsse
-nur einige \si{\micro\meter}. Eine hohe außen angelegte Spannung (einige \si{\kilo\volt}), vergrößert
-die ladungsträgerarme Zone auf einige \si{\centi\meter}. Dies ist nur begrenzt
-möglich, da sich die Halbleiterdiode durch die hohe Spannung erhitzt und somit mehr
-thermische Elektronen freigesetzt werden, die somit auch in das Leitungsband
-übergehen können und somit für einen Strom sorgen, der die Messergebnisse
+nur einige \si{\micro\meter}. Eine hohe außen angelegte Spannung (einige \si{\kilo\volt}) vergrößert
+die ladungsträgerarme Zone auf einige \si{\centi\meter}.
+Dies ist nur begrenzt möglich, da die Hochspannung dazu führt, dass die
+freigesetzen thermischen Elektronen auch zu den verschiedenen Elektroden
+beschleunigt werden. Somit wird Strom erzeugt, der die Messergebnisse
 verfälscht. Deswegen wird während der Messung der Germaniumkristall mit
 flüssigem Stickstoff auf $\SI{77}{\kelvin}$ gekühlt.
 Außerdem ist die Dicke $d$ der Sperrschicht abhängig von der Dotierung
@@ -159,10 +161,10 @@ zu sehen.
 \end{figure}
 
 Als p-dotierte Schicht und zusätzlich als Anschluss für die Hochspannung wird
-eine dünne Goldfolie auf die Innenseite des Germaniumskristalls aufgetragen.
+eine dünne Schicht aus Gold auf die Innenseite des Germaniumskristalls aufgedampft.
 Als n-dotierte Schicht ist der Germaniumkristall auf der Außenseite von einer
 Lithiumschicht umgeben. Der Detektor ist außerdem mit einer Aluminium
-Schutzhaube umgeben üfr eine thermische Isolation. Zusätzlich wird die natürliche
+Schutzhaube umgeben für eine thermische Isolation. Zusätzlich wird die natürliche
 Untergrundstrahlung durch eine Blei-Schicht abgeschirmt, um die Messergebnisse
 nicht zu verfälschen.
 Um gegebenenfalls strahlende Isotope aus dem Blei abzuschirmen, wird noch eine
@@ -170,20 +172,17 @@ weitere Schicht aus Kupfer unter der Blei-Schicht angebracht.
 
 \subsection{Energiespektrum}
 In Abbildung \ref{abb:4} ist das Energiespektrum eines monochromatischen
-$\gamma$-Strahlers zu sehen.
-\begin{itemize}
-  \item Der Photopeak ensteht durch vollständige Abgabe der Enerige
-  durch den Photoeffekt.
-  \item Das Compton-Kontinuum wird durch die Comptonstreuung hervorgerufen.
-  Hierbei wird nur ein Teil der Energie abgegeben, deswegen ist dies für die
-  Energiebestimmung des $\gamma$-Quants nicht nützlich. Die Comptonkante entsteht durch
-  den maximalen Energieübertrag bei einer Richtungsänderung des Photons von $\pi$.
-  Nach der Compton-Kante ist dennoch eine Intensität zu erkennen. Diese kommt
-  durch mehrfach compton-gestreute $\gamma$-Quants zustande.
-  \item Der Rückstreupeak ensteht auch durch Comptonstreuung, aber
-  nicht in dem Detektor, sondern in der Umgebung, beispielsweise in der
-  Abschirmung.
-\end{itemize}
+$\gamma$-Strahlers zu sehen. Der Photopeak ensteht durch vollständige Abgabe der Enerige
+durch den Photoeffekt.
+Das Compton-Kontinuum wird durch die Comptonstreuung hervorgerufen.
+Hierbei wird nur ein Teil der Energie abgegeben, deswegen ist dies für die
+Energiebestimmung des $\gamma$-Quants nicht nützlich. Die Comptonkante entsteht durch
+den maximalen Energieübertrag bei einer Richtungsänderung des $\gamma$-Quants von $\pi$.
+Nach der Compton-Kante ist dennoch eine Intensität zu erkennen. Diese kommt
+durch mehrfach compton-gestreute $\gamma$-Quants zustande.
+Der Rückstreupeak ensteht auch durch Comptonstreuung, aber
+nicht in dem Detektor, sondern in der Umgebung, beispielsweise in der
+Abschirmung.
 
 \begin{figure}
   \centering
@@ -210,7 +209,7 @@ verteilt wird.
 Da die Ladungsträgerverteilung nicht komplett unkorreliert verläuft, sondern
 die Fluktuation der Ladungsträgererzeugung durch die Fluktuation der
 Phononenanregung kompensiert wird, wird der Fano-Faktor $F$ eingeführt ($F<1$).
-Bei diesem Versuch liegt der Fano-Faktor bei etwa $F=0,1$
+Bei diesem Versuch liegt der Fano-Faktor bei etwa $F=0,1$.
 Damit folgt für die Standardabweichung $\sigma$
 \begin{equation}
   \sigma = \sqrt{F\overline{n}} = \sqrt{F \frac{E_{\gamma}}{E_{\symup{El}}}}
@@ -223,18 +222,18 @@ Poissonverteilung mit einer Gaußverteilung angenähert werden:
   \Delta E_{1/2} = \sqrt{2\ln{(2)}}\sigma_E =\sqrt{8\ln{(2)}}\frac{\sigma}{\overline{n}}
   E_{\gamma} = 2,35\sqrt{0,1E_{\gamma}E_{\symup{El}}}
 \end{equation}
-Die Halbwertsbreite des Germanium-Detektors bei einer typischen Energie von
+Die Halbwertsbreite des Germaniumdetektors bei einer typischen Energie von
 \SI{500}{\kilo\eV} liegt bei:
 \begin{align}
     \label{eq:halbwertsbreite}
-    \Delta E_{1/2}(\SI{500}{\eV})= 2,35 \sqrt{0,1 \cdot 500000\cdot 2,9} \approx \SI{895}{\eV} \; .
+    \Delta E_{1/2}(\SI{500}{\kilo\eV})= 2,35 \sqrt{0,1 \cdot 500000\cdot 2,9} \approx \SI{895}{\eV} \; .
 \end{align}
 
 
 Durch einige Einflüsse wird das energetische Auflösungsvermögen vermindert:
 \begin{itemize}
   \item Rauschen des Leckstroms, durch Eigenleitung und Restverunreinigung.
-  Dies wird durch Abkühlen der Apperatur verringert.
+  Dies wird durch Abkühlen der Apparatur verringert.
   \item Rauschen des Verstärkers
   \item unvollständige Ladungssammlung durch Feldinhomogenitäten
 \end{itemize}
@@ -248,7 +247,7 @@ Die Effizienz Q eines Germaniumdetektors kann mit Hilfe einiger Parameter berech
     \label{eq:effizienz}
     \text{Q} = \frac{4 \pi \text{Z}}{\Omega \text{A} \Delta \text{t} \text{W}}
 \end{equation}
-Hierbei beschreibt A die Aktivität der Probe am Versuchstag, W die Emissionswahrscheinlichkeit, Z das gemessene Zählergebniss als Summe der Impulse in einem Peak und $\Omega$ den Raumwinkel.
+Hierbei beschreibt A die Aktivität der Probe am Versuchstag, W die Emissionswahrscheinlichkeit, Z das gemessene Zählergebnis als Summe der Impulse in einem Peak, $\delta t$ den Messzeitraum und $\Omega$ den Raumwinkel.
 Das Raumwinkelelement $\frac{\Omega}{4\pi}$ berechnet sich wie folgt:
 \begin{equation}
     \label{eq:Omega}
@@ -258,49 +257,61 @@ Das Raumwinkelelement $\frac{\Omega}{4\pi}$ berechnet sich wie folgt:
 \begin{figure}
   \centering
   \includegraphics[scale=0.7]{Raumwinkel.png}
-  \caption{Berechnung des Raumwinkels}
+  \caption{Geometische Veranschaulichung zur Berechnung des Raumwinkels. \cite{Q1}}
   \label{abb:Raumwinkel}
 \end{figure}
 
 \subsection{Aufbau}
 
 Der Blockschaltbild des Versuchs ist in Abbildung \ref{abb:2} zu sehen. Folgende
-Komponenten sind in dem Aufbau enthalten:
-\begin{itemize}
-  \item Detektor: Zur Detektion der $\gamma$-Strahlen mit Hilfe
-  einer Halbleiterdiode.
-  \item Vorverstärker: Der Vorverstärker integriert den vom Detektor
-  kommende Strom in einen Spannungsimpuls, da Spannung mit geringeren
-  Verlusten weitergeleitet werden kann als Strom. Damit die eintreffenden Signale
-  nicht nacheinander aufaddiert werden und somit keine Aussage über die Höhe der
-  einzelnen Signale mehr getroffen werden kann, muss der Kondensator nach jedem
-  Ladungsimpuls entladen werden. Da durch eine
-  Entladung über einen Widerstand ein Rauschen entsteht, wird der Kondensator
-  durch eine optoelektronische Rückkopplung entladen, bei der die Gate-Drain-Schicht,
-  bzw. hier die Feldeffekttransistoren
-  des Operationsverstärkers mit einer LED beleuchtet wird, wobei die
-  Sperrschicht kurz leitend wird und die Ladung somit abfließen kann.
-  \item Hauptverstärker: Der Hauptverstärker verstärkt die Spannung
-  nach dem Vorverstärker. Dabei muss darauf geachtet werden, dass die Bandbreite
-  des Verstärkers weder zu klein noch zu groß ist, um alle Signale zu
-  übertragen und das Rauschen nicht zu groß werden zu lassen.
-  Zusätzlich differenziert und integriert der Hauptverstärker als Hoch- und
-  Tiefpassfilter.
-  \item Vielkanalanalysator: Der Vielkanalanalysator sortiert
-  die Spannungsimpulse nach ihrer Größe und zählt diese, indem ein Kondensator
-  durch den zu messenden Spannungsimpuls geladen wird und die Zeit der
-  Entladung erfasst wird. Der Kondensator ist zusätzlich an eine
-  Gleichspannungsquelle angeschlossen. Da die Entladezeit ein Maß für die
-  Höhe des Spannungsimpulses ist, wird die Zählerstelle des zur Entladezeit
-  passenden Kanals um eins erhöht. Zur Messzeit wird das Gatter zu dem Kondensator
-  geschlossen, damit kein zweiter Spannungsimpuls während der Messung
-  den Kondensator auflädt und somit die Messung verfälscht.
-  Die Messungen des Vielkanalanalysators werden auf dem angeschlossenen
-  Computer gespeichert.
-  \item Temperaturregler: Während der Messung wird die Apperatur
-  durchgehend durch flüssigen Stickstoff gekühlt, um z.B. die Rauschen des
-  Leckstroms zu verringern.
-\end{itemize}
+Komponenten sind in dem Aufbau enthalten: Detektor, Vorverstärker, Hauptverstärker,
+Vielkanalanalysator, Temperaturregler.
+
+Der Detektor dient zur Detektion der $\gamma$-Quanten mit Hilfe
+einer Halbleiterdiode.
+
+Der Vorverstärker integriert den vom Detektor
+kommenden Strom in einen Spannungsimpuls, da Spannung mit geringeren
+Verlusten weitergeleitet werden kann als Strom. Damit die eintreffenden Signale
+nicht nacheinander aufaddiert werden und somit keine Aussage über die Höhe der
+einzelnen Signale mehr getroffen werden kann, muss der Kondensator nach jedem
+Ladungsimpuls entladen werden. Da durch eine
+Entladung über einen Widerstand ein Rauschen entsteht, wird der Kondensator
+durch eine optoelektronische Rückkopplung entladen, bei der die
+Gate-Drain-Schicht der Feldeffekttransistoren
+des Operationsverstärkers mit einer LED beleuchtet wird, wobei die
+Sperrschicht kurz leitend wird und die Ladung somit abfließen kann.
+
+Der Hauptverstärker verstärkt die Spannung
+nach dem Vorverstärker im Bereich von \SI{(0-10)}{\volt}, da der
+Vielkanalanalysator auf diesen Bereich genormt ist. Dabei muss darauf
+geachtet werden, dass die Bandbreite
+des Verstärkers weder zu klein noch zu groß ist, um alle Signale zu
+übertragen und das Rauschen nicht zu groß werden zu lassen.
+Zusätzlich differenziert und integriert der Hauptverstärker als Hoch- und
+Tiefpassfilter.
+
+Der Vielkanalanalysator sortiert die Spannungsimpulse nach ihrer Größe und zählt
+diese, indem ein Kondensator durch den zu messenden Spannungsimpuls geladen wird
+und die Zeit der Entladung erfasst wird. Der Kondensator ist zusätzlich an eine
+Konstantstromquelle angeschlossen, die zur Entladung des Kondensators mittels
+eines konstanten Stromes $I_k$ dient. Beginnend mit der Entladung fängt ein
+Binärzähler an die äquidistanten Impulse eines hochstabilen Quarz-Oszillators zu
+zählen, da der Binärzähler nur ein Signal empfängt, wenn ein vorgeschaltetes
+Und-Gatter ein Signal weiterleitet.  Dies ist bei Beginn der Entladung gegeben.
+Während der Entladung des Kondensators wird durch die Steuereinheit des
+Analog-Digital-Konverters der Eingang gesperrt, sodass kein weiteres Messsignal
+die laufende Messung stören kann. Die Messungen des Vielkanalanalysators werden
+auf dem angeschlossenen
+Computer gespeichert.
+
+Der Temperaturregler kühlt die Apparatur während der Messung durchgehend
+mit flüssigem Stickstoff, um z.B. den Leckstrom zu verringern.
+
+
+
+
+
 
 Um keine Verstärkung von Gleichspannungen und Offsetspannungen zu erhalten, wird
 zwischen dem Vorverstärker und dem Hauptverstärker ein RC-Glied geschaltet. Ein
@@ -334,12 +345,12 @@ vor dem Detektor befestigt. Die Messung wird für jede Probe ca. eine Stunde lan
 durchgeführt.
 
 \section{Auswertung}
-Um die Funktionsweise des Germanium-Detektors zu untersuchen, werden nun im Folgenden die aufgenommenen
+Um die Funktionsweise des Germaniumdetektors zu untersuchen, werden nun im Folgenden die aufgenommenen
 Spektren ausgewertet.
 
-\subsection{Kalibrierung und Effizienzbestimmung des Germanium-Detektors}
+\subsection{Kalibrierung und Effizienzbestimmung des Germaniumdetektors}
 
-Zur Kalibrierung des Germanium-Detektors wird das Spektrum eines $^{152}$Eu-Strahlers untersucht. Hierbei
+Zur Kalibrierung des Germaniumdetektors wird das Spektrum eines $^{152}$Eu-Strahlers untersucht. Hierbei
 werden im aufgenommenen Spektrum die Peaks detektiert und dann den im Energiespektrum von $^{152}$Eu, die der
 Versuchsanleitung \cite{Q1} entnommen wurden, hervorstechenden Energiewerten zugeordnet. Das
 $^{152}$Eu-Spektrum mit den detektierten Peaks ist in
@@ -362,7 +373,7 @@ Die fertige Zuordnung von Binwerten zu den Energien ist in Tabelle
 
 \begin{table}
     \centering
-    \caption{Werte zur Kalibrierung des Germanium-Detektors.}
+    \caption{Werte zur Kalibrierung des Germaniumdetektors.}
     \label{tab:Kali}
     \begin{tabular}{ c c c c }
         \toprule
@@ -409,12 +420,12 @@ Für die Werte des linearen Fits ergibt sich dann:
 \begin{figure}
     \centering
     \includegraphics[scale=0.7]{Kalibrierung.pdf}
-    \caption{Energiekalibrierung des Germanium-Detektors.}
+    \caption{Energiekalibrierung des Germaniumdetektors.}
     \label{abb:linfit}
 \end{figure}
 \FloatBarrier
 
-\noindent Um die Effizienz des Germanium-Detektors gemäß Formel \ref{eq:effizienz} zu bestimmen, müssen
+\noindent Um die Effizienz des Germaniumdetektors gemäß Formel \ref{eq:effizienz} zu bestimmen, müssen
 zunächst die Parameter A, Z, W und $\Omega$ ermittelt werden.
 Die Aktivität A der Probe am Versuchstag, dem 07.11.2018, lässt sich mit den Angaben zur Halbwertszeit von
 $^{152}$Eu ($t_{1/2}=\SI{4943(5)}{\day}$) und der Aktivität am 01.10.2000: $\text{A}_0=
@@ -425,7 +436,7 @@ $^{152}$Eu ($t_{1/2}=\SI{4943(5)}{\day}$) und der Aktivität am 01.10.2000: $\te
 \end{align*}
 Das Raumwinkelelement $\frac{\Omega}{4 \pi}$ berechnet sich nach Gleichung \ref{eq:Omega} mit dem Parameter
 $a$ für den Abstand zwischen Quelle und Absorptionspunkt ($a=\SI{8,81}{\centi\meter}$) und $r$ für die halbe
-Breite des Germanium-Detektors ($r= \SI{2,25}{\centi \meter}$). Die Wahl für $a$ ergibt sich aus der Angabe
+Breite des Germaniumdetektors ($r= \SI{2,25}{\centi \meter}$). Die Wahl für $a$ ergibt sich aus der Angabe
 aus der Anleitung zum Versuch \cite{Q1}, dass der wahrscheinlichste Absorptionspunkt im Germanium
 $\SI{1,5}{\centi \meter}$ unter der Aluminiumhaube liegt und der Höhe des Abstandshalters zwischen Probe und
 Detektor ($\SI{7,31}{\centi \meter}$).
@@ -525,7 +536,7 @@ Die Wertepaare, als auch die gefittete Potenzfunktion, sind in Abbildung \ref{ab
 \begin{figure}
     \centering
     \includegraphics[scale=0.7]{effizienz.pdf}
-    \caption{Effizienz des Germanium-Detektors gegen die Energie aufgetragen.}
+    \caption{Effizienz des Germaniumdetektors gegen die Energie aufgetragen.}
     \label{abb:effizienz}
 \end{figure}
 \FloatBarrier
@@ -729,7 +740,7 @@ Die erhaltenen Werte für die Aktivität werden anschließend gemittelt, wodurch
 
 
 \subsection{Aktive Nuklide eines unbekannten Strahlers}
-Im finalen Teil des Versuchs wird eine unbekannte Substanz im Germanium-Detektor analysiert. Das Spektrum, sowie die detektierten Peaks sind in Abbildung \ref{abb:unbekannt} zu sehen. Die Position sowie die Höhe und zugehörige Energie sind in Tabelle \ref{tab:unbekannt} zu sehen.
+Im finalen Teil des Versuchs wird eine unbekannte Substanz im Germaniumdetektor analysiert. Das Spektrum, sowie die detektierten Peaks sind in Abbildung \ref{abb:unbekannt} zu sehen. Die Position sowie die Höhe und zugehörige Energie sind in Tabelle \ref{tab:unbekannt} zu sehen.
 \FloatBarrier
 \begin{figure}
     \centering
@@ -763,7 +774,7 @@ sich die niedrigen Peaks mit wenigen Counts nicht gut über Gaußfits
 approximieren lassen. Außerdem werden für die Erstellung des Fits die
 unkorrigierten Channelnummern verwendet.
 
-\noindent Die hohe Präzision des Germanium-Detektors ist an der sehr geringen
+\noindent Die hohe Präzision des Germaniumdetektors ist an der sehr geringen
 Abweichung von $\SI{0,1}{\percent}$ des detektierten Wertes für die Energie des
 Photopeaks vom Literaturwert \cite{Q3} erkennbar. Ebenso spricht die Abweichung
 der Compton-Kante mit lediglich zwei Prozent vom Theoriewert für die hohe
