@@ -196,20 +196,20 @@ print('a=', params2[0], '±', errors2[0] )
 print('b=', params2[1], '±', errors2[1] )
 
 
-#print(noms(Q))
+print(noms(Q))
 
-#a=ufloat(params2[0],errors2[0])
-#b=ufloat(params2[1],errors2[1])
-#
-#
-#x= np.linspace(200,1600, 10000)
-#plt.plot(x, potenz(x,*params2), 'r--', label='Energie-Effizienz-Fit')
-#plt.plot(E, noms(Q),'g+', label='Messwerte')
-#plt.legend(loc='best')
-#plt.xlabel(r'E / keV')
-#plt.ylabel(r'Q(E)')
-#plt.savefig('effizienz.pdf')
-#plt.clf()
+a=ufloat(params2[0],errors2[0])
+b=ufloat(params2[1],errors2[1])
+
+
+x= np.linspace(200,1600, 10000)
+plt.plot(x, potenz(x,*params2), 'r--', label='Energie-Effizienz-Fit')
+plt.plot(E, noms(Q),'gx', label='Messwerte')
+plt.legend(loc='best')
+plt.xlabel(r'E / keV')
+plt.ylabel(r'Q(E)')
+plt.savefig('effizienz.pdf')
+plt.clf()
 
 
 ################Teil b)##############################################
