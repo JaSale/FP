@@ -359,7 +359,7 @@ Energiespektrums wurde, wie alle folgenden Plots in der Form bearbeitet, als
 dass sie jeweils nur die für die Auswertung relevanten Ausschnitte aus dem
 Spektrum darstellen. Weiter wurden die markierten Peaks bereits mit den, den
 Kanalnummern entsprechenden Energien beschriftet. Die Berechnung der
-Energiewerte erfolgte nach Gleichung \ref{eq:energie}.
+Energiewerte erfolgte nach Gleichung \ref{eq:energie}. Die Messzeit betrug in diesem Teil des Versuchs $\SI{3851}{\second}$.
 Die fertige Zuordnung von Binwerten zu den Energien ist in Tabelle
 \ref{tab:Kali} zu sehen.
 \FloatBarrier
@@ -414,7 +414,7 @@ Für die Werte des linearen Fits ergibt sich dann:
     n &= \SI{0,2(16)}{\kilo \electronvolt}
 \end{align*}
 
-\noindent Die Wertepaare aus bestehend aus dem Bin-Index und der zugeordneten Energie aus den Literaturwerten sind gemeinsam mit dem linearen Fit in Abbildung \ref{abb:linfit} zu sehen.
+\noindent Die Wertepaare bestehend aus dem Bin-Index und der zugeordneten Energie aus den Literaturwerten sind gemeinsam mit dem linearen Fit in Abbildung \ref{abb:linfit} zu sehen.
 
 \FloatBarrier
 \begin{figure}
@@ -474,7 +474,7 @@ Die Wertepaare, als auch die gefittete Potenzfunktion, sind in Abbildung \ref{ab
 \FloatBarrier
 \begin{table}
     \centering
-    \caption{Werte zur Effizienbestimmung aus den Gaußfits}
+    \caption{Werte zur Effizienzbestimmung aus den Gaußfits}
     \label{tab:effizienz1}
     \begin{tabular}{ c c c c }
         \toprule
@@ -545,7 +545,7 @@ Die Wertepaare, als auch die gefittete Potenzfunktion, sind in Abbildung \ref{ab
 
 Um die Halbwertsbreite des Photopeaks eines $^{137}$Cs-Strahlers zu untersuchen,
 wird das Spektrum eines monochromatischen Gammastrahlers, das von $^{137}$Cs,
-aufgenommen. Das erhaltene Spektrum ist zusammen mit den detektierten Peaks in
+aufgenommen. Die Messzeit betrug $\SI{3336}{\second}$. Das erhaltene Spektrum ist zusammen mit den detektierten Peaks in
 Abbildung \ref{abb:Cs_peaks} zu sehen. Die für die Auswertung wichtigen Peaks sind der
 Photopeak, der Rückstreupeak sowie die Compton-Kante. Die erhaltenen Werte für die
 Bin-Indizes sowie die zugehörigen Energiewerte sind in Tabelle \ref{tab:Cs_peaks}
@@ -566,7 +566,7 @@ dargestellt.
     \label{tab:Cs_peaks}
     \begin{tabular}{ c c c }
         \toprule
-        & {Bin-Index} & {Energie $E_i$}      \\
+        & {Bin-Index} & {Energie $E_i$ / $\si{\kilo \electronvolt}$  }      \\
         \midrule
         {Rückstreupeak} & 486  & 195,44      \\
         {Compton-Kante} & 1164 & 467,87      \\
@@ -656,11 +656,11 @@ Es kann daher davon ausgegangen werden, dass die Elektronen nicht nur einmalig E
 
 \noindent In diesem Teil des Versuchs wird das Spektrum eines $^{133}$Ba-
 Strahlers untersucht.
-Die Detektormesswerte, sowie die ermittelten Peaks der Bariumquelle sind in Abbildung \ref{abb:BaPlot} dargestellt die Messzeit betrug $\SI{3790}{\second}$.
+Die Detektormesswerte, sowie die ermittelten Peaks der Bariumquelle sind in Abbildung \ref{abb:BaPlot} dargestellt. Die Messzeit betrug $\SI{3790}{\second}$.
 Dafür werden die Peaks zunächst analog zum ersten Teil
 des Versuchs detektiert, anschließend Gauß-gefittet und die Peakinhalte werden
 ermittelt, indem über die Gaußfits integriert wird. Die zugeordneten Bin-
-Indizes, sowie die gemäß Formel \ref{eq:energie} aus den Kanalnummern
+Indizes sowie die gemäß Formel \ref{eq:energie} aus den Kanalnummern
 berechneten Energien, sind in Tabelle \ref{tab:BaTab} dargestellt.
 \FloatBarrier
 \begin{figure}
@@ -677,7 +677,7 @@ berechneten Energien, sind in Tabelle \ref{tab:BaTab} dargestellt.
     \label{tab:BaTab}
     \begin{tabular}{cccc}
         \toprule
-        {E / keV} & { W } & zugeordneter Bin-Index & berechnete Energie \\
+        {E / keV} & { W / $\si{\percent}$ } & zugeordneter Bin-Index & berechnete Energie \\
         \midrule
         53,16   &   2,2     &   139,0  &    55,86\pm0,07      \\
         810    &   34,1     &   208,0  &    83,575\pm0,008    \\
@@ -692,7 +692,7 @@ berechneten Energien, sind in Tabelle \ref{tab:BaTab} dargestellt.
 \FloatBarrier
 
 \noindent Mit Hilfe der Formel für die Ermittlung der Effizienz \ref{eq:effizienz}, kann so ein Wert für die Aktivität der Bariumquelle ermittelt werden. Hierbei ist darauf zu achten, dass nur Werte mit einer Energie $E_i$ größer als $\SI{150}{\kilo \electronvolt}$ verwendet werden, da nur für diese Werte die Effizienz bestimmt werden kann.
-Die Werte, die sich für die Bin-Indizes, die Standardabweichung, die Höhe der Peaks, die Peakinhalte, die Energie sowie die Aktivität der Quelle ergeben, sind in den Tabellen \ref{tab:BaAkt} \ref{tab:BaAkt2} dargestellt.
+Die Werte, die sich für die Bin-Indizes, die Standardabweichung, die Höhe der Peaks, die Peakinhalte, die Energie sowie die Aktivität der Quelle ergeben, sind in den Tabellen \ref{tab:BaAkt} und  \ref{tab:BaAkt2} dargestellt.
 \FloatBarrier
 \begin{table}
     \centering
@@ -740,7 +740,7 @@ Die erhaltenen Werte für die Aktivität werden anschließend gemittelt, wodurch
 
 
 \subsection{Aktive Nuklide eines unbekannten Strahlers}
-Im finalen Teil des Versuchs wird eine unbekannte Substanz im Germaniumdetektor analysiert. Das Spektrum, sowie die detektierten Peaks sind in Abbildung \ref{abb:unbekannt} zu sehen. Die Position sowie die Höhe und zugehörige Energie sind in Tabelle \ref{tab:unbekannt} zu sehen.
+Im finalen Teil des Versuchs wird eine unbekannte Substanz im Germaniumdetektor analysiert. Die Messzeit betrug $\SI{3412}{\secon}$. Das Spektrum, sowie die detektierten Peaks sind in Abbildung \ref{abb:unbekannt} zu sehen. Die Position sowie die Höhe und zugehörige Energie sind in Tabelle \ref{tab:unbekannt} zu sehen.
 \FloatBarrier
 \begin{figure}
     \centering
@@ -772,7 +772,7 @@ und der Energie gut sichtbar gemacht werden.
 Die große Abweichung im Fitparameter $n$ ist eventuell dadurch erklärbar, dass
 sich die niedrigen Peaks mit wenigen Counts nicht gut über Gaußfits
 approximieren lassen. Außerdem werden für die Erstellung des Fits die
-unkorrigierten Channelnummern verwendet.
+unkorrigierten Channelnummern verwendet. Die bestimmten Effizienzen sind als Näherung zu betrachten, da in deren Berechnung der einfließende Paramater $\frac{\Omega}{4\pi}$ mittels einer Approximation ermittelt wird.
 
 \noindent Die hohe Präzision des Germaniumdetektors ist an der sehr geringen
 Abweichung von $\SI{0,1}{\percent}$ des detektierten Wertes für die Energie des
@@ -782,19 +782,22 @@ Präzision des Detektors. Die etwas höhere Abweichung des Theoriewertes für de
 Rückstreupeak ist dadurch zu erklären, dass der theoretische Wert nur als eine
 Näherung zu betrachten ist und das Ablesen des Peaks eine gewisse Ungenauigeit
 birgt.
+
+
+\nodindent Bei der Ermittlung der Aktivität von $\ce{^{133}{Ba}}$ ist zu sehen, dass sich die Werte für die Aktivität für die Energien ab $\SI{276,40}{\kilo \electronvolt}$ kaum unterscheiden. Der Wert für die Aktivität, der zu dem Energiewert von $\SI{160,61}{\kilo \electronvolt}$ gehört, weist zum Rest der Werte eine kleine Abweichung auf, liegt jedoch noch in derselben Größenordnung, weshalb er zur finalen  Berechnung der Aktivität hinzugenommen wurde. Die Abweichung vom Rest der berechneten Aktivitäten ist möglicherweise durch die geringe Emissionswahrscheinlichkeit zu erklären, in Folge derer sich der Peakinhalt nur sehr ungenau bestimmen lässt.
+
 Die Emissionslinien des unbekannten Strahlers konnten deutlich dargestellt und
 mit den Theoriewerten verglichen werden. Es ist leicht zu erkennen, dass das
 detektierte Spektrum dem von $^{60}Co$ entspricht. Die Energien weisen eine
 sehr geringe Abweichung von $\SI{0,05}{\percent}$ für den detektierten Peak mit
 $\SI{1331,38}{\kilo \electronvolt}$ und $\SI{0,03}{\percent}$ für den Peak mit
-$\SI{1172,66}{\kilo \electronvolt}$. Dies spricht abermals für das sehr gute
+$\SI{1172,66}{\kilo \electronvolt}$ auf. Dies spricht abermals für das sehr gute
 Auflösungsvermögen des Germaniumdetektors, worauf auch die sehr geringe Halbwertsbreite von $\SI{2,45(23)}{\kilo \electronvolt}$ schon hinweist.
 
 \noindent Bei der Ermittlung der theoretischen Halbwertsbreite
 (siehe Gleichung \ref{eq:halbwertsbreite_theo} ) fällt auf, dass diese deutlich kleiner ist, als
-der experimentell ermittelte Wert. Dies ist durch die immer noch vorhandene
-Untergrundstrahlung zu erklären, die von dem im Versuch verwendeten
-Germaniumdetektor nicht abgeschirmt werden kann.
+der experimentell ermittelte Wert. Dies ist durch das Verstärkerrauschen, Feldinhomogenitäten und den trotz der Kühlung auf $\SI{77}{\kelvin}$ immer noch vorhandenen Leckstrom zu erklären.
+All diese Faktoren führen dazu, dass die theoretische Energieauflösung nicht erreicht wird.
 
 
 \printbibliography
